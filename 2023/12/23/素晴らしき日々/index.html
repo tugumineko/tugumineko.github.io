@@ -25,55 +25,9 @@
   <!-- import head_begin begin -->
   <!-- import head_begin end -->
   <!-- Custom Files headBegin begin-->
-  var binft = function (r) {
-    var isTransparent = true;
-    function getRandomColor() {
-        if(isTransparent){
-            isTransparent = false;
-            //此处修改字体颜色,最后的 0 和 1 不要改
-            return "rgba(255,255,255,0)"
-        }else{
-            isTransparent = true;
-            return "rgba(255,255,255,1)"
-        }
-    }  
-    function n(r) {
-        for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {
-            var oneword = document.createElement("span");
-            oneword.textContent = "_"; // 此处是末尾字符,如果想用光标样式可以改为"|"
-            oneword.style.color = getRandomColor();
-            n.appendChild(oneword);
-        }
-        return n
-    }
-    function i() {
-        var t = wordList[c.skillI];
-        c.step ? c.step-- : (c.step = refreshDelayTime, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = "backward", c.delay = showTotalWordDelayTime) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % wordList.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(maxLength, maxLength + c.prefixP) : Math.min(maxLength, t.length - c.skillP))), setTimeout(i, d)
-    }
-    var l = "",
-    //此处改成你自己的诗词
-    wordList = [ 
-            "只给予你的晴天.",
-            "因为夏日将终.",
-        ].map(function (r) {
-    return r + ""
-    }),
-    showTotalWordDelayTime = 2,
-    refreshDelayTime = 1,
-    maxLength = 1,
-    d = 75,
-    c = {
-        text: "",
-        prefixP: -maxLength,
-        skillI: 0,
-        skillP: 0,
-        direction: "forward",
-        delay: showTotalWordDelayTime,
-        step: refreshDelayTime
-    };
-    i()
-};
-binft(document.getElementById('binft'));
+  <script  src="/custom.js"></script>
+<script defer src="/custom.js"></script>
+
   <!-- Custom Files headBegin end-->
   <link rel="preload" href="/css/style.css" as="style">
   <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
@@ -81,14 +35,14 @@ binft(document.getElementById('binft'));
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>素晴らしき日々～不連続存在～ - <font><span>Hello</span> <span>World</span></font></title>
+  <title>素晴らしき日々～不連続存在～ - tugumineko</title>
   <meta name="keywords" content="黄油,null">
-  <meta desc name="description" content="鶫猫 - John Doe - <font><span>Hello</span> <span>World</span></font>">
+  <meta desc name="description" content="鶫猫 - John Doe - tugumineko">
   
 <meta property="og:type" content="article">
 <meta property="og:title" content="素晴らしき日々～不連続存在～">
 <meta property="og:url" content="http://example.com/2023/12/23/%E7%B4%A0%E6%99%B4%E3%82%89%E3%81%97%E3%81%8D%E6%97%A5%E3%80%85/index.html">
-<meta property="og:site_name" content="&lt;font&gt;&lt;span&gt;Hello&lt;&#x2F;span&gt; &lt;span&gt;World&lt;&#x2F;span&gt;&lt;&#x2F;font&gt;">
+<meta property="og:site_name" content="tugumineko">
 <meta property="og:description" content="世界是没有意义的。婴儿哭着来到这个世界,又不可避免地注定死亡。人的奋斗，人的情感，人的财产，人的选择对于这一切毫无意义。因此，我们不知道死亡的意义，我们无比惧怕死亡，可是无论是化身救世主，还是试图走到世界的尽头与亡者相见，死亡终会到来，我们无法愿终。世界上没有救世主，人类没有意义，世界毫无意义。 世界是有界限的。因为万物皆生，一切有限，终将回归与此。水天一色，天空回转，不可到达终点。世上没有世界末">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2160,7 +2114,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703304496305),
+    lastupdate: new Date(1703307640734),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2493,10 +2447,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/23/素晴らしき日々/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="<font><span>Hello</span> <span>World</span></font>">
+    <meta itemprop="name" content="tugumineko">
   </span>
   <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="<font><span>Hello</span> <span>World</span></font>">
+    <meta itemprop="name" content="tugumineko">
     <meta itemprop="description" content="鶫猫">
   </span>
   
@@ -2615,9 +2569,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="-mob-share-list share-body">
     
       
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/12/23/%E7%B4%A0%E6%99%B4%E3%82%89%E3%81%97%E3%81%8D%E6%97%A5%E3%80%85/&title=素晴らしき日々～不連続存在～ - <font><span>Hello</span> <span>World</span></font>&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/12/23/%E7%B4%A0%E6%99%B4%E3%82%89%E3%81%97%E3%81%8D%E6%97%A5%E3%80%85/&title=素晴らしき日々～不連続存在～ - tugumineko&summary="
           
           >
           
@@ -2627,9 +2581,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/12/23/%E7%B4%A0%E6%99%B4%E3%82%89%E3%81%97%E3%81%8D%E6%97%A5%E3%80%85/&title=素晴らしき日々～不連続存在～ - <font><span>Hello</span> <span>World</span></font>&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/12/23/%E7%B4%A0%E6%99%B4%E3%82%89%E3%81%97%E3%81%8D%E6%97%A5%E3%80%85/&title=素晴らしき日々～不連続存在～ - tugumineko&summary="
           
           >
           
@@ -2639,9 +2593,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          href="http://service.weibo.com/share/share.php?url=http://example.com/2023/12/23/%E7%B4%A0%E6%99%B4%E3%82%89%E3%81%97%E3%81%8D%E6%97%A5%E3%80%85/&title=素晴らしき日々～不連続存在～ - <font><span>Hello</span> <span>World</span></font>&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/12/23/%E7%B4%A0%E6%99%B4%E3%82%89%E3%81%97%E3%81%8D%E6%97%A5%E3%80%85/&title=素晴らしき日々～不連続存在～ - tugumineko&summary="
           
           >
           
@@ -3222,7 +3176,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"<font><span>Hello</span> <span>World</span></font>","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"鶫猫"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"<font><span>Hello</span> <span>World</span></font>"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/12/23/素晴らしき日々/","name":"素晴らしき日々～不連続存在～"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"<font><span>Hello</span> <span>World</span></font>","url":"http://example.com/","keywords":null,"description":"鶫猫","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"鶫猫"},"publisher":{"@type":"Organization","name":"<font><span>Hello</span> <span>World</span></font>","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"素晴らしき日々～不連続存在～","description":"鶫猫","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/12/23/%E7%B4%A0%E6%99%B4%E3%82%89%E3%81%97%E3%81%8D%E6%97%A5%E3%80%85/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"<font><span>Hello</span> <span>World</span></font>","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/12/23/%E7%B4%A0%E6%99%B4%E3%82%89%E3%81%97%E3%81%8D%E6%97%A5%E3%80%85/","wordCount":0,"datePublished":"2023-12-23T03:36:27.000Z","dateModified":"2023-12-23T03:45:59.430Z","keywords":"黄油","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"鶫猫"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"tugumineko"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/12/23/素晴らしき日々/","name":"素晴らしき日々～不連続存在～"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"tugumineko","url":"http://example.com/","keywords":null,"description":"鶫猫","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"鶫猫"},"publisher":{"@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"素晴らしき日々～不連続存在～","description":"鶫猫","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/12/23/%E7%B4%A0%E6%99%B4%E3%82%89%E3%81%97%E3%81%8D%E6%97%A5%E3%80%85/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"tugumineko","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/12/23/%E7%B4%A0%E6%99%B4%E3%82%89%E3%81%97%E3%81%8D%E6%97%A5%E3%80%85/","wordCount":0,"datePublished":"2023-12-23T03:36:27.000Z","dateModified":"2023-12-23T03:45:59.430Z","keywords":"黄油","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
