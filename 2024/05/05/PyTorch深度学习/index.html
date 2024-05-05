@@ -43,7 +43,7 @@
 <meta property="og:title" content="PyTorch深度学习">
 <meta property="og:url" content="http://example.com/2024/05/05/PyTorch%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="tugumineko">
-<meta property="og:description" content="PyTorch深度学习神经网络 层层组成，多达几百层或者上千层的叫作深度神经网络。从海量的数据中进行处理和分析，提炼出物体的特征，建立模型，从而实现处理大量数据，解决复杂的任务。   架构：每个数据与不同权重相乘后加和，加上偏差后激活再将结果传入下一个神经网络。   构建一个神经网络需要下面五个步骤：    准备数据 定义模型 训练模型 评估预测 做出预测  那么我们怎么高效快速地完成上述五个步骤">
+<meta property="og:description" content="PyTorch深度学习 神经网络  层层组成，多达几百层或者上千层的叫作深度神经网络。从海量的数据中进行处理和分析，提炼出物体的特征，建立模型，从而实现处理大量数据，解决复杂的任务。   架构：每个数据与不同权重相乘后加和，加上偏差后激活再将结果传入下一个神经网络。   构建一个神经网络需要下面五个步骤：  准备数据 定义模型 训练模型 评估预测 做出预测  那么我们怎么高效快速地完成上述五个步骤">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-05-04T16:38:25.000Z">
@@ -2114,7 +2114,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1714887752733),
+    lastupdate: new Date(1714895630804),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2164,7 +2164,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd begin-->
   
   <!-- Custom Files headEnd end-->
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2514,14 +2514,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="PyTorch深度学习"><a href="#PyTorch深度学习" class="headerlink" title="PyTorch深度学习"></a>PyTorch深度学习</h1><h2 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h2><blockquote>
+    <h1>PyTorch深度学习</h1>
+<h2 id="神经网络">神经网络</h2>
+<blockquote>
 <p>层层组成，多达几百层或者上千层的叫作<strong>深度神经网络</strong>。从海量的数据中进行处理和分析，提炼出物体的特征，建立模型，从而实现处理大量数据，解决复杂的任务。</p>
 </blockquote>
 <blockquote>
 <p>架构：每个数据与不同权重相乘后加和，加上偏差后激活再将结果传入下一个神经网络。</p>
 </blockquote>
 <p><img src="https://s2.loli.net/2024/05/05/DrZSv46V7Fg5YUy.png" class="lazyload" data-srcset="https://s2.loli.net/2024/05/05/DrZSv46V7Fg5YUy.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="神经网络架构概述.png" title="神经网络架构概述"></p>
-<p>构建一个神经网络需要下面五个步骤：  </p>
+<p>构建一个神经网络需要下面五个步骤：</p>
 <ol>
 <li>准备数据</li>
 <li>定义模型</li>
@@ -2530,17 +2532,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>做出预测</li>
 </ol>
 <p><mark><em>那么我们怎么高效快速地完成上述五个步骤呢？</em></mark></p>
-<h2 id="卷积神经网络CNN-Convolution-Neural-Networks"><a href="#卷积神经网络CNN-Convolution-Neural-Networks" class="headerlink" title="卷积神经网络CNN(Convolution Neural Networks)"></a>卷积神经网络CNN(Convolution Neural Networks)</h2><h2 id="例：LeNet-5"><a href="#例：LeNet-5" class="headerlink" title="例：LeNet-5"></a>例：LeNet-5</h2><ol>
+<h2 id="卷积神经网络cnn-convolution-neural-networks">卷积神经网络CNN(Convolution Neural Networks)</h2>
+<h2 id="例：lenet-5">例：LeNet-5</h2>
+<ol>
 <li>PyTorch是一款流行的深度学习框架，有着丰富的工具包</li>
-<li>利用PyTorch识别数字 <ol>
+<li>利用PyTorch识别数字
+<ol>
 <li>准备数据：计算机将图片进行分割，将图片转化成数字信息</li>
-<li>定义模型：<ol>
+<li>定义模型：
+<ol>
 <li>卷积层：把图像变为一系列数据范围为0~1的矩阵。</li>
 <li>池化层：把一张很大的图像压缩，变成一张更小更容易计算的图像矩阵。</li>
 <li>全连接层：把处理后的图像转化成一段数据。</li>
 </ol>
 </li>
-<li>训练模型：<ol>
+<li>训练模型：
+<ol>
 <li>将训练数据输入模型并计算损失并调整更新参数。重复进行多个周期后直到模型能够很好地识别数字。</li>
 <li>损失函数：交叉熵损失(Cross Entropy Loss)</li>
 <li>优化器：随机梯度下降(SGD)</li>
@@ -2553,25 +2560,25 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p><img src="https://s2.loli.net/2024/05/05/xaJj2duzk6P9gSV.png" class="lazyload" data-srcset="https://s2.loli.net/2024/05/05/xaJj2duzk6P9gSV.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="LeNet-5.png" title="LeNet-5"></p>
 <ol>
 <li>卷积层(Convolutions):提取特征</li>
-<li>池化层(Subsampling):将特征提取到最突出的元素 </li>
+<li>池化层(Subsampling):将特征提取到最突出的元素</li>
 <li>全连接层(Full connection):最后OUTPUT为一个十维向量，每一维代表一个数字类别的预测概率</li>
 </ol>
-<h2 id="PyTorch实操"><a href="#PyTorch实操" class="headerlink" title="PyTorch实操"></a>PyTorch实操</h2><p>验证&#x2F;安装pytorch</p>
+<h2 id="pytorch实操">PyTorch实操</h2>
+<p>验证/安装pytorch</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="built_in">print</span>(torch.__version__)  <span class="comment"># torch.__version__ 返回安装的 PyTorch 的版本号</span></span><br></pre></td></tr></table></figure>
-
 <pre><code>2.3.0+cpu
 </code></pre>
-<h3 id="准备数据"><a href="#准备数据" class="headerlink" title="准备数据"></a>准备数据</h3><ol>
+<h3 id="准备数据">准备数据</h3>
+<ol>
 <li>数据下载：将数据变为适合神经网络模型训练的格式</li>
 <li>加载数据：经过预处理，使得数字都位于图像的中心位置，手写数据分类</li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torchvision.datasets <span class="keyword">import</span> MNIST</span><br><span class="line"><span class="keyword">from</span> torchvision.transforms <span class="keyword">import</span> ToTensor</span><br><span class="line"><span class="comment"># 定义保存或加载数据集的位置</span></span><br><span class="line">path = <span class="string">&#x27;~/.torch/datasets/mnist&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载并定义数据集</span></span><br><span class="line">train = MNIST(path, train=<span class="literal">True</span>, download=<span class="literal">True</span>, transform=ToTensor())</span><br><span class="line">test = MNIST(path, train=<span class="literal">True</span>, download=<span class="literal">True</span>, transform=ToTensor())</span><br></pre></td></tr></table></figure>
-
 <ol start="3">
-<li>处理图像数据<br> PIL图像：以像素数组的形式保存，每个像素点数字范围为0~1，这样就会有无限的精度</li>
+<li>处理图像数据<br>
+PIL图像：以像素数组的形式保存，每个像素点数字范围为0~1，这样就会有无限的精度</li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> torchvision.transforms <span class="keyword">as</span> transforms</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load the image using PIL</span></span><br><span class="line">image_path = <span class="string">&#x27;./personal/1.png&#x27;</span></span><br><span class="line">image = Image.<span class="built_in">open</span>(image_path)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Convert the image to a PyTorch tensor</span></span><br><span class="line">transform = transforms.ToTensor()</span><br><span class="line">tensor = transform(image)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(image)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Check the tensor shape to confirm conversion</span></span><br><span class="line">tensor.shape, tensor.dtype <span class="comment"># (torch.Size([3, 1024, 1024]), torch.float32)</span></span><br></pre></td></tr></table></figure>
-
 <pre><code>&lt;PIL.PngImagePlugin.PngImageFile image mode=RGBA size=1920x1200 at 0x1B6D50F8F10&gt;
 
 
@@ -2581,12 +2588,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 (torch.Size([4, 1200, 1920]), torch.float32)
 </code></pre>
 <ol start="4">
-<li>数据集划分:<br> 将数据划分为更小的batch(子数据集),增加处理大量数据的效率<br> 通过枚举的方式进行训练</li>
+<li>数据集划分:<br>
+将数据划分为更小的batch(子数据集),增加处理大量数据的效率<br>
+通过枚举的方式进行训练</li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义如何枚举数据集</span></span><br><span class="line"><span class="keyword">from</span> torch.utils.data <span class="keyword">import</span> DataLoader</span><br><span class="line">train_dl = DataLoader(train, batch_size=<span class="number">64</span>, shuffle=<span class="literal">True</span>)</span><br><span class="line">test_dl = DataLoader(test, batch_size=<span class="number">1024</span>,shuffle=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="定义模型"><a href="#定义模型" class="headerlink" title="定义模型"></a>定义模型</h3><h4 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h4><ol>
-<li><p>卷积：将矩阵和一组权重相乘，生成一个新的二维数组</p>
+<h3 id="定义模型">定义模型</h3>
+<h4 id="特征提取">特征提取</h4>
+<ol>
+<li>
+<p>卷积：将矩阵和一组权重相乘，生成一个新的二维数组</p>
 <ol>
 <li>卷积核(kernel),对某个局部的加权求和，决定了权重矩阵</li>
 <li>特征图(feature map),一个特征图对应一个图像的一个特征</li>
@@ -2595,16 +2606,31 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>输入的特征图也可以是多个，例如RGB</li>
 </ol>
 </li>
-<li><p>池化：<br> 逐渐缩小表示空间的大小以提高计算效率<br> 会单独对每个特征图进行运算<br> 常用方法：最大池化</p>
+<li>
+<p>池化：<br>
+逐渐缩小表示空间的大小以提高计算效率<br>
+会单独对每个特征图进行运算<br>
+常用方法：最大池化</p>
 </li>
-<li><p>定义继承自Module父类的类CNN<br> 建立方法__init__</p>
+<li>
+<p>定义继承自Module父类的类CNN<br>
+建立方法__init__</p>
 </li>
-<li><p>第一个卷积层使用Conv2d创建二维卷积层，接收n_channels个输入通道，输出32个特征图，使用3X3的卷积核进行卷积运算<br> 使用kaiming_uniform_方法初始化权重(weight也称为参数)，并设置激活函数为relu<br> (机器学习的关键是更新每次卷积的权重)</p>
+<li>
+<p>第一个卷积层使用Conv2d创建二维卷积层，接收n_channels个输入通道，输出32个特征图，使用3X3的卷积核进行卷积运算<br>
+使用kaiming_uniform_方法初始化权重(weight也称为参数)，并设置激活函数为relu<br>
+(机器学习的关键是更新每次卷积的权重)</p>
 <ol>
-<li>激活函数，做出是否要传递信息的决定门<br><img src="https://s2.loli.net/2024/05/05/1dAQfRMghx6oK5T.png" class="lazyload" data-srcset="https://s2.loli.net/2024/05/05/1dAQfRMghx6oK5T.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="激活函数.jpg" title="激活函数"><br><img src="https://s2.loli.net/2024/05/05/pHeQAS14CtOoE63.png" class="lazyload" data-srcset="https://s2.loli.net/2024/05/05/pHeQAS14CtOoE63.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Relu.jpg" title="Relu"></li>
+<li>激活函数，做出是否要传递信息的决定门<br>
+<img src="https://s2.loli.net/2024/05/05/1dAQfRMghx6oK5T.png" class="lazyload" data-srcset="https://s2.loli.net/2024/05/05/1dAQfRMghx6oK5T.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="激活函数.jpg" title="激活函数"><br>
+<img src="https://s2.loli.net/2024/05/05/pHeQAS14CtOoE63.png" class="lazyload" data-srcset="https://s2.loli.net/2024/05/05/pHeQAS14CtOoE63.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Relu.jpg" title="Relu"></li>
 </ol>
 </li>
-<li><p>第一个池化层将特征图分割成2X2大小的区域，并从每个区域中取最大值(最大池化)<br> stride(2,2)是池化操作的步长<br> <img src="https://s2.loli.net/2024/05/05/q5yWfrtNTonbuwP.png" class="lazyload" data-srcset="https://s2.loli.net/2024/05/05/q5yWfrtNTonbuwP.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="最大池化.jpg" title="最大池化"><br> 作用：</p>
+<li>
+<p>第一个池化层将特征图分割成2X2大小的区域，并从每个区域中取最大值(最大池化)<br>
+stride(2,2)是池化操作的步长<br>
+<img src="https://s2.loli.net/2024/05/05/q5yWfrtNTonbuwP.png" class="lazyload" data-srcset="https://s2.loli.net/2024/05/05/q5yWfrtNTonbuwP.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="最大池化.jpg" title="最大池化"><br>
+作用：</p>
 <ul>
 <li>保留了最大特征的同时减少了尺寸</li>
 <li>减少过拟合，减少泛化能力</li>
@@ -2724,16 +2750,25 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2024/05/05/A-Rigorous-Derivation-of-the-Bubble-Sort-Curve/'>
           <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>冒泡排序曲线的推导</p>
-          <p class='content'>
-</p>
+          <p class='content'>冒泡排序
+遍历一组数字以相邻交换的方式找到这一组数字的最值的排序方式
+这里讨论的是从小到大的排序
+冒泡排序曲线
+给出定义
+假设：在完全均匀且随机打乱一组数字的情况下进行冒泡排序，将数字的大小以柱...</p>
         </a>
       
       
         <a class='next' href='/2024/04/29/markdown-syntax/'>
           <p class='title'>markdown-syntax<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>注：点击run查看效果
-Markdown 标题语法#的数量代表了标题的级别
-Heading level 1Heading level 2Heading level 3Heading level ...</p>
+          <p class='content'>注：
+点击run查看效果
+Markdown 标题语法
+#的数量代表了标题的级别
+Heading level 1
+Heading level 2
+Heading level 3
+Heading l...</p>
         </a>
       
     </div>
@@ -2794,7 +2829,7 @@ Heading level 1Heading level 2Heading level 3Heading level ...</p>
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-text">神经网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CCNN-Convolution-Neural-Networks"><span class="toc-text">卷积神经网络CNN(Convolution Neural Networks)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%EF%BC%9ALeNet-5"><span class="toc-text">例：LeNet-5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PyTorch%E5%AE%9E%E6%93%8D"><span class="toc-text">PyTorch实操</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E6%95%B0%E6%8D%AE"><span class="toc-text">准备数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B"><span class="toc-text">定义模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96"><span class="toc-text">特征提取</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-text">神经网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9Ccnn-convolution-neural-networks"><span class="toc-text">卷积神经网络CNN(Convolution Neural Networks)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%EF%BC%9Alenet-5"><span class="toc-text">例：LeNet-5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pytorch%E5%AE%9E%E6%93%8D"><span class="toc-text">PyTorch实操</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E6%95%B0%E6%8D%AE"><span class="toc-text">准备数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B"><span class="toc-text">定义模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96"><span class="toc-text">特征提取</span></a></li></ol></li></ol></li></ol>
   </div>
 </section>
 
