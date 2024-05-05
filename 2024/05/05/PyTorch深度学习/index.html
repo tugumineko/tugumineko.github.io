@@ -43,11 +43,11 @@
 <meta property="og:title" content="PyTorch深度学习">
 <meta property="og:url" content="http://example.com/2024/05/05/PyTorch%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="tugumineko">
-<meta property="og:description" content="PyTorch深度学习神经网络 层层组成，多达几百层或者上千层的叫作__深度神经网络__。从海量的数据中进行处理和分析，提炼出物体的特征，建立模型，从而实现处理大量数据，解决复杂的任务。   架构：每个数据与不同权重相乘后加和，加上偏差后激活再将结果传入下一个神经网络。   构建一个神经网络需要下面五个步骤：    准备数据 定义模型 训练模型 评估预测 做出预测  那么我们怎么高效快速地完成上述">
+<meta property="og:description" content="PyTorch深度学习神经网络 层层组成，多达几百层或者上千层的叫作深度神经网络。从海量的数据中进行处理和分析，提炼出物体的特征，建立模型，从而实现处理大量数据，解决复杂的任务。   架构：每个数据与不同权重相乘后加和，加上偏差后激活再将结果传入下一个神经网络。   构建一个神经网络需要下面五个步骤：    准备数据 定义模型 训练模型 评估预测 做出预测  那么我们怎么高效快速地完成上述五个步骤">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-05-04T16:38:25.000Z">
-<meta property="article:modified_time" content="2024-05-04T16:43:26.876Z">
+<meta property="article:modified_time" content="2024-05-05T03:36:18.442Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary">
@@ -2114,7 +2114,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1714841015136),
+    lastupdate: new Date(1714880716985),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2515,12 +2515,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <h1 id="PyTorch深度学习"><a href="#PyTorch深度学习" class="headerlink" title="PyTorch深度学习"></a>PyTorch深度学习</h1><h2 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h2><blockquote>
-<p>层层组成，多达几百层或者上千层的叫作__深度神经网络__。从海量的数据中进行处理和分析，提炼出物体的特征，建立模型，从而实现处理大量数据，解决复杂的任务。</p>
+<p>层层组成，多达几百层或者上千层的叫作<strong>深度神经网络</strong>。从海量的数据中进行处理和分析，提炼出物体的特征，建立模型，从而实现处理大量数据，解决复杂的任务。</p>
 </blockquote>
 <blockquote>
 <p>架构：每个数据与不同权重相乘后加和，加上偏差后激活再将结果传入下一个神经网络。</p>
 </blockquote>
-<p><img src="https://wx2.sinaimg.cn/orj360/008CKB4Zgy1hpdr1i8pkxj30u60cgn5y.jpg" class="lazyload" data-srcset="https://wx2.sinaimg.cn/orj360/008CKB4Zgy1hpdr1i8pkxj30u60cgn5y.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="神经网络架构概述.png" title="神经网络架构概述"></p>
+<p><img src="http://m.qpic.cn/psc?/V522YDf82TELSY0joniI32TEQZ02DBiy/ruAMsa53pVQWN7FLK88i5kA69AVIk*2X13LMMwnu*Ly35YIVcRA0vcsRmwZATMopGL028C5GBHC3gYheFJCl2H4sU9M1jM4QHAlPcahaUWk!/b&bo=PgTAAT4EwAEDR2I!&rf=viewer_4" class="lazyload" data-srcset="http://m.qpic.cn/psc?/V522YDf82TELSY0joniI32TEQZ02DBiy/ruAMsa53pVQWN7FLK88i5kA69AVIk*2X13LMMwnu*Ly35YIVcRA0vcsRmwZATMopGL028C5GBHC3gYheFJCl2H4sU9M1jM4QHAlPcahaUWk!/b&bo=PgTAAT4EwAEDR2I!&rf=viewer_4" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="神经网络架构概述.png" title="神经网络架构概述"></p>
 <p>构建一个神经网络需要下面五个步骤：  </p>
 <ol>
 <li>准备数据</li>
@@ -2550,7 +2550,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ol>
 </li>
 </ol>
-<p><img src="https://wx2.sinaimg.cn/mw690/008CKB4Zgy1hpdr5y73quj317o0dvwpz.jpg" class="lazyload" data-srcset="https://wx2.sinaimg.cn/mw690/008CKB4Zgy1hpdr5y73quj317o0dvwpz.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="LeNet-5.png" title="LeNet-5"></p>
+<p><img src="http://m.qpic.cn/psc?/V522YDf82TELSY0joniI32TEQZ02DBiy/ruAMsa53pVQWN7FLK88i5uYGSZB4nXyciEJ4QRBYYTOMjtZs*sjreYGFcvunGMlDR4DpZPaCl4sPlips2jg5vOsk96DXA01cB5FEtM2pvEc!/b&bo=nAX5AZwF.QEDByI!&rf=viewer_4" class="lazyload" data-srcset="http://m.qpic.cn/psc?/V522YDf82TELSY0joniI32TEQZ02DBiy/ruAMsa53pVQWN7FLK88i5uYGSZB4nXyciEJ4QRBYYTOMjtZs*sjreYGFcvunGMlDR4DpZPaCl4sPlips2jg5vOsk96DXA01cB5FEtM2pvEc!/b&bo=nAX5AZwF.QEDByI!&rf=viewer_4" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="LeNet-5.png" title="LeNet-5"></p>
 <ol>
 <li>卷积层(Convolutions):提取特征</li>
 <li>池化层(Subsampling):将特征提取到最突出的元素 </li>
@@ -2601,10 +2601,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </li>
 <li><p>第一个卷积层使用Conv2d创建二维卷积层，接收n_channels个输入通道，输出32个特征图，使用3X3的卷积核进行卷积运算<br> 使用kaiming_uniform_方法初始化权重(weight也称为参数)，并设置激活函数为relu<br> (机器学习的关键是更新每次卷积的权重)</p>
 <ol>
-<li>激活函数，做出是否要传递信息的决定门<br><img src="https://wx4.sinaimg.cn/mw690/008CKB4Zgy1hpdwazn3i7j30wj0g27eo.jpg" class="lazyload" data-srcset="https://wx4.sinaimg.cn/mw690/008CKB4Zgy1hpdwazn3i7j30wj0g27eo.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="激活函数.jpg" title="激活函数"><br><img src="https://wx4.sinaimg.cn/orj360/008CKB4Zgy1hpdwdoq7mpj312i0fjtma.jpg" class="lazyload" data-srcset="https://wx4.sinaimg.cn/orj360/008CKB4Zgy1hpdwdoq7mpj312i0fjtma.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Relu.jpg" title="Relu"></li>
+<li>激活函数，做出是否要传递信息的决定门<br><img src="http://m.qpic.cn/psc?/V522YDf82TELSY0joniI32TEQZ02DBiy/ruAMsa53pVQWN7FLK88i5uYGSZB4nXyciEJ4QRBYYTNMHWYS2o*afwG06kys7BjpaxNdILOtY6oODuI*ZwsAg2ibnsb6Mr*EGrv9XzGaqIc!/b&bo=kwRCApMEQgIDByI!&rf=viewer_4" class="lazyload" data-srcset="http://m.qpic.cn/psc?/V522YDf82TELSY0joniI32TEQZ02DBiy/ruAMsa53pVQWN7FLK88i5uYGSZB4nXyciEJ4QRBYYTNMHWYS2o*afwG06kys7BjpaxNdILOtY6oODuI*ZwsAg2ibnsb6Mr*EGrv9XzGaqIc!/b&bo=kwRCApMEQgIDByI!&rf=viewer_4" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="激活函数.jpg" title="激活函数"><br><img src="http://m.qpic.cn/psc?/V522YDf82TELSY0joniI32TEQZ02DBiy/ruAMsa53pVQWN7FLK88i5uYGSZB4nXyciEJ4QRBYYTOMJsuhIN4l5qU3wpGvbA87rbq.*rRUcqLoNbBSqJogSy*czRel9*64ExI0JAK17yU!/b&bo=agUvAmoFLwIDR2I!&rf=viewer_4" class="lazyload" data-srcset="http://m.qpic.cn/psc?/V522YDf82TELSY0joniI32TEQZ02DBiy/ruAMsa53pVQWN7FLK88i5uYGSZB4nXyciEJ4QRBYYTOMJsuhIN4l5qU3wpGvbA87rbq.*rRUcqLoNbBSqJogSy*czRel9*64ExI0JAK17yU!/b&bo=agUvAmoFLwIDR2I!&rf=viewer_4" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Relu.jpg" title="Relu"></li>
 </ol>
 </li>
-<li><p>第一个池化层将特征图分割成2X2大小的区域，并从每个区域中取最大值(最大池化)<br> stride(2,2)是池化操作的步长<br> <img src="https://wx2.sinaimg.cn/orj360/008CKB4Zgy1hpdwfxzhzqj30s40dp7bz.jpg" class="lazyload" data-srcset="https://wx2.sinaimg.cn/orj360/008CKB4Zgy1hpdwfxzhzqj30s40dp7bz.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="最大池化.jpg" title="最大池化"><br> 作用：</p>
+<li><p>第一个池化层将特征图分割成2X2大小的区域，并从每个区域中取最大值(最大池化)<br> stride(2,2)是池化操作的步长<br> <img src="http://m.qpic.cn/psc?/V522YDf82TELSY0joniI32TEQZ02DBiy/ruAMsa53pVQWN7FLK88i5uYGSZB4nXyciEJ4QRBYYTPOcOZzelHIssDW.g*YtEJxYVgjgQsq8bzRFGmJX0o.jfm1OfzadMUqwfzzIPCFRiA!/b&bo=9APtAfQD7QEDNxI!&rf=viewer_4" class="lazyload" data-srcset="http://m.qpic.cn/psc?/V522YDf82TELSY0joniI32TEQZ02DBiy/ruAMsa53pVQWN7FLK88i5uYGSZB4nXyciEJ4QRBYYTPOcOZzelHIssDW.g*YtEJxYVgjgQsq8bzRFGmJX0o.jfm1OfzadMUqwfzzIPCFRiA!/b&bo=9APtAfQD7QEDNxI!&rf=viewer_4" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="最大池化.jpg" title="最大池化"><br> 作用：</p>
 <ul>
 <li>保留了最大特征的同时减少了尺寸</li>
 <li>减少过拟合，减少泛化能力</li>
@@ -2636,7 +2636,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-05-05T00:43:26+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-05-05T11:36:18+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：May 5, 2024</p>
@@ -3282,7 +3282,7 @@ Heading level 1Heading level 2Heading level 3Heading level ...</p>
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"鶫猫"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"tugumineko"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/05/05/PyTorch深度学习/","name":"PyTorch深度学习"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"tugumineko","url":"http://example.com/","keywords":null,"description":"鶫猫","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"鶫猫"},"publisher":{"@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"PyTorch深度学习","description":"鶫猫","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/05/05/PyTorch%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"tugumineko","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/05/05/PyTorch%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/","wordCount":0,"datePublished":"2024-05-04T16:38:25.000Z","dateModified":"2024-05-04T16:43:26.876Z","keywords":"深度学习","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"鶫猫"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"tugumineko"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/05/05/PyTorch深度学习/","name":"PyTorch深度学习"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"tugumineko","url":"http://example.com/","keywords":null,"description":"鶫猫","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"鶫猫"},"publisher":{"@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"PyTorch深度学习","description":"鶫猫","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/05/05/PyTorch%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"tugumineko","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/05/05/PyTorch%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/","wordCount":0,"datePublished":"2024-05-04T16:38:25.000Z","dateModified":"2024-05-05T03:36:18.442Z","keywords":"深度学习","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
