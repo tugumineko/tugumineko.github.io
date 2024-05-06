@@ -25,8 +25,9 @@
   <!-- import head_begin begin -->
   <!-- import head_begin end -->
   <!-- Custom Files headBegin begin-->
-  <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js"></script>
-<script defer src="/custom.js"></script>
+  <script src="https://gcore.jsdelivr.net/gh/jquery/jquery@3.6/dist/jquery.min.js"></script>
+<script src="https://fastly.jsdelivr.net/gh/tugumineko/live2d-widget@latest/autoload.js"></script>
+<script src="/custom.js"></script>
   <!-- Custom Files headBegin end-->
   <link rel="preload" href="/css/style.css" as="style">
   <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
@@ -831,6 +832,71 @@ button {
   .cover-wrapper.dock .menu {
     background: rgba(255,255,255,0.5);
     backdrop-filter: saturate(200%) blur(20px);
+  }
+}
+.cover-wrapper #parallax-window {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+.parallax-mirror {
+  animation-delay: 0s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-name: fadeIn;
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -2276,7 +2342,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1714906051983),
+    lastupdate: new Date(1714973935068),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2306,7 +2372,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       },
       
       
-      rightmenus: {"enable":true,"order":["plugins.navigation","hr","plugins.inputBox","plugins.seletctText","plugins.elementCheck","plugins.elementImage","menus.link","hr","menus.darkMode","plugins.articlePage","music"],"options":{"iconPrefix":"fa-solid","articleShowLink":true,"musicAlwaysShow":true},"plugins":{"navigation":[{"id":"left","name":"转到上一页","icon":"fa-solid fa-arrow-left","event":"history.back()","group":"navigation"},{"id":"right","name":"转到下一页","icon":"fa-solid fa-arrow-right","event":"history.forward()","group":"navigation"},{"id":"redo","name":"刷新当前页面","icon":"fa-solid fa-redo","event":"window.location.reload()","group":"navigation"},{"id":"up","name":"回到顶部","icon":"fa-solid fa-arrow-up","event":"VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)","group":"navigation"}],"inputBox":[{"id":"copyPaste","name":"粘贴文本","icon":"fa-solid fa-paste","event":"copyPaste","group":"inputBox"},{"id":"copyAll","name":"全选文本","icon":"fa-solid fa-object-ungroup","event":"copyAll","group":"inputBox"},{"id":"copyCut","name":"剪切文本","icon":"fa-solid fa-cut","event":"copyCut","group":"inputBox"}],"seletctText":[{"id":"copyText","name":"复制文本","icon":"fa-solid fa-copy","event":"copyText","group":"seletctText"},{"id":"searchWord","name":"站内搜索","icon":"fa-solid fa-search","event":"OpenSearch(__text__)","group":"seletctText"},{"id":"bingSearch","name":"必应搜索","icon":"fa-solid fa-search","event":"window.open(`https://cn.bing.com/search?q=${__text__}`)","group":"seletctText"}],"elementCheck":[{"id":"openTab","name":"新标签页打开","icon":"fa-solid fa-external-link-square-alt","event":"window.open(__link__)","group":"elementCheck"},{"id":"copyLink","name":"复制链接地址","icon":"fa-solid fa-link","event":"copyLink","group":"elementCheck"}],"elementImage":[{"id":"copyImg","name":"复制图片","icon":"fa-solid fa-image","event":"copyImg","group":"elementImage"},{"id":"googleImg","name":"谷歌识图","icon":"fa-solid fa-images","event":"window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)","group":"elementImage"}],"articlePage":[{"id":"printMode","name":"打印页面","icon":"fa-solid fa-print","event":"printMode","group":"articlePage"},{"id":"readMode","name":"阅读模式","icon":"fa-solid fa-book-open","event":"readMode","group":"articlePage"}]},"menus":{"link":[{"id":"help","name":"常见问题","icon":"fa-solid fa-question","link":"https://volantis.js.org/faqs/","group":"link"},{"id":"examples","name":"示例博客","icon":"fa-solid fa-rss","link":"https://volantis.js.org/examples/","group":"link"},{"id":"contributors","name":"加入社区","icon":"fa-solid fa-fan","link":"https://volantis.js.org/contributors/","group":"link"},"hr",{"id":"source_docs","name":"本站源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/volantis-docs/","group":"link"},{"id":"source_theme","name":"主题源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/hexo-theme-volantis/","group":"link"}],"darkMode":[{"id":"darkMode","name":"暗黑模式","icon":"fa-solid fa-moon","event":"volantis.dark.toggle()","group":"darkMode"}]}}
+      rightmenus: {"enable":true,"order":["menus.prevNext","plugins.navigation","hr","plugins.inputBox","plugins.seletctText","plugins.elementCheck","plugins.elementImage","menus.link","hr","menus.darkMode","plugins.articlePage","music"],"options":{"iconPrefix":"fa-solid","articleShowLink":true,"musicAlwaysShow":true},"plugins":{"navigation":[{"id":"left","name":"转到上一页","icon":"fa-solid fa-arrow-left","event":"history.back()","group":"navigation"},{"id":"right","name":"转到下一页","icon":"fa-solid fa-arrow-right","event":"history.forward()","group":"navigation"},{"id":"redo","name":"刷新当前页面","icon":"fa-solid fa-redo","event":"window.location.reload()","group":"navigation"},{"id":"up","name":"回到顶部","icon":"fa-solid fa-arrow-up","event":"VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)","group":"navigation"}],"inputBox":[{"id":"copyPaste","name":"粘贴文本","icon":"fa-solid fa-paste","event":"copyPaste","group":"inputBox"},{"id":"copyAll","name":"全选文本","icon":"fa-solid fa-object-ungroup","event":"copyAll","group":"inputBox"},{"id":"copyCut","name":"剪切文本","icon":"fa-solid fa-cut","event":"copyCut","group":"inputBox"}],"seletctText":[{"id":"copyText","name":"复制文本","icon":"fa-solid fa-copy","event":"copyText","group":"seletctText"},{"id":"searchWord","name":"站内搜索","icon":"fa-solid fa-search","event":"OpenSearch(__text__)","group":"seletctText"},{"id":"bingSearch","name":"必应搜索","icon":"fa-solid fa-search","event":"window.open(`https://cn.bing.com/search?q=${__text__}`)","group":"seletctText"}],"elementCheck":[{"id":"openTab","name":"新标签页打开","icon":"fa-solid fa-external-link-square-alt","event":"window.open(__link__)","group":"elementCheck"},{"id":"copyLink","name":"复制链接地址","icon":"fa-solid fa-link","event":"copyLink","group":"elementCheck"}],"elementImage":[{"id":"copyImg","name":"复制图片","icon":"fa-solid fa-image","event":"copyImg","group":"elementImage"},{"id":"googleImg","name":"谷歌识图","icon":"fa-solid fa-images","event":"window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)","group":"elementImage"}],"articlePage":[{"id":"printMode","name":"打印页面","icon":"fa-solid fa-print","event":"printMode","group":"articlePage"},{"id":"readMode","name":"阅读模式","icon":"fa-solid fa-book-open","event":"readMode","group":"articlePage"}]},"menus":{"prevNext":[{"id":"prev","name":"查看上一篇","icon":"fa-solid fa-angles-left","event":"volantis.rightmenu.jump('prev')","group":"prevNext"},{"id":"next","name":"查看下一篇","icon":"fa-solid fa-angles-right","event":"volantis.rightmenu.jump('next')","group":"prevNext"}],"link":[{"id":"help","name":"常见问题","icon":"fa-solid fa-question","link":"https://volantis.js.org/faqs/","group":"link"},{"id":"examples","name":"示例博客","icon":"fa-solid fa-rss","link":"https://volantis.js.org/examples/","group":"link"},{"id":"contributors","name":"加入社区","icon":"fa-solid fa-fan","link":"https://volantis.js.org/contributors/","group":"link"},"hr",{"id":"source_docs","name":"本站源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/volantis-docs/","group":"link"},{"id":"source_theme","name":"主题源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/hexo-theme-volantis/","group":"link"}],"darkMode":[{"id":"darkMode","name":"暗黑模式","icon":"fa-solid fa-moon","event":"volantis.dark.toggle()","group":"darkMode"}]}}
       
     },
     search: {
@@ -2338,9 +2404,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
     <!-- Custom Files bodyBegin begin-->
-    
+    	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.js"></script>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+	<!-- 雪花特效 -->
+<script type="text/javascript" src="\js\snow.js"></script>
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2441,23 +2510,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover"
-                href="/friends/" title="友链"
-                  
-                  
-                  
-                    active-action="action-friends"
-                  >
-                  <i class='fa-solid fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
                 href="/about/" title="关于"
                   
                   
@@ -2468,6 +2520,44 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                 </a>
                 
               </li>
+            
+          
+          
+            
+            
+              
+                <li>
+                  <a class="menuitem flat-box">
+                    <i class='fa-solid fa-compact-disc fa-fw music'></i>背景音乐
+                  </a>
+                  <ul class="list-v">
+                    <li>
+                      <div class="aplayer-container">
+                        
+
+  
+      
+        <meting-js
+          theme='#1BCDFC'
+          autoplay='false'
+          volume='0.7'
+          loop='all'
+          order='list'
+          fixed='false'
+          list-max-height='320px'
+          server='netease'
+          type='playlist'
+          id='3175833810'
+          list-folded='true'>
+        </meting-js>
+      
+    
+ 
+                      </div>
+                    </li>
+                  </ul>
+                <li>
+              
             
           
           
@@ -2562,23 +2652,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover"
-                href="/friends/" title="友链"
-                  
-                  
-                  
-                    active-action="action-friends"
-                  >
-                  <i class='fa-solid fa-link fa-fw'></i>友链
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
                 href="/about/" title="关于"
                   
                   
@@ -2589,6 +2662,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                 </a>
                 
               </li>
+            
+          
+            
+              
+            
+              
             
           
             
@@ -2606,6 +2685,49 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
     <div id="l_body">
       <div id="l_cover">
+  
+    
+      <div class="cover-wrapper post dock" id='half'>
+        
+  <div id="parallax-window"></div>
+
+<div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title"><font><span>Hello</span> <span>World</span></font></p>
+    
+    
+      <p class="subtitle">鶫ねこ</p>
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a href="/archives/"
+              
+              
+              active-action="action-archives">
+              <img src='https://unpkg.com/volantis-static@0.0.1660614606622/media/twemoji/assets/svg/1f4f0.svg'><p>博客</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/"
+              
+              
+              active-action="action-https:githubcomvolantis-xhexo-theme-volantis">
+              <img src='https://unpkg.com/volantis-static@0.0.1660614606622/media/twemoji/assets/svg/1f9ec.svg'><p>源码</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+    
   
 </div>
 
@@ -2652,6 +2774,24 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1.4k 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：6 分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
 
 
           
@@ -2669,6 +2809,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
             
 
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="busuanzi_value_page_pv">
+        <i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i>
+      </span>
+        
+      <span>次浏览</span>
+    </p>
+  </a>
+</div>
 
 
           
@@ -3064,7 +3218,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#heading-level-2"><span class="toc-text">Heading level 2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#heading-level-3"><span class="toc-text">Heading level 3</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#heading-level-4"><span class="toc-text">Heading level 4</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#heading-level-5"><span class="toc-text">Heading level 5</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#heading-level-2"><span class="toc-text">Heading level 2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-text">代码块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#markdown-%E5%9B%B4%E6%A0%8F%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-text">Markdown 围栏代码块</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%89%87"><span class="toc-text">图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#markdown-%E5%88%86%E9%9A%94%E7%BA%BF%E8%AF%AD%E6%B3%95"><span class="toc-text">Markdown 分隔线语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#markdown-%E9%93%BE%E6%8E%A5%E8%AF%AD%E6%B3%95"><span class="toc-text">Markdown 链接语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#markdown-%E5%9B%BE%E7%89%87%E8%AF%AD%E6%B3%95"><span class="toc-text">Markdown 图片语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#markdown-%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6%E8%AF%AD%E6%B3%95"><span class="toc-text">Markdown 转义字符语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%BC%E5%AE%B9html%E7%9A%84%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95"><span class="toc-text">兼容html的常用语法</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#heading-level-2"><span class="toc-number">1.</span> <span class="toc-text">Heading level 2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#heading-level-3"><span class="toc-number">1.1.</span> <span class="toc-text">Heading level 3</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#heading-level-4"><span class="toc-number">1.1.1.</span> <span class="toc-text">Heading level 4</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#heading-level-5"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">Heading level 5</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#heading-level-2"><span class="toc-number">2.</span> <span class="toc-text">Heading level 2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-number">3.</span> <span class="toc-text">代码块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#markdown-%E5%9B%B4%E6%A0%8F%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-number">3.1.</span> <span class="toc-text">Markdown 围栏代码块</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%89%87"><span class="toc-number">4.</span> <span class="toc-text">图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#markdown-%E5%88%86%E9%9A%94%E7%BA%BF%E8%AF%AD%E6%B3%95"><span class="toc-number">5.</span> <span class="toc-text">Markdown 分隔线语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#markdown-%E9%93%BE%E6%8E%A5%E8%AF%AD%E6%B3%95"><span class="toc-number">6.</span> <span class="toc-text">Markdown 链接语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#markdown-%E5%9B%BE%E7%89%87%E8%AF%AD%E6%B3%95"><span class="toc-number">7.</span> <span class="toc-text">Markdown 图片语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#markdown-%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6%E8%AF%AD%E6%B3%95"><span class="toc-number">8.</span> <span class="toc-text">Markdown 转义字符语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%BC%E5%AE%B9html%E7%9A%84%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95"><span class="toc-number">9.</span> <span class="toc-text">兼容html的常用语法</span></a></li></ol>
   </div>
 </section>
 
@@ -3089,26 +3243,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="aplayer-container">
           
 
-   
-     
-    <script>
-      const MetingPlusAudio = [{"name":"七つ一旋桜 -華-","title":"七つ一旋桜 -華-","artist":"A.SAKA","url":"/music/A.SAKA - 七つ一旋桜 -華-.mp3","lrc":"/music/七つ一旋桜 -華-.lrc","cover":"/music/七つ一旋桜 -華-.jpg"},{"name":"- ローリンガール","title":"- ローリンガール","artist":"wowaka,初音ミク","url":"/music/wowaka,初音ミク - ローリンガール.mp3","lrc":"/music/- ローリンガール.lrc","cover":"/music/- ローリンガール.jpg"}];
-    </script>
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='false'
-      volume='0.7'
-      loop='all'
-      order='list'
-      fixed='false'
-      list-max-height='320px'
-      server='netease'
-      type='playlist'
-      id='3175833810'
-      list-folded='true'
-      audio='MetingPlusAudio'
-      >
-      </meting-js>
+  
+      
+        <meting-js
+          theme='#1BCDFC'
+          autoplay='false'
+          volume='0.7'
+          loop='all'
+          order='list'
+          fixed='false'
+          list-max-height='320px'
+          server='netease'
+          type='playlist'
+          id='3175833810'
+          list-folded='true'>
+        </meting-js>
+      
     
  
         </div>
@@ -3119,9 +3269,39 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="social-wrapper" itemprop="about" itemscope itemtype="http://schema.org/Thing">
           
             
-          
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer" itemprop="url">
+                
+              </a>
             
           
+            
+              <a href="/exd422@gmail.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer" itemprop="url">
+                
+              </a>
+            
+          
+            
+              <a href="https://github.com/tugumineko"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer" itemprop="url">
+                
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=1526075903"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer" itemprop="url">
+                
+              </a>
             
           
         </div>
@@ -3135,7 +3315,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         本站使用
         <a href="https://github.com/volantis-x/hexo-theme-volantis/#6.0.0-alpha.1" target="_blank" class="codename">Volantis</a>
-        作为主题
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
       
     
       
@@ -3173,6 +3356,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.css("https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.min.css");
   
   
+  volantis.css("https://unpkg.com/font-awesome-animation@1.1.1/css/font-awesome-animation.min.css");
+  
+  
+  volantis.css("https://cdn.bootcdn.net/ajax/libs/node-waves/0.7.6/waves.min.css");
   
 </script>
 
@@ -3206,6 +3393,24 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <div id="rightmenu-wrapper">
   <ul class="list-v rightmenu" id="rightmenu-content">
     
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="prev" data-event="volantis.rightmenu.jump('prev')" data-group="prevNext">
+      <i class="fa-solid fa-angles-left fa-fw"></i>
+      查看上一篇
+    </span>
+  </li>
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="next" data-event="volantis.rightmenu.jump('next')" data-group="prevNext">
+      <i class="fa-solid fa-angles-right fa-fw"></i>
+      查看下一篇
+    </span>
+  </li>
+
+
   <li class='navigation menuNavigation-Content'>
 
 
@@ -3434,6 +3639,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <script>
   const RightMenusFunction = {};
   
+
+
+  RightMenusFunction['prev'] = () => {volantis.rightmenu.jump('prev')}
+
+
+
+
+
+  RightMenusFunction['next'] = () => {volantis.rightmenu.jump('next')}
+
+
+
 
 
 
@@ -3784,7 +4001,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
   function p_giscus() {
     const HEAD = check_giscus();
     if (!HEAD) return;
-    let cfg = Object.assign({"theme":{"light":"light","dark":"dark"}},pdata.commentConfig)
+    let cfg = Object.assign({"enable":false,"repo":"tugumineko/discuss","repo_id":"R_kgDOL3YDZg","category":"Announcements","category_id":"DIC_kwDOL3YDZs4CfJw8","mapping":"pathname","reactions_enabled":1,"emit_metadata":0,"lang":"zh-CN","input_position":"bottom","loading":"lazy","crossorigin":"anonymous","theme":{"light":"light","dark":"dark"}},pdata.commentConfig)
     const script = document.createElement('script');
     script.setAttribute('src', 'https://giscus.app/client.js');
     Object.keys(cfg).forEach(k=>{
@@ -3817,6 +4034,8 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
+
+  <script defer src="https://npm.elemecdn.com/penndu@1.0.0/bsz.js"></script>
 
 
 <!-- optional -->
@@ -3871,6 +4090,25 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/node-waves/0.7.6/waves.min.js"></script>
+
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function () {
+  Waves.attach('.flat-btn', ['waves-button']);
+  Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+  Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+  Waves.attach('.flat-box', ['waves-block']);
+  Waves.attach('.float-box', ['waves-block', 'waves-float']);
+  Waves.attach('.waves-image');
+  Waves.init();
+});
+</script>
+
+
+
+  
+<script src="https://unpkg.com/volantis-static@0.0.1660614606622/libs/comment_typing/comment_typing.js"></script>
 
 
 
@@ -3895,6 +4133,55 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
+
+
+  <script>
+  let imgs = ["https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//16.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//5.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//4.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//19.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//12.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//20.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//21.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//9.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//11.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//17.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//13.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//8.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//3.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//15.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//18.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//6.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//7.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//1.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//14.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//10.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//2.jpg"];
+  let index = 0;
+  let IntervalParallax = null;
+
+  function parallax(){
+    let ParallaxWindow = document.querySelector("#parallax-window");
+    
+      ParallaxWindow = document.querySelector("html");
+    
+    Parallax.window = ParallaxWindow;
+    Parallax.options.fade = 1500;
+    Parallax.cache = 1;
+    next_parallax();
+    Parallax.init();
+    if (imgs.length>1) {
+      IntervalParallax = setInterval(function () {
+        next_parallax();
+      }, '60000');
+    }
+  }
+
+  function next_parallax() {
+    if (typeof Parallax == "undefined") {
+      return
+    }
+    
+    if (imgs.length>=1) {
+      Parallax.options.src = imgs[index % imgs.length];
+      Parallax.start();
+      index++;
+      if (Parallax.cache) {
+        fetch(imgs[index % imgs.length] +"?t=" + new Date().getTime());
+        if (index == imgs.length) {
+          Parallax.cache = 0;
+        }
+      }
+    }
+  }
+  var runningOnBrowser = typeof window !== "undefined";
+  var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
+  if (!isBot) {
+    volantis.js('/js/plugins/parallax.js').then(()=>{
+      parallax()
+    })
+  }
+</script>
 
 
 
@@ -4117,5 +4404,4 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
   }, 'prevNext', false) 
 </script> 
     <!-- Custom Files bodyEnd end-->
-  </body>
-</html>
+  <script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

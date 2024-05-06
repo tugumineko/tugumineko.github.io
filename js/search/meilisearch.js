@@ -1,4 +1,8 @@
-let SearchService=(()=>{const s={};let i,l,r;return s.queryText=null,s.template=`<div id="u-search">
+let SearchService = (() => {
+  const fn = {};
+  let search, meilisearch, timerId; 
+  fn.queryText = null;
+  fn.template = `<div id="u-search">
   <div class="modal">
     <header class="modal-header" class="clearfix">
       <button type="submit" id="u-search-modal-btn-submit" class="u-search-btn-submit">
@@ -28,8 +32,185 @@ let SearchService=(()=>{const s={};let i,l,r;return s.queryText=null,s.template=
   </div>
   <div id="modal-overlay" class="modal-overlay"></div>
   </div>
-  `,s.init=()=>{var e=document.createElement("div");e.innerHTML+=s.template,document.body.append(e),(l=volantis.GLOBAL_CONFIG.search).appId&&l.apiKey&&l.indexName?(s.event(),s.setAlgolia()):(document.querySelector("#u-search main.modal-body").innerHTML="Algolia setting is invalid!",document.querySelector("#u-search main.modal-body").style.textAlign="center",document.querySelector("#u-search .modal").style.maxHeight="128px")},s.event=()=>{document.querySelector("#u-search-btn-close").addEventListener("click",s.close,!1),document.querySelector("#modal-overlay").addEventListener("click",s.close,!1),document.querySelectorAll(".u-search-form").forEach(e=>{e.addEventListener("submit",s.onSubmit,!1)}),document.querySelector("#meilisearch-search-input").addEventListener("input",e=>{var t=e.target.querySelector(".ais-SearchBox-input");s.queryText=(t||e.target).value})},s.setAlgolia=()=>{i=instantsearch({indexName:l.indexName,searchClient:instantMeiliSearch(l.appId,l.apiKey),searchFunction(e){e.state.query&&e.search()}});instantsearch.widgets.configure({hitsPerPage:l.hitsPerPage});var e=instantsearch.widgets.searchBox({container:"#meilisearch-search-input",autofocus:!0,showReset:!1,showSubmit:!1,showLoadingIndicator:!1,searchAsYouType:l.searchAsYouType,placeholder:l.placeholder,templates:{input:"meilisearch-input"},queryHook(e,t){clearTimeout(r),r=setTimeout(()=>t(e),500)}}),t=instantsearch.widgets.hits({container:"#meilisearch-hits",templates:{item(e){var t=s.queryText?"?keyword="+s.queryText:"",a=e.permalink||""+volantis.GLOBAL_CONFIG.root+e.path,e=e._highlightResult,i=s.cutContent(e.text.value);return`
-            <a href="${a}${t}" class="result">
-            <span class="title">${e.title.value||"no-title"}</span>
-            <span class="digest">${i}</span>
-            </a>`},empty:function(e){return`<div id="resule-hits-empty"><i class="fa-solid fa-box-open"></i><p>${volantis.GLOBAL_CONFIG.languages.search.hits_empty.replace(/\$\{query}/,e.query)}</p></div>`}}}),a=instantsearch.widgets.stats({container:"#meilisearch-info > .meilisearch-stats",templates:{text:function(e){return""+volantis.GLOBAL_CONFIG.languages.search.hits_stats.replace(/\$\{hits}/,e.nbHits).replace(/\$\{time}/,e.processingTimeMS)}}});i.addWidgets([e,t,a]),i.start()},s.setQueryText=e=>{s.queryText=e,i||s.init(),i?.setUiState({[l.indexName]:{query:e}})},s.search=()=>{document.querySelector("#u-search").style.display="block",document.addEventListener("keydown",e=>{"Escape"===e.code&&s.close()},{once:!0})},s.onSubmit=e=>{e.preventDefault();var t=e.target.querySelector(".u-search-input");s.setQueryText((t?.value?t:e.target).value),s.search()},s.cutContent=e=>{if(""===e)return"";var t=e.indexOf("<mark>");let a=t-30,i=t+120,s="",l="";return a<=0?(a=0,i=140):s="...",i>e.length?i=e.length:l="...",s+e.substring(a,i)+l},s.close=()=>{document.querySelector("#u-search").style.display="none"},{init:s.init,setQueryText:e=>{s.setQueryText(e)},search:s.search,close:s.close}})();Object.freeze(SearchService),SearchService.init();
+  `;
+
+  fn.init = () => {
+    let div = document.createElement("div");
+    div.innerHTML += fn.template;
+    document.body.append(div);
+
+    meilisearch = volantis.GLOBAL_CONFIG.search;
+    if (meilisearch.appId && meilisearch.apiKey && meilisearch.indexName) {
+      fn.event();
+      fn.setAlgolia();
+    } else {
+      document.querySelector('#u-search main.modal-body').innerHTML = 'Algolia setting is invalid!';
+      document.querySelector('#u-search main.modal-body').style.textAlign = 'center';
+      document.querySelector('#u-search .modal').style.maxHeight = '128px';
+    }
+  }
+
+  fn.event = () => {
+    document
+      .querySelector("#u-search-btn-close")
+      .addEventListener("click", fn.close, false);
+    document
+      .querySelector("#modal-overlay")
+      .addEventListener("click", fn.close, false);
+    document.querySelectorAll(".u-search-form").forEach((e) => {
+      e.addEventListener("submit", fn.onSubmit, false);
+    });
+    document.querySelector("#meilisearch-search-input").addEventListener("input", event => {
+      let input = event.target.querySelector(".ais-SearchBox-input");
+      if (input) {
+        fn.queryText = input.value;
+      } else {
+        fn.queryText = event.target.value;
+      }
+    })
+  }
+
+  fn.setAlgolia = () => {
+    search = instantsearch({
+      indexName: meilisearch.indexName,
+      searchClient: instantMeiliSearch(meilisearch.appId, meilisearch.apiKey),
+      searchFunction(helper) {
+        helper.state.query && helper.search()
+      },
+    })
+
+    const configure = instantsearch.widgets.configure({
+      hitsPerPage: meilisearch.hitsPerPage
+    })
+
+    const searchBox = instantsearch.widgets.searchBox({
+      container: '#meilisearch-search-input',
+      autofocus: true,
+      showReset: false,
+      showSubmit: false,
+      showLoadingIndicator: false,
+      searchAsYouType: meilisearch.searchAsYouType,
+      placeholder: meilisearch.placeholder,
+      templates: {
+        input: 'meilisearch-input'
+      },
+      queryHook(query, refine) {
+        clearTimeout(timerId)
+        timerId = setTimeout(() => refine(query), 500)
+      }
+    })
+
+    const hits = instantsearch.widgets.hits({
+      container: '#meilisearch-hits',
+      templates: {
+        item(data) {
+          const keyword = !!fn.queryText ? `?keyword=${fn.queryText}` : ''
+          const link = data.permalink ? data.permalink : `${volantis.GLOBAL_CONFIG.root}${data.path}`
+          const result = data._highlightResult
+          const content = fn.cutContent(result.text.value)
+          return `
+            <a href="${link}${keyword}" class="result">
+            <span class="title">${result.title.value || 'no-title'}</span>
+            <span class="digest">${content}</span>
+            </a>`
+        },
+        empty: function (data) {
+          return (
+            `<div id="resule-hits-empty"><i class="fa-solid fa-box-open"></i><p>${volantis.GLOBAL_CONFIG.languages.search.hits_empty.replace(/\$\{query}/, data.query)}</p></div>`
+          )
+        }
+      }
+    })
+
+    const stats = instantsearch.widgets.stats({
+      container: '#meilisearch-info > .meilisearch-stats',
+      templates: {
+        text: function (data) {
+          const stats = volantis.GLOBAL_CONFIG.languages.search.hits_stats
+            .replace(/\$\{hits}/, data.nbHits)
+            .replace(/\$\{time}/, data.processingTimeMS)
+          return (
+            `${stats}`
+          )
+        }
+      }
+    })
+
+    search.addWidgets([searchBox, hits, stats])
+
+    search.start()
+
+  }
+
+  fn.setQueryText = queryText => {
+    fn.queryText = queryText;
+    if (!search) {
+      fn.init()
+    }
+    search?.setUiState({
+      [meilisearch.indexName]: {
+        query: queryText
+      }
+    })
+  }
+
+  fn.search = () => {
+    document.querySelector("#u-search").style.display = "block";
+    document.addEventListener("keydown", event => {
+      if (event.code === "Escape") {
+        fn.close();
+      }
+    }, { once: true })
+  }
+
+  fn.onSubmit = (event) => {
+    event.preventDefault();
+    let input = event.target.querySelector(".u-search-input");
+    fn.setQueryText(input?.value ? input.value : event.target.value)
+    fn.search();
+  };
+
+  fn.cutContent = content => {
+    if (content === '') return ''
+
+    const firstOccur = content.indexOf('<mark>')
+
+    let start = firstOccur - 30
+    let end = firstOccur + 120
+    let pre = ''
+    let post = ''
+
+    if (start <= 0) {
+      start = 0
+      end = 140
+    } else {
+      pre = '...'
+    }
+
+    if (end > content.length) {
+      end = content.length
+    } else {
+      post = '...'
+    }
+
+    let matchContent = pre + content.substring(start, end) + post
+    return matchContent
+  }
+
+  fn.close = () => {
+    document.querySelector("#u-search").style.display = "none";
+  };
+
+  return {
+    init: fn.init,
+    setQueryText: queryText => {
+      fn.setQueryText(queryText);
+    },
+    search: fn.search,
+    close: fn.close
+  }
+})()
+
+Object.freeze(SearchService);
+
+SearchService.init();
