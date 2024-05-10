@@ -27,7 +27,154 @@
   <!-- Custom Files headBegin begin-->
   <script src="https://gcore.jsdelivr.net/gh/jquery/jquery@3.6/dist/jquery.min.js"></script>
 <script defer src="https://gcore.jsdelivr.net/gh/tugumineko/live2d-widget@latest/autoload.js"></script>
-<script src="/custom.js"></script>
+<script>
+var binft = function (r) {
+    var isTransparent = true;
+    function getRandomColor() {
+        if(isTransparent){
+            isTransparent = false;
+            //此处修改字体颜色,最后的 0 和 1 不要改
+            return "rgba(255,255,255,0)"
+        }else{
+            isTransparent = true;
+            return "rgba(255,255,255,1)"
+        }
+    }  
+    function n(r) {
+        for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {
+            var oneword = document.createElement("span");
+            oneword.textContent = "_"; // 此处是末尾字符,如果想用光标样式可以改为"|"
+            oneword.style.color = getRandomColor();
+            n.appendChild(oneword);
+        }
+        return n
+    }
+    function i() {
+        var t = wordList[c.skillI];
+        c.step ? c.step-- : (c.step = refreshDelayTime, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = "backward", c.delay = showTotalWordDelayTime) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % wordList.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(maxLength, maxLength + c.prefixP) : Math.min(maxLength, t.length - c.skillP))), setTimeout(i, d)
+    }
+    var l = "",
+    //此处改成你自己的诗词
+    wordList = [ 
+            "只给予你的晴天.",
+            "因为夏日将终.",
+        ].map(function (r) {
+    return r + ""
+    }),
+    showTotalWordDelayTime = 2,
+    refreshDelayTime = 1,
+    maxLength = 1,
+    d = 75,
+    c = {
+        text: "",
+        prefixP: -maxLength,
+        skillI: 0,
+        skillP: 0,
+        direction: "forward",
+        delay: showTotalWordDelayTime,
+        step: refreshDelayTime
+    };
+    i()
+};
+binft(document.getElementById('binft'));
+
+var OriginTitle = document.title;
+document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+        document.title = '╭(°A°`)╮ 你去哪了? 快回来!!!';
+    }else {
+        document.title = '(ฅ>ω<*ฅ) 你终于回来了 ~';
+        setTimeout(function () {
+            if(!document.hidden){
+                document.title = OriginTitle;
+            }
+        }, 2000);
+    }
+});
+
+function BackTOP() {
+    $("#btn").hide();
+    $(function () {
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 50) {
+                $("#btn").fadeIn(200);
+            } else {
+                $("#btn").fadeOut(200);
+            }
+        });
+        $("#btn").click(function () {
+            $('body,html').animate({
+                    scrollTop: 0
+                },
+                500);
+            return false;
+        });
+    });
+    $(function () {
+        $("#say").click(function () {
+            $('body,html').animate({
+                    scrollTop: $('html, body').get(0).scrollHeight
+                },
+                500);
+            return false;
+        });
+    })
+}
+
+$('#readmode').click(function () {
+        $('body').toggleClass('read-mode')
+    })
+    
+function SiderMenu() {
+    $('#main-container').toggleClass('open');
+    $('.iconflat').css('width', '50px').css('height', '50px');
+    $('.openNav').css('height', '50px');
+    $('#main-container,#mo-nav,.openNav').toggleClass('open')
+}
+
+function switchNightMode() {
+    $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($("body")), setTimeout(
+        function () {
+            (volantis.dark.mode == "dark") 
+            ? 
+            ($("html").addClass("DarkMode"),
+            $('#modeicon').attr("xlink:href", "#icon-sun")) 
+            : 
+            ($("html").removeClass("DarkMode"),
+            $('#modeicon').attr("xlink:href", "#icon-_moon")), 
+            setTimeout(function () {
+                $(".Cuteen_DarkSky").fadeOut(1e3, function () {
+                    $(this).remove()
+                })
+            }, 2e3)
+        }), 50
+}
+
+function checkNightMode() {
+    if ($("html").hasClass("n-f")) {
+        $("html").removeClass("day");
+        $("html").addClass("DarkMode");
+        $('#modeicon').attr("xlink:href", "#icon-sun")
+        return;
+    }
+    if ($("html").hasClass("d-f")) {
+        $("html").removeClass("DarkMode");
+        $("html").addClass("day");
+        $('#modeicon').attr("xlink:href", "#icon-_moon")
+        return;
+    }
+    if (volantis.dark.mode == "dark") {
+        $("html").addClass("DarkMode");
+        $('#modeicon').attr("xlink:href", "#icon-sun")
+    } else {
+        $("html").removeClass("DarkMode");
+        $('#modeicon').attr("xlink:href", "#icon-_moon")
+    }
+}
+BackTOP();
+volantis.dark.push(switchNightMode);
+
+</script>
   <!-- Custom Files headBegin end-->
   <link rel="preload" href="/css/style.css" as="style">
   <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
@@ -2339,7 +2486,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1715181302338),
+    lastupdate: new Date(1715320904773),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2362,11 +2509,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     },
     plugins: {
       message: {"enable":true,"icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
-      
-      aplayer: {
-        id: 3175833810,
-        enable:true
-      },
       
       
       rightmenus: {"enable":true,"order":["menus.prevNext","plugins.navigation","hr","plugins.inputBox","plugins.seletctText","plugins.elementCheck","plugins.elementImage","menus.link","hr","menus.darkMode","plugins.articlePage","music"],"options":{"iconPrefix":"fa-solid","articleShowLink":true,"musicAlwaysShow":true},"plugins":{"navigation":[{"id":"left","name":"转到上一页","icon":"fa-solid fa-arrow-left","event":"history.back()","group":"navigation"},{"id":"right","name":"转到下一页","icon":"fa-solid fa-arrow-right","event":"history.forward()","group":"navigation"},{"id":"redo","name":"刷新当前页面","icon":"fa-solid fa-redo","event":"window.location.reload()","group":"navigation"},{"id":"up","name":"回到顶部","icon":"fa-solid fa-arrow-up","event":"VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)","group":"navigation"},{"id":"home","name":"回到首页","icon":"fa-solid fa-home","link":"/","group":"navigation"}],"inputBox":[{"id":"copyPaste","name":"粘贴文本","icon":"fa-solid fa-paste","event":"copyPaste","group":"inputBox"},{"id":"copyAll","name":"全选文本","icon":"fa-solid fa-object-ungroup","event":"copyAll","group":"inputBox"},{"id":"copyCut","name":"剪切文本","icon":"fa-solid fa-cut","event":"copyCut","group":"inputBox"}],"seletctText":[{"id":"copyText","name":"复制文本","icon":"fa-solid fa-copy","event":"copyText","group":"seletctText"},{"id":"searchWord","name":"站内搜索","icon":"fa-solid fa-search","event":"OpenSearch(__text__)","group":"seletctText"},{"id":"bingSearch","name":"必应搜索","icon":"fa-solid fa-search","event":"window.open(`https://cn.bing.com/search?q=${__text__}`)","group":"seletctText"},{"id":"googleSearch","name":"谷歌搜索","icon":"fa-solid fa-search","event":"window.open(`https://www.google.com/search?q=${__text__}`)","group":"seletctText"}],"elementCheck":[{"id":"openTab","name":"新标签页打开","icon":"fa-solid fa-external-link-square-alt","event":"window.open(__link__)","group":"elementCheck"},{"id":"copyLink","name":"复制链接地址","icon":"fa-solid fa-link","event":"copyLink","group":"elementCheck"}],"elementImage":[{"id":"copyImg","name":"复制图片","icon":"fa-solid fa-image","event":"copyImg","group":"elementImage"},{"id":"googleImg","name":"谷歌识图","icon":"fa-solid fa-images","event":"window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)","group":"elementImage"}],"articlePage":[{"id":"printMode","name":"打印页面","icon":"fa-solid fa-print","event":"printMode","group":"articlePage"},{"id":"readMode","name":"阅读模式","icon":"fa-solid fa-book-open","event":"readMode","group":"articlePage"}]},"menus":{"prevNext":[{"id":"prev","name":"查看上一篇","icon":"fa-solid fa-angles-left","event":"volantis.rightmenu.jump('prev')","group":"prevNext"},{"id":"next","name":"查看下一篇","icon":"fa-solid fa-angles-right","event":"volantis.rightmenu.jump('next')","group":"prevNext"}],"link":[{"id":"help","name":"常见问题","icon":"fa-solid fa-question","link":"https://volantis.js.org/faqs/","group":"link"},{"id":"examples","name":"示例博客","icon":"fa-solid fa-rss","link":"https://volantis.js.org/examples/","group":"link"},{"id":"contributors","name":"加入社区","icon":"fa-solid fa-fan","link":"https://volantis.js.org/contributors/","group":"link"},"hr",{"id":"source_docs","name":"本站源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/volantis-docs/","group":"link"},{"id":"source_theme","name":"主题源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/hexo-theme-volantis/","group":"link"}],"darkMode":[{"id":"darkMode","name":"暗黑模式","icon":"fa-solid fa-moon","event":"volantis.dark.toggle()","group":"darkMode"}]}}
@@ -2401,10 +2543,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
     <!-- Custom Files bodyBegin begin-->
-    	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.js"></script>
-<script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
-	<!-- 雪花特效 -->
-<script type="text/javascript" src="\js\snow.js"></script>
+    
     <!-- Custom Files bodyBegin end-->
     <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
   <div class='container'>
@@ -2531,24 +2670,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                     <li>
                       <div class="aplayer-container">
                         
-
-  
-      
-        <meting-js
-          theme='#1BCDFC'
-          autoplay='false'
-          volume='0.7'
-          loop='all'
-          order='list'
-          fixed='false'
-          list-max-height='320px'
-          server='netease'
-          type='playlist'
-          id='3175833810'
-          list-folded='true'>
-        </meting-js>
-      
-    
  
                       </div>
                     </li>
@@ -2564,7 +2685,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div class="m_search">
         <form name="searchform" class="form u-search-form">
           <i class="icon fa-solid fa-search fa-fw"></i>
-          <input type="text" class="input u-search-input" placeholder="Search..." />
+          <input type="text" class="input u-search-input" placeholder="搜索您想要查找的内容" />
         </form>
       </div>
       
@@ -2695,7 +2816,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <p class="title"><font><span>Hello</span> <span>World</span></font></p>
     
     
-      <p class="subtitle">鶫ねこ</p>
+      <p class="subtitle">人よ、幸福に生きろ！</p>
     
   </div>
   <div class='bottom'>
@@ -2849,26 +2970,31 @@ C++是一种静态语言。这意味着，每一个实体(对象、值、名称�
   <div class='content'>
     
       
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/Logo-NavBar@3x.png'/>
+        <a class='avatar flat-box circle' href='/about/'>
+          <img no-lazy src='https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//202405101324394.png'/>
         </a>
       
     
+    
+      <div class='text'>
+        
+          <h2>鶫ねこ</h2>
+        
+        
+          <p>tugumineko</p>
+
+        
+        
+		    
+        <p>何気ない日常、瞬く間にすぎてゆく<br>ふとした瞬間、想うことがどんなに幸せだろう ​​​</p>
+		      
+      </div>
     
     
       <div class="social-wrapper">
         
           
-            <a href="/atom.xml"
-              class="social fa-solid fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
+            <a href="mailto:exd422@gmail.com"
               class="social fa-solid fa-envelope flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -2877,7 +3003,7 @@ C++是一种静态语言。这意味着，每一个实体(对象、值、名称�
           
         
           
-            <a href="https://github.com/volantis-x/"
+            <a href="https://github.com/tugumineko/"
               class="social fab fa-github flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -2982,24 +3108,6 @@ C++是一种静态语言。这意味着，每一个实体(对象、值、名称�
       
         <div class="aplayer-container">
           
-
-  
-      
-        <meting-js
-          theme='#1BCDFC'
-          autoplay='false'
-          volume='0.7'
-          loop='all'
-          order='list'
-          fixed='false'
-          list-max-height='320px'
-          server='netease'
-          type='playlist'
-          id='3175833810'
-          list-folded='true'>
-        </meting-js>
-      
-    
  
         </div>
       
@@ -3710,38 +3818,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script>
-  volantis.css("https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css");
-
-  
-    volantis.js("https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js").then(()=>{
-      document.querySelectorAll('.aplayer-local').forEach(e=>{
-        new APlayer({
-          container: e,
-          fixed: false,
-          order: "list",
-          volume: "0.7",
-          autoplay: false,
-          loop: "all",
-          theme: "#1BCDFC",
-          listMaxHeight: "320px",
-          listFolded: "true",
-          preload: 'auto',
-          lrcType: 3,
-          audio: 
-        });
-      })
-
-      // post.music 迷你模式 todo...
-      // document.querySelectorAll('.aplayer-local-min').forEach(e=>{
-      //   // todo...
-      // })
-      // 右键 todo...
-    })
-  
-</script>
-
-
 
 
       <script>
@@ -3897,7 +3973,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   <script>
-  let imgs = ["https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//10.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//8.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//15.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//18.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//11 .jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//5.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//1.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//6.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//14.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//21.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//16.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//20.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//9.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//2.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//4.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//12.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//19.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//17.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//7.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//3.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//13.jpg"];
+  let imgs = ["https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//3.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//15.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//2.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//1.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//20.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//17.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//8.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//19.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//4.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//6.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//10.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//7.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//5.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//13.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//11 .jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//9.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//14.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//21.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//16.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//18.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//12.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
