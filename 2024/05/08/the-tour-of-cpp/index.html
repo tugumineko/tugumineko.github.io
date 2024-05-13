@@ -209,7 +209,7 @@ volantis.dark.push(switchNightMode);
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-05-08T14:55:22.000Z">
-<meta property="article:modified_time" content="2024-05-08T15:05:59.712Z">
+<meta property="article:modified_time" content="2024-05-13T14:32:34.313Z">
 <meta property="article:author" content="tugumineko">
 <meta property="article:tag" content="语法">
 <meta name="twitter:card" content="summary">
@@ -2504,7 +2504,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1715322597453),
+    lastupdate: new Date(1715610804875),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2920,13 +2920,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.5k 字</p>
+      <p>字数：2.4k 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：6 分钟</p>
+      <p>时长：10 分钟</p>
     </a>
   </div>
 
@@ -2994,8 +2994,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1>基础</h1>
-<h2 id="程序">程序</h2>
+    <h2 id="基础">基础</h2>
+<h3 id="程序">程序</h3>
 <ol>
 <li>ISO C++标准中定义了两种实体：</li>
 </ol>
@@ -3009,9 +3009,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int main()&#123;&#125;  //最小的cpp程序</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//import std; 是cpp20的特性</span><br><span class="line">#include&lt;iostream&gt;  //标准库组件</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    std::cout&lt;&lt;&quot;Hello, World!\n&quot;;  //标准库命名空间std::</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Hello, World!</p>
-<h2 id="函数">函数</h2>
+<h3 id="函数">函数</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">double sqrt(double d);  //函数声明的时候可以包含参数的名称</span><br><span class="line">double s = sqrt(2);  //检测参数类型在必要的时候会发生隐式类型转换</span><br><span class="line">char&amp; String::operator[](int index);  //函数的类型是char&amp; String::(int),函数可以是类成员</span><br></pre></td></tr></table></figure>
-<h2 id="类型-变量和运算">类型、变量和运算</h2>
+<h3 id="类型-变量和运算">类型、变量和运算</h3>
 <ol>
 <li><strong>unsigned</strong>一般用于位运算</li>
 <li>数字可以是浮点数或者整数：
@@ -3040,7 +3040,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">double d1 = 2.3;</span><br><span class="line">double d2 &#123;2.3&#125;;</span><br><span class="line">double d3 = &#123;2.3&#125;;</span><br><span class="line">complex&lt;double&gt; z = 1;</span><br><span class="line">complex&lt;double&gt; z2 &#123;d1,d2&#125;;</span><br><span class="line">complex&lt;double&gt; z3 = &#123;d1,d2&#125;;</span><br><span class="line">vector&lt;int&gt; v &#123;1, 2, 3, 4, 5, 6&#125;;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">auto y = 3.14;</span><br><span class="line">auto z &#123;sqrt(y)&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="作用域和生命周期">作用域和生命周期</h2>
+<h3 id="作用域和生命周期">作用域和生命周期</h3>
 <ol>
 <li>声明语句把一个名字引入作用域：
 <ul>
@@ -3058,7 +3058,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ul>
 </li>
 </ol>
-<h2 id="常量">常量</h2>
+<h3 id="常量">常量</h3>
 <ul>
 <li><strong>const</strong>
 <blockquote>
@@ -3115,16 +3115,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ul>
 </blockquote>
 <div class="note warning"><p>注意const只具有接口性质，不是实际上的常量</p></div>
-<div class="note success"><p>函数的声明为常量(constexpr,consteval)可以实现C++的纯函数，即数学意义上的函数，不会产生副作用，不能修改函数的输入参数</p></div>
-<h2 id="指针-数组和引用">指针、数组和引用</h2>
+<div class="note success"><p>函数的声明为常量(constexpr,consteval)可以实现C++的纯函数，即数学意义上的函数，不会有副作用，不能修改函数的输入参数</p></div>
+<h3 id="指针-数组和引用">指针、数组和引用</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">T a[n];  //数组</span><br><span class="line">T* p;  //指针</span><br><span class="line">T&amp; r;  //引用</span><br><span class="line"></span><br><span class="line">char* p = &amp;v[3];  //p指向数组v的第四个元素</span><br><span class="line">char x = *p;  //*p代表p指向的对象(*解引用)</span><br></pre></td></tr></table></figure>
 <div class="note warning"><p>注意*在定义时是定义指针,在指针前使用是解引用</p></div>
-<h2 id="空指针">空指针</h2>
+<h3 id="空指针">空指针</h3>
 <p>空指针用nullptr表达，整数用0或NULL表达，在检验时是兼容的</p>
 <div class="note danger"><p>不能引用空指针</p></div>
-<h2 id="映射到硬件">映射到硬件</h2>
+<h3 id="映射到硬件">映射到硬件</h3>
 <ul>
-<li><strong>赋值</strong>:</li>
+<li>赋值:</li>
 </ul>
 <ol>
 <li>p和q同时指向y的地址</li>
@@ -3136,11 +3136,77 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int x = 2;</span><br><span class="line">int y = 3;</span><br><span class="line">int&amp; r1 = x;</span><br><span class="line">int&amp; r2 = y;</span><br><span class="line">r1 = r2;</span><br></pre></td></tr></table></figure>
 <div class="note warning"><p>这里直接用引用的方法操作地址，没有使用指针</p></div>
 <ul>
-<li><strong>初始化</strong>:没有未经初始化的引用</li>
+<li>初始化:没有未经初始化的引用</li>
 </ul>
 <p>使用 <strong>=</strong> 来初始化一个引用，注意这不是赋值</p>
 <pre><code>int&amp; r = x;  //r指代x
 </code></pre>
+<div class="note info"><p>补充在函数中引用的两种方法</p></div>
+<pre><code>void sort(vector&lt;double&gt;&amp;v)
+</code></pre>
+<p>若只想减少复制参数的开销，则：</p>
+<pre><code>double sum(const vector&lt;double&gt;&amp;)
+</code></pre>
+<p>这样就不能改变函数传入的参数</p>
+<h2 id="用户自定义类型">用户自定义类型</h2>
+<ul>
+<li>内置类型：用基本类型、<strong>const</strong>操作符和声明操作符构造出来的类型</li>
+<li>用户自定义类型：利用C++的抽象机制从其他类型构造出来的类型，包括类和枚举类型</li>
+</ul>
+<h3 id="结构-struct">结构 struct</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">struct Vector &#123;</span><br><span class="line">    double* elem;</span><br><span class="line">    int sz;        </span><br><span class="line">&#125;;</span><br><span class="line">        </span><br><span class="line">void vector_init(Vector&amp; v, int s)&#123;</span><br><span class="line">    v.elem = new double[s];</span><br><span class="line">    v.sz = s;    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">double read_and_sum(int s)</span><br><span class="line">    //从cin中读入s个整数，然后返回它们的和；假定s为正</span><br><span class="line">&#123;</span><br><span class="line">    Vector v;</span><br><span class="line">    vector_init(v,s);    </span><br><span class="line">    </span><br><span class="line">    for(int i=0;i!=s;i++)&#123;</span><br><span class="line">        std::cin&gt;&gt;v.elem[i];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    double sum = 0;</span><br><span class="line">    for(int i=0;i!=s;i++)&#123;</span><br><span class="line">        sum += v.elem[i];</span><br><span class="line">    &#125;</span><br><span class="line">    return sum;</span><br><span class="line">&#125;    </span><br></pre></td></tr></table></figure>
+<div class="note info"><p>访问结构体的成员有两种方式</p></div>
+<ul>
+<li>用 <strong>.</strong> 表示通过名字或者引用访问</li>
+<li>用 <strong>-&gt;</strong> 表示通过指针访问</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void f(Vector v, Vector&amp; rv, Vector* pv)&#123;</span><br><span class="line">    int i1 = v.sz;   //通过名字访问</span><br><span class="line">    int i2 = rv.sz;  //通过引用访问</span><br><span class="line">    int i3 = pv-&gt;sz; //通过指针访问     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="类-class">类 class</h3>
+<p>把类型的接口（所有代码都可使用的部分）与其实现（可访问外部不可访问的数据）分离开来的语言机制被称为<strong>类</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Vector &#123;</span><br><span class="line">public:</span><br><span class="line">    Vector(int s) :elem&#123; new double[s] &#125;, sz&#123; s &#125; &#123;&#125; //构造函数</span><br><span class="line">    double&amp; operator[](int i) &#123; return elem[i]; &#125;</span><br><span class="line">    int size() &#123; return sz; &#125;</span><br><span class="line">private:</span><br><span class="line">    double* elem;</span><br><span class="line">    int sz;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>构造函数在初始化类对象时一定会被调用</li>
+<li>错误处理暂时没有涉及</li>
+<li>思考通过<strong>new</strong>获取的<strong>double</strong>数组如何归还？</li>
+</ul>
+<div class="note info"><p><strong>struct</strong>和<strong>class</strong>没有本质区别，<strong>struct</strong>是默认public的</p></div>
+<h3 id="枚举">枚举</h3>
+<h4 id="enum-class">enum class</h4>
+<ul>
+<li>枚举类型用于表示少量整数数值的集合</li>
+<li>通过符号名称替代整数</li>
+<li>后面的<strong>class</strong>表示这个枚举类型是强类型，并且具备独立作用域</li>
+</ul>
+<blockquote>
+<p>不能混用不同类的枚举值<br>
+无法隐式地混用枚举类型与整数类型的值</p>
+</blockquote>
+<ul>
+<li>默认情况下，一个<strong>enum class</strong>定义仅定义赋值操作符、初始化函数及比较操作符，也可以自定义其他操作符</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">enum class Color &#123; red, blue, green &#125;;</span><br><span class="line">enum class Traffic_light &#123; green, yellow, red &#125;;</span><br><span class="line"></span><br><span class="line">Color col = Color::red;</span><br><span class="line">Traffic_light light = Traffic_light::red;</span><br><span class="line"></span><br><span class="line">Traffic_light* operator++(Traffic_light&amp; t) &#123;</span><br><span class="line">	using enum Traffic_light;</span><br><span class="line"></span><br><span class="line">	switch (t) &#123;</span><br><span class="line">	case green:return t = yellow;</span><br><span class="line">	case red:return t = green;</span><br><span class="line">	case green:return t = red;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="note danger"><p>Color x = red<br>Color y = traffic_light::red<br></p></div>  
+<div class="note danger"><p>int i = Color::red<br>Color c = 2<br></p></div>  
+<div class="note success"><p>Color z = Color::red<br>auto z = Color::red<br></p></div>  
+<div class="note success"><p>Color x = Color{5}<br>Color y {6}<br></p></div>  
+<h4 id="enum">enum</h4>
+<ul>
+<li>普通<strong>enum</strong>中的枚举值进入与<strong>enum</strong>自身同级的作用域</li>
+<li>可以被隐式转换为整数数值</li>
+</ul>
+<div class="note warning"><p>用枚举表示一组命名的常量<br>为枚举定义操作来简化并保证安全<br>优先使用<strong>enum class</strong>以避免很多麻烦</p></div>  
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">enum Color &#123;red, green, blue&#125;;</span><br><span class="line">int col = red; //col &#123;0&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="联合-union">联合 union</h3>
+<ul>
+<li>实际占用空间就是它最大成员所占的空间，可以用来节约空间</li>
+<li>同一时刻，<strong>union</strong>中只能保存一个成员的值</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">enum class Type &#123; ptr, num &#125;;</span><br><span class="line"></span><br><span class="line">union Value &#123;</span><br><span class="line">	Node* p;</span><br><span class="line">	int i;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">struct Entry &#123;</span><br><span class="line">	string name;</span><br><span class="line">	Type t;</span><br><span class="line">	Value v;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void f(Entry* pe)</span><br><span class="line">&#123;</span><br><span class="line">	if (pe-&gt;t == Type::num)</span><br><span class="line">		cout &lt;&lt; pe-&gt;v.i;</span><br><span class="line">	//...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="note warning"><p>避免使用“裸”<strong>union</strong>;将其与类型字段一起封装在一个类中</p></div>
+<div class="note info"><p>使用标准库类型<strong>variant</strong>可以消除大多数需要直接使用<strong>union</strong><br><strong>variant</strong>更简单，安全</p></div>  
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">struct Entry &#123;</span><br><span class="line">	string name;</span><br><span class="line">    variant&lt;Node*,int&gt; v;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void f(Entry* pe)</span><br><span class="line">&#123;</span><br><span class="line">	if (v&lt;int&gt;(pe-&gt;v))</span><br><span class="line">		cout &lt;&lt; get&lt;int&gt;(pe-&gt;v);</span><br><span class="line">	//...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="模块化">模块化</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 
   </div>
   
@@ -3165,10 +3231,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-05-08T23:05:59+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-05-13T22:32:34+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2024年5月8日</p>
+    <p>更新于：2024年5月13日</p>
   </a>
 </div>
 
@@ -3320,7 +3386,7 @@ string or None
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.</span> <span class="toc-text">程序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B-%E5%8F%98%E9%87%8F%E5%92%8C%E8%BF%90%E7%AE%97"><span class="toc-number">3.</span> <span class="toc-text">类型、变量和运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">4.</span> <span class="toc-text">作用域和生命周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-number">5.</span> <span class="toc-text">常量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E9%92%88-%E6%95%B0%E7%BB%84%E5%92%8C%E5%BC%95%E7%94%A8"><span class="toc-number">6.</span> <span class="toc-text">指针、数组和引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E6%8C%87%E9%92%88"><span class="toc-number">7.</span> <span class="toc-text">空指针</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%A0%E5%B0%84%E5%88%B0%E7%A1%AC%E4%BB%B6"><span class="toc-number">8.</span> <span class="toc-text">映射到硬件</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.1.</span> <span class="toc-text">程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B-%E5%8F%98%E9%87%8F%E5%92%8C%E8%BF%90%E7%AE%97"><span class="toc-number">1.3.</span> <span class="toc-text">类型、变量和运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">1.4.</span> <span class="toc-text">作用域和生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-number">1.5.</span> <span class="toc-text">常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E9%92%88-%E6%95%B0%E7%BB%84%E5%92%8C%E5%BC%95%E7%94%A8"><span class="toc-number">1.6.</span> <span class="toc-text">指针、数组和引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E6%8C%87%E9%92%88"><span class="toc-number">1.7.</span> <span class="toc-text">空指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%A0%E5%B0%84%E5%88%B0%E7%A1%AC%E4%BB%B6"><span class="toc-number">1.8.</span> <span class="toc-text">映射到硬件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">用户自定义类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84-struct"><span class="toc-number">2.1.</span> <span class="toc-text">结构 struct</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB-class"><span class="toc-number">2.2.</span> <span class="toc-text">类 class</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%9A%E4%B8%BE"><span class="toc-number">2.3.</span> <span class="toc-text">枚举</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#enum-class"><span class="toc-number">2.3.1.</span> <span class="toc-text">enum class</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#enum"><span class="toc-number">2.3.2.</span> <span class="toc-text">enum</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%94%E5%90%88-union"><span class="toc-number">2.4.</span> <span class="toc-text">联合 union</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E5%8C%96"><span class="toc-number">3.</span> <span class="toc-text">模块化</span></a></li></ol>
   </div>
 </section>
 
@@ -4209,7 +4275,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   <script>
-  let imgs = ["https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//18.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//8.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//5.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//10.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//16.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//4.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//6.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//14.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//11 .jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//1.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//15.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//13.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//19.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//9.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//7.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//12.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//21.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//17.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//2.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//3.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//20.jpg"];
+  let imgs = ["https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//2.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//3.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//5.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//9.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//4.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//19.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//13.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//11 .jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//17.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//1.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//20.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//16.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//8.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//12.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//10.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//7.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//18.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//14.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//15.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//21.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//6.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4442,7 +4508,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"鶫ねこ"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"tugumineko"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/cpp/","name":"cpp"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/05/08/the-tour-of-cpp/","name":"C++之旅(A Tour of C++)读书笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"tugumineko","url":"http://example.com/","keywords":null,"description":"鶫ねこ","author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"鶫ねこ"},"publisher":{"@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"C++之旅(A Tour of C++)读书笔记","description":"鶫ねこ","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/05/08/the-tour-of-cpp/"},"author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"tugumineko","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/05/08/the-tour-of-cpp/","wordCount":0,"datePublished":"2024-05-08T14:55:22.000Z","dateModified":"2024-05-08T15:05:59.712Z","articleSection":"cpp","keywords":"语法","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"鶫ねこ"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"tugumineko"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/cpp/","name":"cpp"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/05/08/the-tour-of-cpp/","name":"C++之旅(A Tour of C++)读书笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"tugumineko","url":"http://example.com/","keywords":null,"description":"鶫ねこ","author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"鶫ねこ"},"publisher":{"@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"C++之旅(A Tour of C++)读书笔记","description":"鶫ねこ","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/05/08/the-tour-of-cpp/"},"author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"tugumineko","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/05/08/the-tour-of-cpp/","wordCount":0,"datePublished":"2024-05-08T14:55:22.000Z","dateModified":"2024-05-13T14:32:34.313Z","articleSection":"cpp","keywords":"语法","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
