@@ -209,7 +209,7 @@ volantis.dark.push(switchNightMode);
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-05-08T14:55:22.000Z">
-<meta property="article:modified_time" content="2024-05-13T14:48:02.845Z">
+<meta property="article:modified_time" content="2024-05-14T14:43:18.094Z">
 <meta property="article:author" content="tugumineko">
 <meta property="article:tag" content="语法">
 <meta name="twitter:card" content="summary">
@@ -2504,7 +2504,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1715611708639),
+    lastupdate: new Date(1715698236641),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2920,13 +2920,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：2.4k 字</p>
+      <p>字数：4k 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：10 分钟</p>
+      <p>时长：16 分钟</p>
     </a>
   </div>
 
@@ -3204,9 +3204,122 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">enum class Type &#123; ptr, num &#125;;</span><br><span class="line"></span><br><span class="line">union Value &#123;</span><br><span class="line">	Node* p;</span><br><span class="line">	int i;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">struct Entry &#123;</span><br><span class="line">	string name;</span><br><span class="line">	Type t;</span><br><span class="line">	Value v;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void f(Entry* pe)</span><br><span class="line">&#123;</span><br><span class="line">	if (pe-&gt;t == Type::num)</span><br><span class="line">		cout &lt;&lt; pe-&gt;v.i;</span><br><span class="line">	//...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <div class="note warning"><p>避免使用“裸”<strong>union</strong>;将其与类型字段一起封装在一个类中</p></div>
 <div class="note info"><p>使用标准库类型<strong>variant</strong>可以消除大多数需要直接使用<strong>union</strong><br><strong>variant</strong>更简单，安全</p></div>  
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">struct Entry &#123;</span><br><span class="line">	string name;</span><br><span class="line">    variant&lt;Node*,int&gt; v;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void f(Entry* pe)</span><br><span class="line">&#123;</span><br><span class="line">	if (hold_alternative&lt;int&gt;(pe-&gt;v))</span><br><span class="line">		cout &lt;&lt; get&lt;int&gt;(pe-&gt;v);</span><br><span class="line">	//...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">struct Entry &#123;</span><br><span class="line">	string name;</span><br><span class="line">    variant&lt;Node*,int&gt; v;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void f(Entry* pe)</span><br><span class="line">&#123;</span><br><span class="line">	if (holds_alternative&lt;int&gt;(pe-&gt;v))</span><br><span class="line">		cout &lt;&lt; get&lt;int&gt;(pe-&gt;v);</span><br><span class="line">	//...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="模块化">模块化</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<div class="note info"><p>一个C++程序包含许多独立开发的部分，例如函数、用户自定义类型、类层次、 模板<br>为了让这些独立开发的部分在其他地方使用（类似于函数的声明），我们使用模块化的方法</p></div>
+<div class="note warning"><p>区分声明(用作接口)和定义(用作实现)</p></div>
+<h3 id="分离编译">分离编译</h3>
+<h4 id="头文件">头文件</h4>
+<ul>
+<li>在C++中，接口文件后缀名为.h,里面应该包括函数的声明</li>
+<li>实现接口函数的文件后缀名为.cpp,为了帮助编译器保持一致性，同样应该包含提供接口的.h文件</li>
+<li>要使用这个头文件的函数，就需要在头文件中包含&quot;xxx.h&quot;</li>
+</ul>
+<div class="note danger"><p>使用#<strong>include</strong>及头文件实现模块化是一种传统方法，它具有明显的缺点。</p></div>
+<ul>
+<li>编译时间：不同的文件每一次include不同的头文件编译器都要处理一次</li>
+<li>依赖顺序：先include的头文件的定义与宏可能会影响后一个的代码的含义</li>
+<li>不协调：可能会出现类似下面的问题
+<ol>
+<li>我们有意无意地在两个源文件中定义了同一个实体的时候</li>
+<li>不同源文件引用头文件的顺序不一致的时候</li>
+</ol>
+</li>
+<li>传染性：一个文件(1)包含的头文件(2)会包含其他这个文件(1)不需要的头文件，以此类推会导致代码膨胀且冗余</li>
+</ul>
+<div class="note warning"><p>避免在头文件中定义非内联函数<br>不要在头文件中使用 <strong>using</strong> 指令</p></div>
+<h4 id="模块">模块</h4>
+<ul>
+<li>写法1：将class export并表示成声明的形式，就和.h写法差不多</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">export module Vector;</span><br><span class="line"></span><br><span class="line">export class Vector &#123;</span><br><span class="line"> public:</span><br><span class="line">  Vector(int s);</span><br><span class="line">  double&amp; operator[](int i);</span><br><span class="line">  int size();</span><br><span class="line"></span><br><span class="line"> private:</span><br><span class="line">  double* elem;</span><br><span class="line">  int sz;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Vector::Vector(int s) : elem&#123;new double[s]&#125;, sz&#123;s&#125; &#123;&#125;</span><br><span class="line"></span><br><span class="line">double&amp; Vector::operator[](int i) &#123; return elem[i]; &#125;</span><br><span class="line"></span><br><span class="line">int Vector::size() &#123; return sz; &#125;</span><br><span class="line"></span><br><span class="line">export bool operator==(const Vector&amp; v1, const Vector&amp; v2) &#123;</span><br><span class="line">  if (v1.sieze() != v2.size()) return false;</span><br><span class="line">  for (int i = 0; i &lt; v1.size(); i++)</span><br><span class="line">    if (v1.elem[i] != v2.elem[i]) return false;</span><br><span class="line">  return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>写法2：函数export的就是可见的，没有export的就是不可见的(类似java)</p>
+</li>
+<li>
+<p>module Vector接口形式，后缀名为.cppm</p>
+</li>
+<li>
+<p>import Vector使用Vector</p>
+</li>
+<li>
+<p>export module Vector定义Vector</p>
+</li>
+</ul>
+<div class="note success"><p>模块在维护性与编译时间方面的改进非常显著</p></div>
+<h3 id="命名空间">命名空间</h3>
+<p>用 <strong>namespace 命名空间名 {}</strong><br>
+用 <strong>::</strong> 访问</p>
+<ol>
+<li>表达某些声明是属于一个整体的</li>
+<li>表明它们的名字不会与其他命名空间中的名字冲突</li>
+</ol>
+<div class="note warning"><p>真正的<strong>main()</strong>（不是自己定义的命名空间里的）</p></div>
+<p>用 <strong>using</strong> 声明将命名空间中的名字放进作用域,可以降低可读性</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void my_code(vector&lt;int&gt;&amp; x, vector&lt;int&gt;&amp; y) &#123;</span><br><span class="line">  using std::swap;  // 将标准库的swap放进作用域</span><br><span class="line">  //...</span><br><span class="line">  swap(x, y);         // std::swap()</span><br><span class="line">  other::swap(x, y);  // 某个其他的swap()</span><br><span class="line">  //...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用标准库命名空间中所有名称的访问权</p>
+<pre><code>using namespace std;
+</code></pre>
+<div class="note info"><p>用以上方式使用命名空间指令不会影响使用模块的用户，影响仅限于模块内部</p></div>
+<h3 id="函数参数与返回值">函数参数与返回值</h3>
+<p>函数之间传递信息有三种路径：</p>
+<blockquote>
+<p>参数<br>
+全局变量<br>
+类对象中的共享状态</p>
+</blockquote>
+<p>在函数的信息传递中，我们应考量：</p>
+<ul>
+<li>对象是被复制的还是共享的？</li>
+<li>这个共享对象是否可被修改？</li>
+<li>这个对象是否被移动，从而留下了一个空对象？</li>
+</ul>
+<h4 id="参数传递">参数传递</h4>
+<ul>
+<li>默认情况复制(传值)/直接指向引用(传引用)/直接只读const&amp;</li>
+<li>拥有默认值的函数参数可以达到和重载函数一样的效果</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">void print(int value, int base = 10);</span><br><span class="line">print(x,8);</span><br><span class="line">print(x);//默认十进制</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void print(int value, int base)&#123;</span><br><span class="line">	//...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void print(int value)&#123;</span><br><span class="line">	print(int value, 10);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="返回值">返回值</h4>
+<ul>
+<li>返回值的默认行为是复制</li>
+<li>返回引用的情况只应当出现在返回的内容不属于函数局部的时候(注意数组)</li>
+<li>局部变量在函数返回的时候消失，因此我们不应当返回它的引用或者指针</li>
+<li>对于较大的对象构造移动方法来极大地减少复制开销</li>
+<li>编译器会优化复制行为，叫做省略复制优化</li>
+</ul>
+<div class="note warning"><p>使用指针返回大对象的代码性能不会比使用引用返回的函数好，不要使用这样的代码</p></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Matrix* add(const Matrix&amp; x, const Matrix&amp; y) &#123;</span><br><span class="line">  Matrix* p = new Matrix;</span><br><span class="line">  //....</span><br><span class="line">  return p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Matrix m1, m2;</span><br><span class="line">//...</span><br><span class="line">Matrix* m3 = add(m1, m2);  // 只复制指针</span><br><span class="line">//...</span><br><span class="line">delete m3;  // 很容易忘记</span><br></pre></td></tr></table></figure>
+<h4 id="返回类型推导">返回类型推导</h4>
+<p>使用 <strong>auto</strong> 关键字</p>
+<pre><code>auto mul(int i, double d) &#123; return i*d; &#125;
+</code></pre>
+<h4 id="返回类型后置">返回类型后置</h4>
+<p>有的时候，我们需要先看到参数，然后决定返回值的类型。</p>
+<div class="note info"><p>这包括但不限于返回类型推导这种情形，这个问题与命名空间、匿名函数、概念都有一定的联系</p></div>
+<p>使用 <strong>auto</strong> 关键字，表示返回值会在后面提到</p>
+<pre><code>auto mul(int i, double d) -&gt; double &#123; return i*d; &#125;
+</code></pre>
+<p>使用这种记法能够更有效地实现代码对齐</p>
+<pre><code>auto next_elem -&gt; Elem*;
+auto exit(int) -&gt; void;
+auto sqrt(double) -&gt; double;
+</code></pre>
+<div class="note warning"><p>不要过度使用返回类型推断</p></div>
+<h4 id="结构化绑定">结构化绑定</h4>
+<p>把类对象成员赋予局部变量名称的机制</p>
+<p>使用 <strong>{s, i}</strong> 构造<br>
+使用 <strong>[n, v]</strong> 读取(“解包”)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">struct Entry &#123;</span><br><span class="line">  string name;</span><br><span class="line">  int value;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Entry read_entry(istream&amp; is)  // 简单地读函数</span><br><span class="line">&#123;</span><br><span class="line">  string s;</span><br><span class="line">  int i;</span><br><span class="line">  is &gt;&gt; s &gt;&gt; i;</span><br><span class="line">  return &#123;s, i&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">auto [n, v] = read_entry(cin);</span><br><span class="line">cout&lt;&lt;n&lt;&lt;&#x27; &#x27;&lt;&lt;v&lt;&lt;&#x27;\n&#x27;;</span><br></pre></td></tr></table></figure>
+<div class="note info"><p>对完全没有私有数据的类使用结构化绑定时，绑定行为是明显的：<br>提供的名称数量必须与数据成员的数量相等，每一个绑定名称对应一个成员变量</p></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">map&lt;string, int&gt; m;</span><br><span class="line">//...</span><br><span class="line">for (const auto [key, value] : m) &#123;</span><br><span class="line">  cout &lt;&lt; key &lt; &#x27; &#x27; &lt;&lt; value &lt;&lt; &#x27;\n&#x27;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">auto incr(map&lt;string, int&gt;&amp; m) -&gt; void &#123;</span><br><span class="line">  for (auto&amp; [key, value]) </span><br><span class="line">  	value++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结构化绑定也可以用于处理需要通过成员函数访问对象数据的类（?）</p>
+<pre><code>complex&lt;double&gt; z = &#123;1,2&#125;;  
+auto [re,im] = z+2;
+</code></pre>
+<div class="note warning"><p>不要过度使用结构化绑定</p></div>
 
   </div>
   
@@ -3231,10 +3344,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-05-13T22:48:02+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-05-14T22:43:18+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2024年5月13日</p>
+    <p>更新于：2024年5月14日</p>
   </a>
 </div>
 
@@ -3386,7 +3499,7 @@ string or None
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.1.</span> <span class="toc-text">程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B-%E5%8F%98%E9%87%8F%E5%92%8C%E8%BF%90%E7%AE%97"><span class="toc-number">1.3.</span> <span class="toc-text">类型、变量和运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">1.4.</span> <span class="toc-text">作用域和生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-number">1.5.</span> <span class="toc-text">常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E9%92%88-%E6%95%B0%E7%BB%84%E5%92%8C%E5%BC%95%E7%94%A8"><span class="toc-number">1.6.</span> <span class="toc-text">指针、数组和引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E6%8C%87%E9%92%88"><span class="toc-number">1.7.</span> <span class="toc-text">空指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%A0%E5%B0%84%E5%88%B0%E7%A1%AC%E4%BB%B6"><span class="toc-number">1.8.</span> <span class="toc-text">映射到硬件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">用户自定义类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84-struct"><span class="toc-number">2.1.</span> <span class="toc-text">结构 struct</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB-class"><span class="toc-number">2.2.</span> <span class="toc-text">类 class</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%9A%E4%B8%BE"><span class="toc-number">2.3.</span> <span class="toc-text">枚举</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#enum-class"><span class="toc-number">2.3.1.</span> <span class="toc-text">enum class</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#enum"><span class="toc-number">2.3.2.</span> <span class="toc-text">enum</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%94%E5%90%88-union"><span class="toc-number">2.4.</span> <span class="toc-text">联合 union</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E5%8C%96"><span class="toc-number">3.</span> <span class="toc-text">模块化</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.1.</span> <span class="toc-text">程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B-%E5%8F%98%E9%87%8F%E5%92%8C%E8%BF%90%E7%AE%97"><span class="toc-number">1.3.</span> <span class="toc-text">类型、变量和运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">1.4.</span> <span class="toc-text">作用域和生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-number">1.5.</span> <span class="toc-text">常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E9%92%88-%E6%95%B0%E7%BB%84%E5%92%8C%E5%BC%95%E7%94%A8"><span class="toc-number">1.6.</span> <span class="toc-text">指针、数组和引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E6%8C%87%E9%92%88"><span class="toc-number">1.7.</span> <span class="toc-text">空指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%A0%E5%B0%84%E5%88%B0%E7%A1%AC%E4%BB%B6"><span class="toc-number">1.8.</span> <span class="toc-text">映射到硬件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">用户自定义类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84-struct"><span class="toc-number">2.1.</span> <span class="toc-text">结构 struct</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB-class"><span class="toc-number">2.2.</span> <span class="toc-text">类 class</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%9A%E4%B8%BE"><span class="toc-number">2.3.</span> <span class="toc-text">枚举</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#enum-class"><span class="toc-number">2.3.1.</span> <span class="toc-text">enum class</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#enum"><span class="toc-number">2.3.2.</span> <span class="toc-text">enum</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%94%E5%90%88-union"><span class="toc-number">2.4.</span> <span class="toc-text">联合 union</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E5%8C%96"><span class="toc-number">3.</span> <span class="toc-text">模块化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%A6%BB%E7%BC%96%E8%AF%91"><span class="toc-number">3.1.</span> <span class="toc-text">分离编译</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="toc-number">3.1.1.</span> <span class="toc-text">头文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97"><span class="toc-number">3.1.2.</span> <span class="toc-text">模块</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="toc-number">3.2.</span> <span class="toc-text">命名空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E4%B8%8E%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-number">3.3.</span> <span class="toc-text">函数参数与返回值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="toc-number">3.3.1.</span> <span class="toc-text">参数传递</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-number">3.3.2.</span> <span class="toc-text">返回值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B%E6%8E%A8%E5%AF%BC"><span class="toc-number">3.3.3.</span> <span class="toc-text">返回类型推导</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B%E5%90%8E%E7%BD%AE"><span class="toc-number">3.3.4.</span> <span class="toc-text">返回类型后置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E5%8C%96%E7%BB%91%E5%AE%9A"><span class="toc-number">3.3.5.</span> <span class="toc-text">结构化绑定</span></a></li></ol></li></ol></li></ol>
   </div>
 </section>
 
@@ -4275,7 +4388,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   <script>
-  let imgs = ["https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//10.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//20.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//4.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//9.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//21.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//12.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//19.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//11 .jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//16.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//17.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//15.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//3.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//5.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//8.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//2.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//14.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//7.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//1.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//6.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//13.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//18.jpg"];
+  let imgs = ["https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//3.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//7.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//8.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//9.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//13.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//2.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//4.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//20.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//15.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//12.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//19.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//14.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//11 .jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//18.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//16.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//21.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//1.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//17.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//10.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//6.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//5.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4508,7 +4621,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"鶫ねこ"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"tugumineko"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/cpp/","name":"cpp"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/05/08/the-tour-of-cpp/","name":"C++之旅(A Tour of C++)读书笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"tugumineko","url":"http://example.com/","keywords":null,"description":"鶫ねこ","author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"鶫ねこ"},"publisher":{"@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"C++之旅(A Tour of C++)读书笔记","description":"鶫ねこ","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/05/08/the-tour-of-cpp/"},"author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"tugumineko","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/05/08/the-tour-of-cpp/","wordCount":0,"datePublished":"2024-05-08T14:55:22.000Z","dateModified":"2024-05-13T14:48:02.845Z","articleSection":"cpp","keywords":"语法","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"鶫ねこ"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"tugumineko"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/cpp/","name":"cpp"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/05/08/the-tour-of-cpp/","name":"C++之旅(A Tour of C++)读书笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"tugumineko","url":"http://example.com/","keywords":null,"description":"鶫ねこ","author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"鶫ねこ"},"publisher":{"@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"C++之旅(A Tour of C++)读书笔记","description":"鶫ねこ","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/05/08/the-tour-of-cpp/"},"author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"tugumineko","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/05/08/the-tour-of-cpp/","wordCount":0,"datePublished":"2024-05-08T14:55:22.000Z","dateModified":"2024-05-14T14:43:18.094Z","articleSection":"cpp","keywords":"语法","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
