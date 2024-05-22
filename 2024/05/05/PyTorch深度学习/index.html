@@ -209,7 +209,7 @@ volantis.dark.push(switchNightMode);
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-05-04T16:38:25.000Z">
-<meta property="article:modified_time" content="2024-05-06T08:37:50.900Z">
+<meta property="article:modified_time" content="2024-05-22T13:32:52.860Z">
 <meta property="article:author" content="tugumineko">
 <meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary">
@@ -2504,7 +2504,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1716358120444),
+    lastupdate: new Date(1716384822697),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2920,13 +2920,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.2k 字</p>
+      <p>字数：1.9k 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：4 分钟</p>
+      <p>时长：7 分钟</p>
     </a>
   </div>
 
@@ -3002,7 +3002,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <blockquote>
 <p>架构：每个数据与不同权重相乘后加和，加上偏差后激活再将结果传入下一个神经网络。</p>
 </blockquote>
-<p><img src="https://s2.loli.net/2024/05/05/DrZSv46V7Fg5YUy.png" class="lazyload" data-srcset="https://s2.loli.net/2024/05/05/DrZSv46V7Fg5YUy.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="神经网络架构概述.png" title="神经网络架构概述"></p>
+<p><img src="https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//DrZSv46V7Fg5YUy.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//DrZSv46V7Fg5YUy.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="神经网络架构概述.png" title="神经网络架构概述"></p>
 <p>构建一个神经网络需要下面五个步骤：</p>
 <ol>
 <li>准备数据</li>
@@ -3037,7 +3037,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ol>
 </li>
 </ol>
-<p><img src="https://s2.loli.net/2024/05/05/xaJj2duzk6P9gSV.png" class="lazyload" data-srcset="https://s2.loli.net/2024/05/05/xaJj2duzk6P9gSV.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="LeNet-5.png" title="LeNet-5"></p>
+<p><img src="https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//xaJj2duzk6P9gSV.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//xaJj2duzk6P9gSV.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="LeNet-5.png" title="LeNet-5"></p>
 <ol>
 <li>卷积层(Convolutions):提取特征</li>
 <li>池化层(Subsampling):将特征提取到最突出的元素</li>
@@ -3076,8 +3076,7 @@ PIL图像：以像素数组的形式保存，每个像素点数字范围为0~1�
 <h3 id="定义模型">定义模型</h3>
 <h4 id="特征提取">特征提取</h4>
 <ol>
-<li>
-<p>卷积：将矩阵和一组权重相乘，生成一个新的二维数组</p>
+<li>卷积：将矩阵和一组权重相乘，生成一个新的二维数组
 <ol>
 <li>卷积核(kernel),对某个局部的加权求和，决定了权重矩阵</li>
 <li>特征图(feature map),一个特征图对应一个图像的一个特征</li>
@@ -3086,12 +3085,22 @@ PIL图像：以像素数组的形式保存，每个像素点数字范围为0~1�
 <li>输入的特征图也可以是多个，例如RGB</li>
 </ol>
 </li>
-<li>
-<p>池化：<br>
-逐渐缩小表示空间的大小以提高计算效率<br>
-会单独对每个特征图进行运算<br>
-常用方法：最大池化</p>
+<li>池化：
+<ol>
+<li>逐渐缩小表示空间的大小以提高计算效率</li>
+<li>会单独对每个特征图进行运算</li>
+<li>常用方法：最大池化</li>
+</ol>
 </li>
+<li>全连接层：
+<ol>
+<li>对前面卷积层提取的特征进行整合，以进行最终的分类决策</li>
+<li>将前一层的所有神经元与当前层的每个神经元相连接，从而使网络能够理解并学习到图像更加复杂的特征</li>
+</ol>
+</li>
+</ol>
+<hr>
+<ol>
 <li>
 <p>定义继承自Module父类的类CNN<br>
 建立方法__init__</p>
@@ -3102,22 +3111,64 @@ PIL图像：以像素数组的形式保存，每个像素点数字范围为0~1�
 (机器学习的关键是更新每次卷积的权重)</p>
 <ol>
 <li>激活函数，做出是否要传递信息的决定门<br>
-<img src="https://s2.loli.net/2024/05/05/1dAQfRMghx6oK5T.png" class="lazyload" data-srcset="https://s2.loli.net/2024/05/05/1dAQfRMghx6oK5T.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="激活函数.jpg" title="激活函数"><br>
-<img src="https://s2.loli.net/2024/05/05/pHeQAS14CtOoE63.png" class="lazyload" data-srcset="https://s2.loli.net/2024/05/05/pHeQAS14CtOoE63.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Relu.jpg" title="Relu"></li>
+<img src="https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//1dAQfRMghx6oK5T.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//1dAQfRMghx6oK5T.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="激活函数.jpg" title="激活函数"><br>
+<img src="https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//pHeQAS14CtOoE63.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//pHeQAS14CtOoE63.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Relu.jpg" title="Relu"></li>
 </ol>
 </li>
 <li>
 <p>第一个池化层将特征图分割成2X2大小的区域，并从每个区域中取最大值(最大池化)<br>
-stride(2,2)是池化操作的步长<br>
-<img src="https://s2.loli.net/2024/05/05/q5yWfrtNTonbuwP.png" class="lazyload" data-srcset="https://s2.loli.net/2024/05/05/q5yWfrtNTonbuwP.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="最大池化.jpg" title="最大池化"><br>
+stride(2,2)是池化操作的步长</p>
+<blockquote>
+<p>这意味着池化窗口每次移动两个像素，有效减少了特征图的维度</p>
+</blockquote>
+<p><img src="https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//q5yWfrtNTonbuwP.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//q5yWfrtNTonbuwP.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="最大池化.jpg" title="最大池化"><br>
 作用：</p>
 <ul>
 <li>保留了最大特征的同时减少了尺寸</li>
 <li>减少过拟合，减少泛化能力</li>
 </ul>
 </li>
+<li>
+<p>第二层卷积层的作用是进一步提取池化层的特征，需要注意的是Conv2d的第一个参数由<strong>n_channels</strong>变成了<strong>32</strong>，这是因为这里的输入是第一层卷积层的输入</p>
+</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.nn <span class="keyword">import</span> Module</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CNN</span>(<span class="title class_ inherited__">Module</span>):</span><br><span class="line">    <span class="comment"># 定义模型属性</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, n_channels</span>):</span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        <span class="comment"># 输入到卷积层 1</span></span><br><span class="line">        self.hidden1 = Conv2d(n_channels, <span class="number">32</span>, (<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line">        kaiming_uniform_(self.hidden1.weight, nonlinearity=<span class="string">&#x27;relu&#x27;</span>)</span><br><span class="line">        self.act1 = ReLU()</span><br><span class="line">        <span class="comment"># 池化层 1</span></span><br><span class="line">        self.pool1 = MaxPool2d((<span class="number">2</span>,<span class="number">2</span>), stride=(<span class="number">2</span>,<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这意味着我们从32个3x3的卷积核中进行操作，并将从每个位置的3x3区域提取特征，并输出32个新的特征通道</p>
+</blockquote>
+<ol start="5">
+<li>第二层池化的作用：
+<ul>
+<li>通过减少特征图的空间尺寸，来降低后续网络层的计算负载</li>
+<li>在一定程度上增强模型的抗噪声能力</li>
+</ul>
+</li>
+</ol>
+<p><strong>通过这两层的连续操作，我们的CNN能够逐渐抽象图像内容，将原始输入转化为高级特征，从而对后续的分类或其他任务提供必要的信息</strong><br>
+<img src="https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//202405221958292.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//202405221958292.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="全连接层.jpg" title="全连接层"></p>
+<ol start="6">
+<li>
+<p>第一个全连接层将5x5x32个线索转化为100个有意义的概念</p>
+<ul>
+<li>使用kaiming_uniform来初始化这个处理中心的连接权重</li>
+<li>RELU激活函数引入了一种非线性的思考方式，让神经网络捕捉到更加复杂的模式和联系</li>
+</ul>
+</li>
+<li>
+<p>第二个全连接层将提炼出的100个概念进一步简化为10个最终的决策，每一个决策都对应着一个手写数字的类别（0~9）</p>
+<ol>
+<li>使用xavier_uniform_的方法来初始化每个连接的权重
+<ul>
+<li>使神经网络的网既不是太紧也不是太松–权重适中，柔韧性与强度兼得</li>
+<li>如果权重过大–神经网络僵硬，难以捕捉细微的特征</li>
+<li>如果权重过小–神经网络松散，容易错过重要的模式</li>
+<li>xavier_uniform_通过初始化权重为一个均匀分布的值，帮助神经网络一开始时就保持了一种平衡状态</li>
+</ul>
+</li>
+<li>Softmax为激活函数，它将决策中心的输出转换为概率分布。使神经网络能够根据概率最高的类别来做出最终的预测</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.nn <span class="keyword">import</span> Module</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CNN</span>(<span class="title class_ inherited__">Module</span>):</span><br><span class="line">    <span class="comment"># 定义模型属性</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, n_channels</span>):</span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        <span class="comment"># 输入到卷积层 1</span></span><br><span class="line">        self.hidden1 = Conv2d(n_channels, <span class="number">32</span>, (<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line">        kaiming_uniform_(self.hidden1.weight, nonlinearity=<span class="string">&#x27;relu&#x27;</span>)</span><br><span class="line">        self.act1 = ReLU()</span><br><span class="line">        <span class="comment"># 池化层 1</span></span><br><span class="line">        self.pool1 = MaxPool2d((<span class="number">2</span>,<span class="number">2</span>), stride=(<span class="number">2</span>,<span class="number">2</span>))</span><br><span class="line">        <span class="comment"># 卷积层 2</span></span><br><span class="line">        self.hidden2 = Conv2d(<span class="number">32</span>, <span class="number">32</span>, (<span class="number">3</span>, <span class="number">3</span>))</span><br><span class="line">        kaiming_uniform_(self.hidden2.weight, nonlinearity=<span class="string">&#x27;relu&#x27;</span>)</span><br><span class="line">        self.act2 = ReLU()</span><br><span class="line">        <span class="comment"># 池化层 2 </span></span><br><span class="line">        self.pool2 = MaxPool2d((<span class="number">2</span>,<span class="number">2</span>), stride(<span class="number">2</span>,<span class="number">2</span>))</span><br><span class="line">        <span class="comment"># 全连接层 1</span></span><br><span class="line">        self.hidden3 = Linear(<span class="number">5</span>*<span class="number">5</span>*<span class="number">32</span>, <span class="number">100</span>)</span><br><span class="line">        kaiming_uniform_(self.hidden3.weight, nonlinearity=<span class="string">&#x27;relu&#x27;</span>)</span><br><span class="line">        self.act3 = RELU()</span><br><span class="line">        <span class="comment"># 全连接层 2</span></span><br><span class="line">        self.hidden4 = Linear(<span class="number">100</span>, <span class="number">10</span>)</span><br><span class="line">        xavier_uniform_(self.hidden4.weight)</span><br><span class="line">        self.act4 = Softmax(dim=<span class="number">1</span>)</span><br><span class="line">        </span><br></pre></td></tr></table></figure>
 
   </div>
   
@@ -3142,10 +3193,10 @@ stride(2,2)是池化操作的步长<br>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-05-06T16:37:50+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-05-22T21:32:52+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2024年5月6日</p>
+    <p>更新于：2024年5月22日</p>
   </a>
 </div>
 
@@ -4198,7 +4249,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   <script>
-  let imgs = ["https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//14.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//21.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//6.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//23.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//4.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//13.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//1.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//10.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//24.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//12.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//20.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//19.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//18.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//3.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//11 .jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//9.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//16.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//2.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//7.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//5.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//22.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//15.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//17.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//8.jpg"];
+  let imgs = ["https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//19.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//5.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//1.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//21.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//23.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//3.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//11 .jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//14.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//10.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//18.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//13.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//17.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//20.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//7.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//2.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//8.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//9.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//4.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//15.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//6.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//24.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//12.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//22.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//16.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4431,7 +4482,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"鶫ねこ"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"tugumineko"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/python/","name":"python"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/05/05/PyTorch深度学习/","name":"PyTorch深度学习"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"tugumineko","url":"http://example.com/","keywords":null,"description":"鶫ねこ","author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"鶫ねこ"},"publisher":{"@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"PyTorch深度学习","description":"鶫ねこ","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/05/05/PyTorch%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"},"author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"tugumineko","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/05/05/PyTorch%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/","wordCount":0,"datePublished":"2024-05-04T16:38:25.000Z","dateModified":"2024-05-06T08:37:50.900Z","articleSection":"python","keywords":"深度学习","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"鶫ねこ"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"tugumineko"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/python/","name":"python"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/05/05/PyTorch深度学习/","name":"PyTorch深度学习"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"tugumineko","url":"http://example.com/","keywords":null,"description":"鶫ねこ","author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"鶫ねこ"},"publisher":{"@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"PyTorch深度学习","description":"鶫ねこ","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/05/05/PyTorch%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"},"author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"tugumineko","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/05/05/PyTorch%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/","wordCount":0,"datePublished":"2024-05-04T16:38:25.000Z","dateModified":"2024-05-22T13:32:52.860Z","articleSection":"python","keywords":"深度学习","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
