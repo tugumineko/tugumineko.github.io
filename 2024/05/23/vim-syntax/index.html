@@ -209,7 +209,7 @@ volantis.dark.push(switchNightMode);
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-05-23T11:44:41.000Z">
-<meta property="article:modified_time" content="2024-05-23T12:00:41.686Z">
+<meta property="article:modified_time" content="2024-05-24T13:54:25.138Z">
 <meta property="article:author" content="tugumineko">
 <meta property="article:tag" content="语法">
 <meta property="article:tag" content="文本编辑器">
@@ -2505,7 +2505,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1716472598465),
+    lastupdate: new Date(1716558904491),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2935,13 +2935,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：809 字</p>
+      <p>字数：1.5k 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：5 分钟</p>
+      <p>时长：9 分钟</p>
     </a>
   </div>
 
@@ -3190,6 +3190,72 @@ You can either use the long or the short option name.</p>
 Press &lt;TAB&gt; to use one completion.</p>
 </li>
 </ol>
+<h2 id="vimrc">VIMRC</h2>
+<p>&quot; Comments in Vimscript start with a `&quot;`.</p>
+<p>&quot; If you open this file in Vim, it’ll be syntax highlighted for you.</p>
+<p>&quot; Vim is based on Vi. Setting `nocompatible` switches from the default<br>
+&quot; Vi-compatibility mode and enables useful Vim functionality. This<br>
+&quot; configuration option turns out not to be necessary for the file named<br>
+&quot; ‘~/.vimrc’, because Vim automatically enters nocompatible mode if that file<br>
+&quot; is present. But we’re including it here just in case this config file is<br>
+&quot; loaded some other way (e.g. saved as `foo`, and then Vim started with<br>
+&quot; `vim -u foo`).<br>
+<code>set nocompatible</code></p>
+<p>&quot; Turn on syntax highlighting.<br>
+<code>syntax on</code></p>
+<p>&quot; Disable the default Vim startup message.<br>
+<code>set shortmess+=I</code></p>
+<p>&quot; Show line numbers.<br>
+<code>set number</code></p>
+<p>&quot; This enables relative line numbering mode. With both number and<br>
+&quot; relativenumber enabled, the current line shows the true line number, while<br>
+&quot; all other lines (above and below) are numbered relative to the current line.<br>
+&quot; This is useful because you can tell, at a glance, what count is needed to<br>
+&quot; jump up or down to a particular line, by {count}k to go up or {count}j to go<br>
+&quot; down.<br>
+<code>set relativenumber</code></p>
+<p>&quot; Always show the status line at the bottom, even if you only have one window open.<br>
+<code>set laststatus=2</code></p>
+<p>&quot; The backspace key has slightly unintuitive behavior by default. For example,<br>
+&quot; by default, you can’t backspace before the insertion point set with ‘i’.<br>
+&quot; This configuration makes backspace behave more reasonably, in that you can<br>
+&quot; backspace over anything.<br>
+<code>set backspace=indent,eol,start</code></p>
+<p>&quot; By default, Vim doesn’t let you hide a buffer (i.e. have a buffer that isn’t<br>
+&quot; shown in any window) that has unsaved changes. This is to prevent you from &quot;<br>
+&quot; forgetting about unsaved changes and then quitting e.g. via <code>:qa!</code>. We find<br>
+&quot; hidden buffers helpful enough to disable this protection. See <code>:help hidden</code><br>
+&quot; for more information on this.<br>
+<code>set hidden</code></p>
+<p>&quot; This setting makes search case-insensitive when all characters in the string<br>
+&quot; being searched are lowercase. However, the search becomes case-sensitive if<br>
+&quot; it contains any capital letters. This makes searching more convenient.<br>
+<code>set ignorecase</code><br>
+<code>set smartcase</code></p>
+<p>&quot; Enable searching as you type, rather than waiting till you press enter.<br>
+<code>set incsearch</code></p>
+<p>&quot; Unbind some useless/annoying default key bindings.<br>
+<code>nmap Q \&lt;Nop&gt;</code> &quot; ‘Q’ in normal mode enters Ex\ mode. You almost never want this.</p>
+<p>&quot; Disable audible bell because it’s annoying.<br>
+<code>set noerrorbells visualbell t_vb=</code></p>
+<p>&quot; Enable mouse support. You should avoid relying on this too much, but it can<br>
+&quot; sometimes be convenient.<br>
+<code>set mouse+=a</code></p>
+<p>&quot; Try to prevent bad habits like using the arrow keys for movement. This is<br>
+&quot; not the only possible bad habit. For example, holding down the h/j/k/l keys<br>
+&quot; for movement, rather than using more efficient movement commands, is also a<br>
+&quot; bad habit. The former is enforceable through a .vimrc, while we don’t know<br>
+&quot; how to prevent the latter.<br>
+&quot; Do this in normal mode…<br>
+<code>nnoremap \&lt;Left&gt;  :echoe &quot;Use h&quot;\&lt;CR&gt;</code><br>
+<code>nnoremap \&lt;Right&gt; :echoe &quot;Use l&quot;\&lt;CR&gt;</code><br>
+<code>nnoremap \&lt;Up&gt;    :echoe &quot;Use k&quot;\&lt;CR&gt;</code><br>
+<code>nnoremap \&lt;Down&gt;  :echoe &quot;Use j&quot;\&lt;CR&gt;</code><br>
+&quot; …and in insert mode<br>
+<code>inoremap \&lt;Left&gt;  \&lt;ESC&gt;:echoe &quot;Use h&quot;\&lt;CR&gt;</code><br>
+<code>inoremap \&lt;Right&gt; \&lt;ESC&gt;:echoe &quot;Use l&quot;\&lt;CR&gt;</code><br>
+<code>inoremap \&lt;Up&gt;    \&lt;ESC&gt;:echoe &quot;Use k&quot;\&lt;CR&gt;</code><br>
+<code>inoremap \&lt;Down&gt;  \&lt;ESC&gt;:echoe &quot;Use j&quot;\&lt;CR&gt;</code></p>
 
   </div>
   
@@ -3214,10 +3280,10 @@ Press &lt;TAB&gt; to use one completion.</p>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-05-23T20:00:41+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-05-24T21:54:25+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2024年5月23日</p>
+    <p>更新于：2024年5月24日</p>
   </a>
 </div>
 
@@ -3378,7 +3444,7 @@ value要满足BST的基本性质，priority用于满足堆的性质，用来实�
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vimtutor"><span class="toc-number">1.</span> <span class="toc-text">VIMTUTOR</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-1-summary"><span class="toc-number">1.1.</span> <span class="toc-text">Lesson 1 SUMMARY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-2-summary"><span class="toc-number">1.2.</span> <span class="toc-text">Lesson 2 SUMMARY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-3-summary"><span class="toc-number">1.3.</span> <span class="toc-text">Lesson 3 SUMMARY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-4-summary"><span class="toc-number">1.4.</span> <span class="toc-text">Lesson 4 SUMMARY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-5-summary"><span class="toc-number">1.5.</span> <span class="toc-text">Lesson 5 SUMMARY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-6-summary"><span class="toc-number">1.6.</span> <span class="toc-text">Lesson 6 SUMMARY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-7-summary"><span class="toc-number">1.7.</span> <span class="toc-text">Lesson 7 SUMMARY</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vimtutor"><span class="toc-number">1.</span> <span class="toc-text">VIMTUTOR</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-1-summary"><span class="toc-number">1.1.</span> <span class="toc-text">Lesson 1 SUMMARY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-2-summary"><span class="toc-number">1.2.</span> <span class="toc-text">Lesson 2 SUMMARY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-3-summary"><span class="toc-number">1.3.</span> <span class="toc-text">Lesson 3 SUMMARY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-4-summary"><span class="toc-number">1.4.</span> <span class="toc-text">Lesson 4 SUMMARY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-5-summary"><span class="toc-number">1.5.</span> <span class="toc-text">Lesson 5 SUMMARY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-6-summary"><span class="toc-number">1.6.</span> <span class="toc-text">Lesson 6 SUMMARY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-7-summary"><span class="toc-number">1.7.</span> <span class="toc-text">Lesson 7 SUMMARY</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vimrc"><span class="toc-number">2.</span> <span class="toc-text">VIMRC</span></a></li></ol>
   </div>
 </section>
 
@@ -4267,7 +4333,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   <script>
-  let imgs = ["https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//18.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//11 .jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//1.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//16.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//7.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//2.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//22.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//6.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//8.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//24.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//20.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//13.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//14.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//4.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//12.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//17.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//5.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//10.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//15.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//3.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//19.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//23.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//9.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//21.jpg"];
+  let imgs = ["https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//4.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//12.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//13.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//19.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//24.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//7.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//10.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//5.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//3.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//17.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//6.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//23.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//14.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//8.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//20.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//22.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//15.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//21.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//11 .jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//16.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//2.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//9.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//1.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//18.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4500,7 +4566,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"鶫ねこ"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"tugumineko"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/vim/","name":"vim"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/05/23/vim-syntax/","name":"vim-syntax"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"tugumineko","url":"http://example.com/","keywords":null,"description":"鶫ねこ","author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"鶫ねこ"},"publisher":{"@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"vim-syntax","description":"鶫ねこ","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/05/23/vim-syntax/"},"author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"tugumineko","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/05/23/vim-syntax/","wordCount":0,"datePublished":"2024-05-23T11:44:41.000Z","dateModified":"2024-05-23T12:00:41.686Z","articleSection":"vim","keywords":"语法,文本编辑器","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"鶫ねこ"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"tugumineko"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/vim/","name":"vim"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/05/23/vim-syntax/","name":"vim-syntax"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"tugumineko","url":"http://example.com/","keywords":null,"description":"鶫ねこ","author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"鶫ねこ"},"publisher":{"@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"vim-syntax","description":"鶫ねこ","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/05/23/vim-syntax/"},"author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"tugumineko","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/05/23/vim-syntax/","wordCount":0,"datePublished":"2024-05-23T11:44:41.000Z","dateModified":"2024-05-24T13:54:25.138Z","articleSection":"vim","keywords":"语法,文本编辑器","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
