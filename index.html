@@ -2501,7 +2501,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1716624980092),
+    lastupdate: new Date(1716910470008),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2926,9 +2926,147 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
         
+          
+        
+          
+        
       
     
     
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/05/28/user-malloc/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="tugumineko">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="tugumineko">
+    <meta itemprop="description" content="鶫ねこ">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2024/05/28/user-malloc/"  itemprop="url">
+        用户态内存分配器合集
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        内存的分配和释放在堆(Heap)上完成
+
+void * ptr = malloc (size)
+free(ptr)
+
+Stack分配是连续的，因为不需要管理。
+Heap是按照size大小分配的，不是连续的。
+1234567int* a1 = malloc (1000 *sizeof(int));int* a2 = malloc (100 *sizeof(int));int b[1000];i...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2024-05-28T20:36:26+08:00">2024-05-28</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/C/">C</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/C/" itemprop="url"><span itemprop="name">C</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2024/05/28/user-malloc/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/05/26/diffusion-model/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="tugumineko">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="tugumineko">
+    <meta itemprop="description" content="鶫ねこ">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2024/05/26/diffusion-model/"  itemprop="url">
+        扩散模型 - Diffusion Model
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        引入
+Diffusion Model是如何运作的
+
+就像把石头雕刻成雕塑，DiffusionModel是将一张充满噪声（noise）的图片不断Denoise最后生成图片的过程
+
+![](https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//DDPM (v711)_01.png)
+
+Denoise模组内部实际做的事情
+
+在遇到一个图片的...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2024-05-26T14:10:13+08:00">2024-05-26</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2024/05/26/diffusion-model/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
       
         
           <div class='post-wrapper'>
@@ -3518,128 +3656,24 @@ Heading level 2
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/23/素晴らしき日々/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="tugumineko">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="tugumineko">
-    <meta itemprop="description" content="鶫ねこ">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/23/%E7%B4%A0%E6%99%B4%E3%82%89%E3%81%97%E3%81%8D%E6%97%A5%E3%80%85/"  itemprop="url">
-        素晴らしき日々～不連続存在～
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        世界是没有意义的。婴儿哭着来到这个世界,又不可避免地注定死亡。人的奋斗，人的情感，人的财产，人的选择对于这一切毫无意义。因此，我们不知道死亡的意义，我们无比惧怕死亡，可是无论是化身救世主，还是试图走到世界的尽头与亡者相见，死亡终会到来，我们无法愿终。世界上没有救世主，人类没有意义，世界毫无意义。
-世界是有界限的。因为万物皆生，一切有限，终将回归与此。水天一色，天空回转，不可到达终点。世上没有...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-12-23T11:36:27+08:00">2023-12-23</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/12/23/%E7%B4%A0%E6%99%B4%E3%82%89%E3%81%97%E3%81%8D%E6%97%A5%E3%80%85/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2020/04/12/高雅创作/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="tugumineko">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="tugumineko">
-    <meta itemprop="description" content="鶫ねこ">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/04/12/%E9%AB%98%E9%9B%85%E5%88%9B%E4%BD%9C/"  itemprop="url">
-        高雅创作
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>我上初一的时候，有个女生从别的班级转来，她属于话题性人物，很多男生女生都会偷偷的讨论她…正好她的座位在我前面，本人那时候就是完全的小孩子性格，<br>
-没事喜欢和朋友追逐打闹之类的，在男女之事完全就没有啥概念，她个性开朗，又喜欢开玩笑，一来二去，我也慢慢的和她关系熟络了起来…<br>
-我和她都是会上晚自习的，每次晚自习的时候，她都会做到我边上，我那时候是真的单纯，长相也是那种可爱型的…<br>
-她很喜欢跟我开玩笑，一开始我就是把她当作男生一样的相处，她学习也很好，大多数考试，我都会把自己不会做的题目写在纸上丢给她，她都会帮我写了再传给我。<br>
-我还记得她经常会忽然跳到我背上，双臂搭载我的脖子上，说实话，我再怎么单纯也有点不好意思的感觉，只能极力隐藏尴尬，继续和她开玩笑</p>
-<p>她长得也是萝莉型的，身材苗条，但是胸部…一马平川…丸子头，功课好，画画好，之前也谈过恋爱，不过我那时候根本对她的感情生活没啥兴趣，还是朋友告诉我的<br>
-每天晚自习，我都和她不停的开玩笑聊天，玩魔方…下五指琪，慢慢的我就感觉我们越来越亲密，她会开始时不时的用手捏我的脸，玩魔方的时候也会用她的👋抓着我的手教我…<br>
-那时候我是真的单纯，不瞒大家，我那时候还不会打飞机…也不知道男女之间的事情，甚至连大姨妈这类的我都不知道，每天就是和同学打打闹闹…<br>
-也从来没有和那些所谓的流氓混混有过任何接触…<br>
-有一天晚上晚自习，她坐在我边上，我们正在嬉戏打闹…她忽然用手把我的脸颊抓起来，然后竟然在安静的教室里亲了我的嘴唇…我整个人都直了…感觉自己要飞升…</p>
-<p>她的五官漂亮，兔牙，反正可爱…在我呆愣中她也不说话直接把头转过去，也不知道在想什么，不过接下来，她的手抓着我的手十指相扣…我紧张的手心全是汗…真的是窘态百出…</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2020-04-12T00:00:00+08:00">2020-04-12</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/04/12/%E9%AB%98%E9%9B%85%E5%88%9B%E4%BD%9C/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
+    
+      <br>
+      <div class="prev-next">
+        
+        <p class="current">
+          1 / 2
+        </p>
+        
+          <a class="next" rel="next" href="/page/2/">
+            <section class="post next white-box shadow floatable blur">
+              &nbsp;下一页&nbsp;<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </section>
+          </a>
+        
+      </div>
     
   
 
@@ -3732,6 +3766,11 @@ Heading level 2
       <ul class="entry navigation">
         
           <li><a class="flat-box"
+            title="/categories/C/" href="/categories/C/"
+            active-action="action-categoriesC"
+            ><div class='name'>C</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/cpp/" href="/categories/cpp/"
             active-action="action-categoriescpp"
             ><div class='name'>cpp</div><div class='badge'>(2)</div></a></li>
@@ -3774,7 +3813,7 @@ Heading level 2
 
 
     <div class='content'>
-      <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" style="font-size: 14px; color: #999">数字图像处理</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 14px; color: #999">数学</a> <a href="/tags/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 14px; color: #999">文本编辑器</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">深度学习</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 19px; color: #777">算法</a> <a href="/tags/%E8%AF%AD%E6%B3%95/" style="font-size: 24px; color: #555">语法</a> <a href="/tags/%E9%BB%84%E6%B2%B9/" style="font-size: 14px; color: #999">黄油</a>
+      <a href="/tags/OS/" style="font-size: 14px; color: #999">OS</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" style="font-size: 14px; color: #999">数字图像处理</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 14px; color: #999">数学</a> <a href="/tags/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 14px; color: #999">文本编辑器</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 19px; color: #777">深度学习</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 19px; color: #777">算法</a> <a href="/tags/%E8%AF%AD%E6%B3%95/" style="font-size: 24px; color: #555">语法</a> <a href="/tags/%E9%BB%84%E6%B2%B9/" style="font-size: 14px; color: #999">黄油</a>
     </div>
   </section>
 
@@ -4670,7 +4709,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   <script>
-  let imgs = ["https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//24.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//16.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//8.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//18.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//7.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//20.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//1.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//11 .jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//12.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//17.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//23.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//6.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//14.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//5.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//9.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//13.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//19.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//15.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//3.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//10.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//4.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//21.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//2.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//22.jpg"];
+  let imgs = ["https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//8.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//18.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//9.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//23.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//12.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//15.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//24.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//13.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//16.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//3.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//14.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//7.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//5.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//2.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//20.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//6.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//11 .jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//1.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//22.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//21.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//19.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//17.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//10.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//4.jpg"];
   let index = 0;
   let IntervalParallax = null;
 

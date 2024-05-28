@@ -209,7 +209,7 @@ volantis.dark.push(switchNightMode);
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-05-23T11:44:41.000Z">
-<meta property="article:modified_time" content="2024-05-25T02:37:43.126Z">
+<meta property="article:modified_time" content="2024-05-28T12:39:50.676Z">
 <meta property="article:author" content="tugumineko">
 <meta property="article:tag" content="语法">
 <meta property="article:tag" content="文本编辑器">
@@ -2505,7 +2505,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1716624980092),
+    lastupdate: new Date(1716910470008),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2935,7 +2935,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.5k 字</p>
+      <p>字数：1.6k 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -3256,6 +3256,35 @@ Press &lt;TAB&gt; to use one completion.</p>
 <code>inoremap &lt;Right&gt; &lt;ESC&gt;:echoe &quot;Use l&quot;&lt;CR&gt;</code><br>
 <code>inoremap &lt;Up&gt;    &lt;ESC&gt;:echoe &quot;Use k&quot;&lt;CR&gt;</code><br>
 <code>inoremap &lt;Down&gt;  &lt;ESC&gt;:echoe &quot;Use j&quot;&lt;CR&gt;</code></p>
+<h2 id="vim进阶">Vim进阶</h2>
+<h3 id="搜索和替换">搜索和替换</h3>
+<p><code>:s</code>(替换命令)</p>
+<ul>
+<li><code>%s/foo/bar/g</code><br>
+- 在整个文件中将foo全局替换成bar</li>
+<li><code>%s/\[.*\](\(.*\))/\1/g</code><br>
+- 将有命名的<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi>a</mi><mi>r</mi><mi>k</mi><mi>d</mi><mi>o</mi><mi>w</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">Markdown</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault">d</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault">n</span></span></span></span>链接替换成简单<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mi>R</mi><mi>L</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">URLs</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault">L</span><span class="mord mathdefault">s</span></span></span></span></li>
+</ul>
+<h3 id="多窗口">多窗口</h3>
+<ul>
+<li>用<code>:sp</code>/<code>:vsp</code>来分割窗口</li>
+<li>同一个缓存可以在多个窗口中显示</li>
+<li>用<code>&lt;c-w&gt;+(hjkl)</code>切换窗口</li>
+</ul>
+<h3 id="宏">宏</h3>
+<ul>
+<li><code>q&#123;字符&#125;</code>来开始在寄存器<code>&#123;字符&#125;</code>中录制宏</li>
+<li><code>q</code>停止录制</li>
+<li><code>@&#123;字符&#125;</code>重放宏</li>
+<li>宏的执行错误会停止</li>
+<li><code>&#123;计数&#125;@&#123;字符&#125;</code>执行一个宏{计数}次</li>
+<li>宏可以递归
+<ul>
+<li>首先用<code>q&#123;字符&#125;q</code>清除宏</li>
+<li>录制该宏，用<code>@&#123;字符&#125;</code>来递归调用该宏（在录制完成之前不会有任何操作）</li>
+</ul>
+</li>
+</ul>
 
   </div>
   
@@ -3280,10 +3309,10 @@ Press &lt;TAB&gt; to use one completion.</p>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-05-25T10:37:43+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-05-28T20:39:50+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2024年5月25日</p>
+    <p>更新于：2024年5月28日</p>
   </a>
 </div>
 
@@ -3455,7 +3484,7 @@ value要满足BST的基本性质，priority用于满足堆的性质，用来实�
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vimtutor"><span class="toc-number">1.</span> <span class="toc-text">VIMTUTOR</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-1-summary"><span class="toc-number">1.1.</span> <span class="toc-text">Lesson 1 SUMMARY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-2-summary"><span class="toc-number">1.2.</span> <span class="toc-text">Lesson 2 SUMMARY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-3-summary"><span class="toc-number">1.3.</span> <span class="toc-text">Lesson 3 SUMMARY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-4-summary"><span class="toc-number">1.4.</span> <span class="toc-text">Lesson 4 SUMMARY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-5-summary"><span class="toc-number">1.5.</span> <span class="toc-text">Lesson 5 SUMMARY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-6-summary"><span class="toc-number">1.6.</span> <span class="toc-text">Lesson 6 SUMMARY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-7-summary"><span class="toc-number">1.7.</span> <span class="toc-text">Lesson 7 SUMMARY</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vimrc"><span class="toc-number">2.</span> <span class="toc-text">VIMRC</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vimtutor"><span class="toc-number">1.</span> <span class="toc-text">VIMTUTOR</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-1-summary"><span class="toc-number">1.1.</span> <span class="toc-text">Lesson 1 SUMMARY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-2-summary"><span class="toc-number">1.2.</span> <span class="toc-text">Lesson 2 SUMMARY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-3-summary"><span class="toc-number">1.3.</span> <span class="toc-text">Lesson 3 SUMMARY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-4-summary"><span class="toc-number">1.4.</span> <span class="toc-text">Lesson 4 SUMMARY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-5-summary"><span class="toc-number">1.5.</span> <span class="toc-text">Lesson 5 SUMMARY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-6-summary"><span class="toc-number">1.6.</span> <span class="toc-text">Lesson 6 SUMMARY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lesson-7-summary"><span class="toc-number">1.7.</span> <span class="toc-text">Lesson 7 SUMMARY</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vimrc"><span class="toc-number">2.</span> <span class="toc-text">VIMRC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vim%E8%BF%9B%E9%98%B6"><span class="toc-number">3.</span> <span class="toc-text">Vim进阶</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E5%92%8C%E6%9B%BF%E6%8D%A2"><span class="toc-number">3.1.</span> <span class="toc-text">搜索和替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%AA%97%E5%8F%A3"><span class="toc-number">3.2.</span> <span class="toc-text">多窗口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8F"><span class="toc-number">3.3.</span> <span class="toc-text">宏</span></a></li></ol></li></ol>
   </div>
 </section>
 
@@ -4344,7 +4373,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   <script>
-  let imgs = ["https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//24.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//16.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//8.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//18.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//7.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//20.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//1.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//11 .jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//12.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//17.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//23.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//6.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//14.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//5.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//9.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//13.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//19.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//15.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//3.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//10.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//4.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//21.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//2.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//22.jpg"];
+  let imgs = ["https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//8.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//18.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//9.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//23.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//12.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//15.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//24.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//13.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//16.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//3.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//14.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//7.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//5.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//2.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//20.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//6.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//11 .jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//1.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//22.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//21.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//19.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//17.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//10.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//4.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4577,7 +4606,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"鶫ねこ"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"tugumineko"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/vim/","name":"vim"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/05/23/vim-syntax/","name":"vim-syntax"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"tugumineko","url":"http://example.com/","keywords":null,"description":"鶫ねこ","author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"鶫ねこ"},"publisher":{"@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"vim-syntax","description":"鶫ねこ","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/05/23/vim-syntax/"},"author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"tugumineko","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/05/23/vim-syntax/","wordCount":0,"datePublished":"2024-05-23T11:44:41.000Z","dateModified":"2024-05-25T02:37:43.126Z","articleSection":"vim","keywords":"语法,文本编辑器","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"鶫ねこ"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"tugumineko"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/vim/","name":"vim"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/05/23/vim-syntax/","name":"vim-syntax"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"tugumineko","url":"http://example.com/","keywords":null,"description":"鶫ねこ","author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"鶫ねこ"},"publisher":{"@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"vim-syntax","description":"鶫ねこ","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/05/23/vim-syntax/"},"author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"tugumineko","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/05/23/vim-syntax/","wordCount":0,"datePublished":"2024-05-23T11:44:41.000Z","dateModified":"2024-05-28T12:39:50.676Z","articleSection":"vim","keywords":"语法,文本编辑器","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

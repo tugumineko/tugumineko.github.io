@@ -5,8 +5,8 @@
   <meta name="Volantis" content="6.0.0-alpha.1">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  
-  <link rel="canonical" href="http://example.com/2024/05/08/the-tour-of-cpp/"/>
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="http://example.com/archives/page/2/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -197,21 +197,18 @@ volantis.dark.push(switchNightMode);
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>C++之旅(A Tour of C++)读书笔记 - tugumineko</title>
-  <meta name="keywords" content="语法,null">
+  <title>归档 - tugumineko</title>
+  <meta name="keywords" content="null">
   <meta desc name="description" content="鶫ねこ - tugumineko - tugumineko">
   
-<meta property="og:type" content="article">
-<meta property="og:title" content="C++之旅(A Tour of C++)读书笔记">
-<meta property="og:url" content="http://example.com/2024/05/08/the-tour-of-cpp/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="tugumineko">
+<meta property="og:url" content="http://example.com/archives/page/2/index.html">
 <meta property="og:site_name" content="tugumineko">
-<meta property="og:description" content="基础 程序  ISO C++标准中定义了两种实体：   核心语言特性.i.e.内置类型(char,int).循环(for,while) 标准库组件.i.e.容器(vector,map).输入输出操作(&lt;&lt;,getline)   C++是一种静态语言。这意味着，每一个实体(对象、值、名称和表达式等)被使用的那一刻，编译器必须知道其准确的类型。  1int main()&#123;&amp;#12">
+<meta property="og:description" content="鶫ねこ">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2024-05-08T14:55:22.000Z">
-<meta property="article:modified_time" content="2024-05-14T14:43:18.094Z">
 <meta property="article:author" content="tugumineko">
-<meta property="article:tag" content="语法">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2496,7 +2493,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <script>
   window.pdata={}
-  pdata.ispage=true;
+  pdata.ispage=false;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2823,7 +2820,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="l_cover">
   
     
-      <div class="cover-wrapper post dock" id='half'>
+      <div class="cover-wrapper  dock" id='half'>
         
   <div id="parallax-window"></div>
 
@@ -2892,618 +2889,213 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2024/05/08/the-tour-of-cpp/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="tugumineko">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="tugumineko">
-    <meta itemprop="description" content="鶫ねこ">
-  </span>
-  
-
-
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  <div class="article-meta" id="top">
-    
-    
-    
-      <h1 class="title" itemprop="name headline">
-        C++之旅(A Tour of C++)读书笔记
-      </h1>
-      <div class='new-meta-box'>
-        
-          
-            
-<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <a itemprop="url" class='author' target="_blank" href="https://github.com/tugumineko" rel="nofollow noopener">
-    <img itemprop="image" src="https://s2.loli.net/2024/05/05/fWJ73mnG5eSVpPj.jpg" class="lazyload" data-srcset="https://s2.loli.net/2024/05/05/fWJ73mnG5eSVpPj.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-    <p itemprop="name">鶫ねこ</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：4k 字</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：16 分钟</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-  
-  
-  
-  <div class='new-meta-item category'>
-    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/cpp/">cpp</a>
-    
-      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/cpp/" itemprop="url"><span itemprop="name">cpp</span></a>
-      </span>
-    
-  </div>
-  
-
-
-
-          
-        
-          
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-05-08T22:55:22+08:00">
-  <a class='notlink'>
-    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2024年5月8日</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-
-
-<div class="new-meta-item browse">
-  <a class='notlink'>
-    <p>
-      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="busuanzi_value_page_pv">
-        <i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i>
-      </span>
-        
-      <span>次浏览</span>
-    </p>
-  </a>
-</div>
-
-
-          
-        
-        <!-- Custom Files topMeta begin-->
-        
-        <!-- Custom Files topMeta end-->
-      </div>
-    
-  </div>
-
-
-  <div id="layoutHelper-page-plugins"></div>
-  <div id="post-body" itemprop="articleBody">
-    <h2 id="基础">基础</h2>
-<h3 id="程序">程序</h3>
-<ol>
-<li>ISO C++标准中定义了两种实体：</li>
-</ol>
-<ul>
-<li>核心语言特性.i.e.内置类型(char,int).循环(for,while)</li>
-<li>标准库组件.i.e.容器(vector,map).输入输出操作(&lt;&lt;,getline)</li>
-</ul>
-<ol start="2">
-<li>C++是一种静态语言。这意味着，每一个实体(对象、值、名称和表达式等)被使用的那一刻，编译器必须知道其准确的类型。</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int main()&#123;&#125;  //最小的cpp程序</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//import std; 是cpp20的特性</span><br><span class="line">#include&lt;iostream&gt;  //标准库组件</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    std::cout&lt;&lt;&quot;Hello, World!\n&quot;;  //标准库命名空间std::</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Hello, World!</p>
-<h3 id="函数">函数</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">double sqrt(double d);  //函数声明的时候可以包含参数的名称</span><br><span class="line">double s = sqrt(2);  //检测参数类型在必要的时候会发生隐式类型转换</span><br><span class="line">char&amp; String::operator[](int index);  //函数的类型是char&amp; String::(int),函数可以是类成员</span><br></pre></td></tr></table></figure>
-<h3 id="类型-变量和运算">类型、变量和运算</h3>
-<ol>
-<li><strong>unsigned</strong>一般用于位运算</li>
-<li>数字可以是浮点数或者整数：
-<ul>
-<li>浮点字面量含有小数点或者指数符号</li>
-<li><strong>0b</strong>二进制整数 //0b0101010<br>
-<strong>0x</strong>十六进制整数 //0x3f3f3f3f<br>
-<strong>0</strong>八进制整数 //0334</li>
-</ul>
-</li>
-<li>使用单引号(’)作位数字分隔符</li>
-</ol>
-<blockquote>
-<p>0x3.243F’6A88’85A3’08D3</p>
-</blockquote>
-<ol start="4">
-<li>初始化:
-<ul>
-<li><strong>=</strong> 的形式是C语言传统的形式，会发生隐式类型转换</li>
-<li><strong>{}</strong> 更通用，而且可以省略’=’,不会发生隐式类型转换</li>
-<li>常量被声明时必须被初始化，用户自定义类型可以在定义时被隐式初始化</li>
-<li>如果变量的类型可以从初始化符号中推导出来，就无需显式指定类型</li>
-<li>使用 <strong>auto</strong> 常用在泛型编程中，以避免书写冗长的类型名称及重复代码</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">double d1 = 2.3;</span><br><span class="line">double d2 &#123;2.3&#125;;</span><br><span class="line">double d3 = &#123;2.3&#125;;</span><br><span class="line">complex&lt;double&gt; z = 1;</span><br><span class="line">complex&lt;double&gt; z2 &#123;d1,d2&#125;;</span><br><span class="line">complex&lt;double&gt; z3 = &#123;d1,d2&#125;;</span><br><span class="line">vector&lt;int&gt; v &#123;1, 2, 3, 4, 5, 6&#125;;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">auto y = 3.14;</span><br><span class="line">auto z &#123;sqrt(y)&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="作用域和生命周期">作用域和生命周期</h3>
-<ol>
-<li>声明语句把一个名字引入作用域：
-<ul>
-<li><em>局部作用域</em>：在函数/匿名函数中定义的名字叫做<em>局部名字</em>(包括函数参数的名字)，以语句块({})结尾.</li>
-<li><em>类作用域</em>：不在函数、匿名函数或 <strong>enum class</strong> 中但在类的内部.</li>
-<li><em>命名空间作用域</em>：不是局部名字和类名字且在命名空间的内部.</li>
-</ul>
-</li>
-<li>生命周期：
-<ul>
-<li>对象必须先被构造（初始化）才能被使用，并且在退出作用域时被销毁。</li>
-<li>命名空间对象在程序结束时被销毁。</li>
-<li>对象成员的销毁时间点取决于所属对象的销毁时间点。</li>
-<li>一个用<strong>new</strong>创建的对象则可以持续生存，直到用<strong>delete</strong>将其销毁。</li>
-</ul>
-</li>
-</ol>
-<h3 id="常量">常量</h3>
-<ul>
-<li><strong>const</strong>
-<blockquote>
-<p>用来说明接口，可以用指针或者引用的方式传入参数而不用担心被改变<br>
-编译器负责强制执行 <strong>const</strong> 承诺<br>
-<strong>const</strong>声明的值可以在运行时计算</p>
-</blockquote>
-</li>
-<li><strong>constexpr</strong>
-<blockquote>
-<p>声明常量，在只读内存中，提高性能<br>
-<strong>constexpr</strong> 的值必须由编译器运算</p>
-</blockquote>
-</li>
-</ul>
-<div class="note success"><p>const double s1 = sum(v); //可行:允许在运行时运算</p></div>  
-<div class="note danger"><p>constexpr double s2 = sum(v);</p></div>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">double sum1(const double&amp;);</span><br><span class="line">double sum2(const vector&lt;double&gt;&amp;);</span><br><span class="line"></span><br><span class="line">vector&lt;double&gt; v &#123;1.2, 3.4, 5.6&#125;;</span><br><span class="line"></span><br><span class="line">const double s1 = sum1(1.0); //可行</span><br><span class="line">constexpr double s2 = sum1(1.0);  //不行</span><br><span class="line">constexpr double s3 = sum2(v); //不行</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>若要使函数在常量表达式(上文代码)中使用，这个函数必须被定义为 <strong>constexpr</strong> 或 <strong>consteval</strong></li>
-<li><strong>constexpr</strong> 函数
-<ul>
-<li>在输入非常量参数时，输出的不是常量表达式</li>
-<li>在输入常量参数时，输出的才是常量表达式</li>
-</ul>
-</li>
-<li><strong>consteval</strong> 函数可以让输入变量只能为常量表达式,即可以省略输入的常量表达式语法，还可以使输出为常量表达式。</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">constexpr double squre(double x)&#123;return x*x;&#125;</span><br><span class="line"></span><br><span class="line">constexpr double max1 = 1.4*squre(17) //可行，17为常量</span><br><span class="line">constexpr double max2 = 1.4*squre(var) //错误，var不是变量，所以返回值不是常量表达式</span><br><span class="line">const double max3 = 1.4*squre(var) //可行</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">consteval double square2(double x)&#123;return x*x;&#125;</span><br><span class="line"></span><br><span class="line">constexpr double max1 = 1.4*square2(17); //可行</span><br><span class="line">const double max2 = 1.4*square2(var); //错误，函数输入只能是常量表达式</span><br></pre></td></tr></table></figure>
-<p>总结</p>
-<blockquote>
-<p>这里讨论的有三个部分，函数的返回值类型（函数的声明），函数的输入参数类型，数据类型,均有两种写法，注意分辨</p>
-</blockquote>
-<blockquote>
-<p>函数的输入参数类型</p>
-<ul>
-<li>(数据类型 变量名):可以是变量，也可以是常量表达式</li>
-<li>(const 数据类型&amp; 变量名):函数不会修改他它的参数</li>
-</ul>
-</blockquote>
-<blockquote>
-<p>数据类型</p>
-<ul>
-<li>const:说明接口，意为“只读”</li>
-<li>cosntexpr:声明常量，赋值给他的只能是常量表达式</li>
-</ul>
-</blockquote>
-<blockquote>
-<p>函数的返回值类型</p>
-<ul>
-<li>constexpr:不指定输入类型，输入和输出的不变性一致</li>
-<li>consteval:输入和输出均为常量表达式</li>
-</ul>
-</blockquote>
-<div class="note warning"><p>注意const只具有接口性质，不是实际上的常量</p></div>
-<div class="note success"><p>函数的声明为常量(constexpr,consteval)可以实现C++的纯函数，即数学意义上的函数，不会有副作用，不能修改函数的输入参数</p></div>
-<h3 id="指针-数组和引用">指针、数组和引用</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">T a[n];  //数组</span><br><span class="line">T* p;  //指针</span><br><span class="line">T&amp; r;  //引用</span><br><span class="line"></span><br><span class="line">char* p = &amp;v[3];  //p指向数组v的第四个元素</span><br><span class="line">char x = *p;  //*p代表p指向的对象(*解引用)</span><br></pre></td></tr></table></figure>
-<div class="note warning"><p>注意*在定义时是定义指针,在指针前使用是解引用</p></div>
-<h3 id="空指针">空指针</h3>
-<p>空指针用nullptr表达，整数用0或NULL表达，在检验时是兼容的</p>
-<div class="note danger"><p>不能引用空指针</p></div>
-<h3 id="映射到硬件">映射到硬件</h3>
-<ul>
-<li>赋值:</li>
-</ul>
-<ol>
-<li>p和q同时指向y的地址</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int y = 3;</span><br><span class="line">int* p = &amp;x;</span><br><span class="line">int* q = &amp;y;</span><br><span class="line">p = q;  </span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>地址r1,r2不同，但是使不同的地址具有相同的值</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int x = 2;</span><br><span class="line">int y = 3;</span><br><span class="line">int&amp; r1 = x;</span><br><span class="line">int&amp; r2 = y;</span><br><span class="line">r1 = r2;</span><br></pre></td></tr></table></figure>
-<div class="note warning"><p>这里直接用引用的方法操作地址，没有使用指针</p></div>
-<ul>
-<li>初始化:没有未经初始化的引用</li>
-</ul>
-<p>使用 <strong>=</strong> 来初始化一个引用，注意这不是赋值</p>
-<pre><code>int&amp; r = x;  //r指代x
-</code></pre>
-<div class="note info"><p>补充在函数中引用的两种方法</p></div>
-<pre><code>void sort(vector&lt;double&gt;&amp;v)
-</code></pre>
-<p>若只想减少复制参数的开销，则：</p>
-<pre><code>double sum(const vector&lt;double&gt;&amp;)
-</code></pre>
-<p>这样就不能改变函数传入的参数</p>
-<h2 id="用户自定义类型">用户自定义类型</h2>
-<ul>
-<li>内置类型：用基本类型、<strong>const</strong>操作符和声明操作符构造出来的类型</li>
-<li>用户自定义类型：利用C++的抽象机制从其他类型构造出来的类型，包括类和枚举类型</li>
-</ul>
-<h3 id="结构-struct">结构 struct</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">struct Vector &#123;</span><br><span class="line">    double* elem;</span><br><span class="line">    int sz;        </span><br><span class="line">&#125;;</span><br><span class="line">        </span><br><span class="line">void vector_init(Vector&amp; v, int s)&#123;</span><br><span class="line">    v.elem = new double[s];</span><br><span class="line">    v.sz = s;    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">double read_and_sum(int s)</span><br><span class="line">    //从cin中读入s个整数，然后返回它们的和；假定s为正</span><br><span class="line">&#123;</span><br><span class="line">    Vector v;</span><br><span class="line">    vector_init(v,s);    </span><br><span class="line">    </span><br><span class="line">    for(int i=0;i!=s;i++)&#123;</span><br><span class="line">        std::cin&gt;&gt;v.elem[i];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    double sum = 0;</span><br><span class="line">    for(int i=0;i!=s;i++)&#123;</span><br><span class="line">        sum += v.elem[i];</span><br><span class="line">    &#125;</span><br><span class="line">    return sum;</span><br><span class="line">&#125;    </span><br></pre></td></tr></table></figure>
-<div class="note info"><p>访问结构体的成员有两种方式</p></div>
-<ul>
-<li>用 <strong>.</strong> 表示通过名字或者引用访问</li>
-<li>用 <strong>-&gt;</strong> 表示通过指针访问</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void f(Vector v, Vector&amp; rv, Vector* pv)&#123;</span><br><span class="line">    int i1 = v.sz;   //通过名字访问</span><br><span class="line">    int i2 = rv.sz;  //通过引用访问</span><br><span class="line">    int i3 = pv-&gt;sz; //通过指针访问     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="类-class">类 class</h3>
-<p>把类型的接口（所有代码都可使用的部分）与其实现（可访问外部不可访问的数据）分离开来的语言机制被称为<strong>类</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Vector &#123;</span><br><span class="line">public:</span><br><span class="line">    Vector(int s) :elem&#123; new double[s] &#125;, sz&#123; s &#125; &#123;&#125; //构造函数</span><br><span class="line">    double&amp; operator[](int i) &#123; return elem[i]; &#125;</span><br><span class="line">    int size() &#123; return sz; &#125;</span><br><span class="line">private:</span><br><span class="line">    double* elem;</span><br><span class="line">    int sz;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>构造函数在初始化类对象时一定会被调用</li>
-<li>错误处理暂时没有涉及</li>
-<li>思考通过<strong>new</strong>获取的<strong>double</strong>数组如何归还？</li>
-</ul>
-<div class="note info"><p><strong>struct</strong>和<strong>class</strong>没有本质区别，<strong>struct</strong>是默认public的</p></div>
-<h3 id="枚举">枚举</h3>
-<h4 id="enum-class">enum class</h4>
-<ul>
-<li>枚举类型用于表示少量整数数值的集合</li>
-<li>通过符号名称替代整数</li>
-<li>后面的<strong>class</strong>表示这个枚举类型是强类型，并且具备独立作用域</li>
-</ul>
-<blockquote>
-<p>不能混用不同类的枚举值<br>
-无法隐式地混用枚举类型与整数类型的值</p>
-</blockquote>
-<ul>
-<li>默认情况下，一个<strong>enum class</strong>定义仅定义赋值操作符、初始化函数及比较操作符，也可以自定义其他操作符</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">enum class Color &#123; red, blue, green &#125;;</span><br><span class="line">enum class Traffic_light &#123; green, yellow, red &#125;;</span><br><span class="line"></span><br><span class="line">Color col = Color::red;</span><br><span class="line">Traffic_light light = Traffic_light::red;</span><br><span class="line"></span><br><span class="line">Traffic_light* operator++(Traffic_light&amp; t) &#123;</span><br><span class="line">	using enum Traffic_light;</span><br><span class="line"></span><br><span class="line">	switch (t) &#123;</span><br><span class="line">	case green:return t = yellow;</span><br><span class="line">	case red:return t = green;</span><br><span class="line">	case green:return t = red;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<div class="note danger"><p>Color x = red<br>Color y = traffic_light::red<br></p></div>  
-<div class="note danger"><p>int i = Color::red<br>Color c = 2<br></p></div>  
-<div class="note success"><p>Color z = Color::red<br>auto z = Color::red<br></p></div>  
-<div class="note success"><p>Color x = Color{5}<br>Color y {6}<br></p></div>  
-<h4 id="enum">enum</h4>
-<ul>
-<li>普通<strong>enum</strong>中的枚举值进入与<strong>enum</strong>自身同级的作用域</li>
-<li>可以被隐式转换为整数数值</li>
-</ul>
-<div class="note warning"><p>用枚举表示一组命名的常量<br>为枚举定义操作来简化并保证安全<br>优先使用<strong>enum class</strong>以避免很多麻烦</p></div>  
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">enum Color &#123;red, green, blue&#125;;</span><br><span class="line">int col = red; //col &#123;0&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="联合-union">联合 union</h3>
-<ul>
-<li>实际占用空间就是它最大成员所占的空间，可以用来节约空间</li>
-<li>同一时刻，<strong>union</strong>中只能保存一个成员的值</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">enum class Type &#123; ptr, num &#125;;</span><br><span class="line"></span><br><span class="line">union Value &#123;</span><br><span class="line">	Node* p;</span><br><span class="line">	int i;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">struct Entry &#123;</span><br><span class="line">	string name;</span><br><span class="line">	Type t;</span><br><span class="line">	Value v;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void f(Entry* pe)</span><br><span class="line">&#123;</span><br><span class="line">	if (pe-&gt;t == Type::num)</span><br><span class="line">		cout &lt;&lt; pe-&gt;v.i;</span><br><span class="line">	//...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<div class="note warning"><p>避免使用“裸”<strong>union</strong>;将其与类型字段一起封装在一个类中</p></div>
-<div class="note info"><p>使用标准库类型<strong>variant</strong>可以消除大多数需要直接使用<strong>union</strong><br><strong>variant</strong>更简单，安全</p></div>  
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">struct Entry &#123;</span><br><span class="line">	string name;</span><br><span class="line">    variant&lt;Node*,int&gt; v;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void f(Entry* pe)</span><br><span class="line">&#123;</span><br><span class="line">	if (holds_alternative&lt;int&gt;(pe-&gt;v))</span><br><span class="line">		cout &lt;&lt; get&lt;int&gt;(pe-&gt;v);</span><br><span class="line">	//...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="模块化">模块化</h2>
-<div class="note info"><p>一个C++程序包含许多独立开发的部分，例如函数、用户自定义类型、类层次、 模板<br>为了让这些独立开发的部分在其他地方使用（类似于函数的声明），我们使用模块化的方法</p></div>
-<div class="note warning"><p>区分声明(用作接口)和定义(用作实现)</p></div>
-<h3 id="分离编译">分离编译</h3>
-<h4 id="头文件">头文件</h4>
-<ul>
-<li>在C++中，接口文件后缀名为.h,里面应该包括函数的声明</li>
-<li>实现接口函数的文件后缀名为.cpp,为了帮助编译器保持一致性，同样应该包含提供接口的.h文件</li>
-<li>要使用这个头文件的函数，就需要在头文件中包含&quot;xxx.h&quot;</li>
-</ul>
-<div class="note danger"><p>使用#<strong>include</strong>及头文件实现模块化是一种传统方法，它具有明显的缺点。</p></div>
-<ul>
-<li>编译时间：不同的文件每一次include不同的头文件编译器都要处理一次</li>
-<li>依赖顺序：先include的头文件的定义与宏可能会影响后一个的代码的含义</li>
-<li>不协调：可能会出现类似下面的问题
-<ol>
-<li>我们有意无意地在两个源文件中定义了同一个实体的时候</li>
-<li>不同源文件引用头文件的顺序不一致的时候</li>
-</ol>
-</li>
-<li>传染性：一个文件(1)包含的头文件(2)会包含其他这个文件(1)不需要的头文件，以此类推会导致代码膨胀且冗余</li>
-</ul>
-<div class="note warning"><p>避免在头文件中定义非内联函数<br>不要在头文件中使用 <strong>using</strong> 指令</p></div>
-<h4 id="模块">模块</h4>
-<ul>
-<li>写法1：将class export并表示成声明的形式，就和.h写法差不多</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">export module Vector;</span><br><span class="line"></span><br><span class="line">export class Vector &#123;</span><br><span class="line"> public:</span><br><span class="line">  Vector(int s);</span><br><span class="line">  double&amp; operator[](int i);</span><br><span class="line">  int size();</span><br><span class="line"></span><br><span class="line"> private:</span><br><span class="line">  double* elem;</span><br><span class="line">  int sz;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Vector::Vector(int s) : elem&#123;new double[s]&#125;, sz&#123;s&#125; &#123;&#125;</span><br><span class="line"></span><br><span class="line">double&amp; Vector::operator[](int i) &#123; return elem[i]; &#125;</span><br><span class="line"></span><br><span class="line">int Vector::size() &#123; return sz; &#125;</span><br><span class="line"></span><br><span class="line">export bool operator==(const Vector&amp; v1, const Vector&amp; v2) &#123;</span><br><span class="line">  if (v1.sieze() != v2.size()) return false;</span><br><span class="line">  for (int i = 0; i &lt; v1.size(); i++)</span><br><span class="line">    if (v1.elem[i] != v2.elem[i]) return false;</span><br><span class="line">  return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>
-<p>写法2：函数export的就是可见的，没有export的就是不可见的(类似java)</p>
-</li>
-<li>
-<p>module Vector接口形式，后缀名为.cppm</p>
-</li>
-<li>
-<p>import Vector使用Vector</p>
-</li>
-<li>
-<p>export module Vector定义Vector</p>
-</li>
-</ul>
-<div class="note success"><p>模块在维护性与编译时间方面的改进非常显著</p></div>
-<h3 id="命名空间">命名空间</h3>
-<p>用 <strong>namespace 命名空间名 {}</strong><br>
-用 <strong>::</strong> 访问</p>
-<ol>
-<li>表达某些声明是属于一个整体的</li>
-<li>表明它们的名字不会与其他命名空间中的名字冲突</li>
-</ol>
-<div class="note warning"><p>真正的<strong>main()</strong>（不是自己定义的命名空间里的）</p></div>
-<p>用 <strong>using</strong> 声明将命名空间中的名字放进作用域,可以降低可读性</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void my_code(vector&lt;int&gt;&amp; x, vector&lt;int&gt;&amp; y) &#123;</span><br><span class="line">  using std::swap;  // 将标准库的swap放进作用域</span><br><span class="line">  //...</span><br><span class="line">  swap(x, y);         // std::swap()</span><br><span class="line">  other::swap(x, y);  // 某个其他的swap()</span><br><span class="line">  //...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>使用标准库命名空间中所有名称的访问权</p>
-<pre><code>using namespace std;
-</code></pre>
-<div class="note info"><p>用以上方式使用命名空间指令不会影响使用模块的用户，影响仅限于模块内部</p></div>
-<h3 id="函数参数与返回值">函数参数与返回值</h3>
-<p>函数之间传递信息有三种路径：</p>
-<blockquote>
-<p>参数<br>
-全局变量<br>
-类对象中的共享状态</p>
-</blockquote>
-<p>在函数的信息传递中，我们应考量：</p>
-<ul>
-<li>对象是被复制的还是共享的？</li>
-<li>这个共享对象是否可被修改？</li>
-<li>这个对象是否被移动，从而留下了一个空对象？</li>
-</ul>
-<h4 id="参数传递">参数传递</h4>
-<ul>
-<li>默认情况复制(传值)/直接指向引用(传引用)/直接只读const&amp;</li>
-<li>拥有默认值的函数参数可以达到和重载函数一样的效果</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">void print(int value, int base = 10);</span><br><span class="line">print(x,8);</span><br><span class="line">print(x);//默认十进制</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void print(int value, int base)&#123;</span><br><span class="line">	//...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void print(int value)&#123;</span><br><span class="line">	print(int value, 10);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="返回值">返回值</h4>
-<ul>
-<li>返回值的默认行为是复制</li>
-<li>返回引用的情况只应当出现在返回的内容不属于函数局部的时候(注意数组)</li>
-<li>局部变量在函数返回的时候消失，因此我们不应当返回它的引用或者指针</li>
-<li>对于较大的对象构造移动方法来极大地减少复制开销</li>
-<li>编译器会优化复制行为，叫做省略复制优化</li>
-</ul>
-<div class="note warning"><p>使用指针返回大对象的代码性能不会比使用引用返回的函数好，不要使用这样的代码</p></div>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Matrix* add(const Matrix&amp; x, const Matrix&amp; y) &#123;</span><br><span class="line">  Matrix* p = new Matrix;</span><br><span class="line">  //....</span><br><span class="line">  return p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Matrix m1, m2;</span><br><span class="line">//...</span><br><span class="line">Matrix* m3 = add(m1, m2);  // 只复制指针</span><br><span class="line">//...</span><br><span class="line">delete m3;  // 很容易忘记</span><br></pre></td></tr></table></figure>
-<h4 id="返回类型推导">返回类型推导</h4>
-<p>使用 <strong>auto</strong> 关键字</p>
-<pre><code>auto mul(int i, double d) &#123; return i*d; &#125;
-</code></pre>
-<h4 id="返回类型后置">返回类型后置</h4>
-<p>有的时候，我们需要先看到参数，然后决定返回值的类型。</p>
-<div class="note info"><p>这包括但不限于返回类型推导这种情形，这个问题与命名空间、匿名函数、概念都有一定的联系</p></div>
-<p>使用 <strong>auto</strong> 关键字，表示返回值会在后面提到</p>
-<pre><code>auto mul(int i, double d) -&gt; double &#123; return i*d; &#125;
-</code></pre>
-<p>使用这种记法能够更有效地实现代码对齐</p>
-<pre><code>auto next_elem -&gt; Elem*;
-auto exit(int) -&gt; void;
-auto sqrt(double) -&gt; double;
-</code></pre>
-<div class="note warning"><p>不要过度使用返回类型推断</p></div>
-<h4 id="结构化绑定">结构化绑定</h4>
-<p>把类对象成员赋予局部变量名称的机制</p>
-<p>使用 <strong>{s, i}</strong> 构造<br>
-使用 <strong>[n, v]</strong> 读取(“解包”)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">struct Entry &#123;</span><br><span class="line">  string name;</span><br><span class="line">  int value;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Entry read_entry(istream&amp; is)  // 简单地读函数</span><br><span class="line">&#123;</span><br><span class="line">  string s;</span><br><span class="line">  int i;</span><br><span class="line">  is &gt;&gt; s &gt;&gt; i;</span><br><span class="line">  return &#123;s, i&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">auto [n, v] = read_entry(cin);</span><br><span class="line">cout&lt;&lt;n&lt;&lt;&#x27; &#x27;&lt;&lt;v&lt;&lt;&#x27;\n&#x27;;</span><br></pre></td></tr></table></figure>
-<div class="note info"><p>对完全没有私有数据的类使用结构化绑定时，绑定行为是明显的：<br>提供的名称数量必须与数据成员的数量相等，每一个绑定名称对应一个成员变量</p></div>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">map&lt;string, int&gt; m;</span><br><span class="line">//...</span><br><span class="line">for (const auto [key, value] : m) &#123;</span><br><span class="line">  cout &lt;&lt; key &lt; &#x27; &#x27; &lt;&lt; value &lt;&lt; &#x27;\n&#x27;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">auto incr(map&lt;string, int&gt;&amp; m) -&gt; void &#123;</span><br><span class="line">  for (auto&amp; [key, value]) </span><br><span class="line">  	value++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结构化绑定也可以用于处理需要通过成员函数访问对象数据的类（?）</p>
-<pre><code>complex&lt;double&gt; z = &#123;1,2&#125;;  
-auto [re,im] = z+2;
-</code></pre>
-<div class="note warning"><p>不要过度使用结构化绑定</p></div>
-
-  </div>
-  
-  
-    
-    <div class='footer'>
-       <!-- 参考资料、相关资料等 -->
-      
-       <!-- 相关文章 -->
-      
-      <!-- 版权声明组件 -->
-      
-      <!-- 打赏组件 -->
-      
-    </div>
-  
-  
-    
-
-
-  <div class='article-meta' id="bottom">
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-05-14T22:43:18+08:00">
-  <a class='notlink'>
-    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2024年5月14日</p>
-  </a>
-</div>
-
-        
-      
-        
-          
-  
-  
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%AF%AD%E6%B3%95/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>语法</p></a></div>
-  <span hidden itemprop="keywords">语法</span>
-  
-
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2024/05/08/the-tour-of-cpp/&title=C++之旅(A Tour of C++)读书笔记 - tugumineko&summary="
-          
-          >
-          
-            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2024/05/08/the-tour-of-cpp/&title=C++之旅(A Tour of C++)读书笔记 - tugumineko&summary="
-          
-          >
-          
-            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2024/05/08/the-tour-of-cpp/&title=C++之旅(A Tour of C++)读书笔记 - tugumineko&summary="
-          
-          >
-          
-            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-          
-        </a>
-      
-    
-      
-    
-      
-    
-  </div>
-</div>
-
-
-
-        
-      
-    </div>
-    <!-- Custom Files bottomMeta begin -->
-    
-    <!-- Custom Files bottomMeta end -->
-  </div>
-
-
-  
-  
-
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='/2024/05/19/%E7%94%9F%E6%B4%BB%E5%9C%A8%E6%A0%91%E4%B8%8A/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>生活在树上</p>
-          <p class='content'>二叉搜索树
-Treap树
-
-每个结点有2个值
-
-键值：value
-优先级：priority
-
-
-
-
-value要满足BST的基本性质，priority用于满足堆的性质，用来实现二叉树的平衡
-
-
-...</p>
-        </a>
-      
-      
-        <a class='next' href='/2024/05/06/python%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/'>
-          <p class='title'>python图像处理<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>python图像处理
-详见文档Pillow:Python-Imaging-Library这里使用的是Image模块
-图像属性
-format属性
-string or None
-标识了图像来源，如果...</p>
-        </a>
-      
-    </div>
-  
-  <!-- 文章推荐 -->
-  
-  
-  <!-- Custom Files postEnd begin-->
-  
-  <!-- Custom Files postEnd end-->
-</article>
-
-
-  
-
-
-  <article class="post white-box shadow floatable blur" id="comments">
-    <span hidden>
-      <meta itemprop="discussionUrl" content="/2024/05/08/the-tour-of-cpp/index.html#comments">
-    </span>
-    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
-    
-
-    <div id="layoutHelper-comments"></div>
-
-  </article>
-
-
-
-
-
-
+	
+	  <article id="arc" class="post article white-box reveal shadow floatable blur">
+			
+			
+				
+				
+					
+						
+						<h2>2024</h2>
+					
+						<div class='timenode'>
+								<a class="meta" href="/2024/05/28/user-malloc/">
+									<time>05-28</time>
+									
+										用户态内存分配器合集
+									
+									
+									
+									
+								</a>
+						</div>
+				
+			
+				
+				
+					
+						<div class='timenode'>
+								<a class="meta" href="/2024/05/26/diffusion-model/">
+									<time>05-26</time>
+									
+										扩散模型 - Diffusion Model
+									
+									
+									
+									
+								</a>
+						</div>
+				
+			
+				
+				
+					
+						<div class='timenode'>
+								<a class="meta" href="/2024/05/25/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+									<time>05-25</time>
+									
+										正则表达式
+									
+									
+									
+									
+								</a>
+						</div>
+				
+			
+				
+				
+					
+						<div class='timenode'>
+								<a class="meta" href="/2024/05/23/vim-syntax/">
+									<time>05-23</time>
+									
+										vim-syntax
+									
+									
+									
+									
+								</a>
+						</div>
+				
+			
+				
+				
+					
+						<div class='timenode'>
+								<a class="meta" href="/2024/05/19/%E7%94%9F%E6%B4%BB%E5%9C%A8%E6%A0%91%E4%B8%8A/">
+									<time>05-19</time>
+									
+										生活在树上
+									
+									
+									
+									
+								</a>
+						</div>
+				
+			
+				
+				
+					
+						<div class='timenode'>
+								<a class="meta" href="/2024/05/08/the-tour-of-cpp/">
+									<time>05-08</time>
+									
+										C++之旅(A Tour of C++)读书笔记
+									
+									
+									
+									
+								</a>
+						</div>
+				
+			
+				
+				
+					
+						<div class='timenode'>
+								<a class="meta" href="/2024/05/06/python%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">
+									<time>05-06</time>
+									
+										python图像处理
+									
+									
+									
+									
+								</a>
+						</div>
+				
+			
+				
+				
+					
+						<div class='timenode'>
+								<a class="meta" href="/2024/05/05/A-Rigorous-Derivation-of-the-Bubble-Sort-Curve/">
+									<time>05-05</time>
+									
+										冒泡排序曲线的推导
+									
+									
+									
+									
+								</a>
+						</div>
+				
+			
+				
+				
+					
+						<div class='timenode'>
+								<a class="meta" href="/2024/05/05/PyTorch%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+									<time>05-05</time>
+									
+										PyTorch深度学习
+									
+									
+									
+									
+								</a>
+						</div>
+				
+			
+				
+				
+					
+						<div class='timenode'>
+								<a class="meta" href="/2024/04/29/markdown-syntax/">
+									<time>04-29</time>
+									
+										markdown-syntax
+									
+									
+									
+									
+								</a>
+						</div>
+				
+			
+				
+				
+					
+						
+						<h2>2023</h2>
+					
+						<div class='timenode'>
+								<a class="meta" href="/2023/12/23/%E7%B4%A0%E6%99%B4%E3%82%89%E3%81%97%E3%81%8D%E6%97%A5%E3%80%85/">
+									<time>12-23</time>
+									
+										素晴らしき日々～不連続存在～
+									
+									
+									
+									
+								</a>
+						</div>
+				
+			
+				
+				
+					
+						
+						<h2>2020</h2>
+					
+						<div class='timenode'>
+								<a class="meta" href="/2020/04/12/%E9%AB%98%E9%9B%85%E5%88%9B%E4%BD%9C/">
+									<time>04-12</time>
+									
+										高雅创作
+									
+									
+									
+									
+								</a>
+						</div>
+				
+			
+	  </article>
+	
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -3512,31 +3104,145 @@ string or None
     
     
       
+<section class="widget blogger desktop mobile ">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box circle' href='/about/'>
+          <img no-lazy src='https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//202405101324394.png'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+          <h2>鶫ねこ</h2>
+        
+        
+          <p>tugumineko</p>
+
+        
+        
+		    
+        <p>何気ない日常、瞬く間にすぎてゆく<br>ふとした瞬間、想うことがどんなに幸せだろう ​​​</p>
+		      
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="mailto:exd422@gmail.com"
+              class="social fa-solid fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/tugumineko/"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="/"
+              class="social fa-solid fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
     
   
 
-
-<div class="widget-sticky">
-
   
+    
+    
+      
   
-
-
-<section class="widget toc-wrapper desktop mobile" id="toc-div" >
-  
+  <section class="widget category desktop">
+    
   <header>
     
-      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+      <a href='/blog/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
     
   </header>
 
 
-  <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.1.</span> <span class="toc-text">程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B-%E5%8F%98%E9%87%8F%E5%92%8C%E8%BF%90%E7%AE%97"><span class="toc-number">1.3.</span> <span class="toc-text">类型、变量和运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">1.4.</span> <span class="toc-text">作用域和生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-number">1.5.</span> <span class="toc-text">常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E9%92%88-%E6%95%B0%E7%BB%84%E5%92%8C%E5%BC%95%E7%94%A8"><span class="toc-number">1.6.</span> <span class="toc-text">指针、数组和引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E6%8C%87%E9%92%88"><span class="toc-number">1.7.</span> <span class="toc-text">空指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%A0%E5%B0%84%E5%88%B0%E7%A1%AC%E4%BB%B6"><span class="toc-number">1.8.</span> <span class="toc-text">映射到硬件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">用户自定义类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84-struct"><span class="toc-number">2.1.</span> <span class="toc-text">结构 struct</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB-class"><span class="toc-number">2.2.</span> <span class="toc-text">类 class</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%9A%E4%B8%BE"><span class="toc-number">2.3.</span> <span class="toc-text">枚举</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#enum-class"><span class="toc-number">2.3.1.</span> <span class="toc-text">enum class</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#enum"><span class="toc-number">2.3.2.</span> <span class="toc-text">enum</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%94%E5%90%88-union"><span class="toc-number">2.4.</span> <span class="toc-text">联合 union</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E5%8C%96"><span class="toc-number">3.</span> <span class="toc-text">模块化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%A6%BB%E7%BC%96%E8%AF%91"><span class="toc-number">3.1.</span> <span class="toc-text">分离编译</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="toc-number">3.1.1.</span> <span class="toc-text">头文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97"><span class="toc-number">3.1.2.</span> <span class="toc-text">模块</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="toc-number">3.2.</span> <span class="toc-text">命名空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E4%B8%8E%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-number">3.3.</span> <span class="toc-text">函数参数与返回值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="toc-number">3.3.1.</span> <span class="toc-text">参数传递</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-number">3.3.2.</span> <span class="toc-text">返回值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B%E6%8E%A8%E5%AF%BC"><span class="toc-number">3.3.3.</span> <span class="toc-text">返回类型推导</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B%E5%90%8E%E7%BD%AE"><span class="toc-number">3.3.4.</span> <span class="toc-text">返回类型后置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E5%8C%96%E7%BB%91%E5%AE%9A"><span class="toc-number">3.3.5.</span> <span class="toc-text">结构化绑定</span></a></li></ol></li></ol></li></ol>
-  </div>
-</section>
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/C/" href="/categories/C/"
+            active-action="action-categoriesC"
+            ><div class='name'>C</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/cpp/" href="/categories/cpp/"
+            active-action="action-categoriescpp"
+            ><div class='name'>cpp</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/markdown/" href="/categories/markdown/"
+            active-action="action-categoriesmarkdown"
+            ><div class='name'>markdown</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/python/" href="/categories/python/"
+            active-action="action-categoriespython"
+            ><div class='name'>python</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/vim/" href="/categories/vim/"
+            active-action="action-categoriesvim"
+            ><div class='name'>vim</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+    
+  
 
   
+    
+    
+      
+  
+  <section class="widget tagcloud desktop mobile">
+    
+  <header>
+    
+      <a href='/blog/tags/'><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/tags/OS/" style="font-size: 14px; color: #999">OS</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" style="font-size: 14px; color: #999">数字图像处理</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 14px; color: #999">数学</a> <a href="/tags/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 14px; color: #999">文本编辑器</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 19px; color: #777">深度学习</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 19px; color: #777">算法</a> <a href="/tags/%E8%AF%AD%E6%B3%95/" style="font-size: 24px; color: #555">语法</a> <a href="/tags/%E9%BB%84%E6%B2%B9/" style="font-size: 14px; color: #999">黄油</a>
+    </div>
+  </section>
+
+
+    
+  
+
+  
+
+
+<div class="widget-sticky">
 
 </div>
 
@@ -3544,7 +3250,6 @@ string or None
   
   <!-- Custom Files side end -->
 </aside>
-
 
 
         </div>
@@ -4654,7 +4359,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"鶫ねこ"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"tugumineko"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/cpp/","name":"cpp"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/05/08/the-tour-of-cpp/","name":"C++之旅(A Tour of C++)读书笔记"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"tugumineko","url":"http://example.com/","keywords":null,"description":"鶫ねこ","author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"鶫ねこ"},"publisher":{"@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"C++之旅(A Tour of C++)读书笔记","description":"鶫ねこ","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/05/08/the-tour-of-cpp/"},"author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"tugumineko","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/05/08/the-tour-of-cpp/","wordCount":0,"datePublished":"2024-05-08T14:55:22.000Z","dateModified":"2024-05-14T14:43:18.094Z","articleSection":"cpp","keywords":"语法","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"鶫ねこ"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"tugumineko"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/archives/","name":"Archive"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"tugumineko","url":"http://example.com/","keywords":null,"description":"鶫ねこ","author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"鶫ねこ"},"publisher":{"@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"鶫ねこ","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"tugumineko","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
