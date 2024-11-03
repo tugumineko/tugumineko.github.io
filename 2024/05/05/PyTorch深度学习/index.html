@@ -209,7 +209,7 @@ volantis.dark.push(switchNightMode);
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-05-04T16:38:25.000Z">
-<meta property="article:modified_time" content="2024-05-22T13:32:52.860Z">
+<meta property="article:modified_time" content="2024-11-03T09:41:52.871Z">
 <meta property="article:author" content="tugumineko">
 <meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary">
@@ -2504,7 +2504,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1725678587150),
+    lastupdate: new Date(1730627066238),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2934,13 +2934,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.9k 字</p>
+      <p>字数：3.4k 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：7 分钟</p>
+      <p>时长：12 分钟</p>
     </a>
   </div>
 
@@ -3183,6 +3183,186 @@ stride(2,2)是池化操作的步长</p>
 </li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.nn <span class="keyword">import</span> Module</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CNN</span>(<span class="title class_ inherited__">Module</span>):</span><br><span class="line">    <span class="comment"># 定义模型属性</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, n_channels</span>):</span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        <span class="comment"># 输入到卷积层 1</span></span><br><span class="line">        self.hidden1 = Conv2d(n_channels, <span class="number">32</span>, (<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line">        kaiming_uniform_(self.hidden1.weight, nonlinearity=<span class="string">&#x27;relu&#x27;</span>)</span><br><span class="line">        self.act1 = ReLU()</span><br><span class="line">        <span class="comment"># 池化层 1</span></span><br><span class="line">        self.pool1 = MaxPool2d((<span class="number">2</span>,<span class="number">2</span>), stride=(<span class="number">2</span>,<span class="number">2</span>))</span><br><span class="line">        <span class="comment"># 卷积层 2</span></span><br><span class="line">        self.hidden2 = Conv2d(<span class="number">32</span>, <span class="number">32</span>, (<span class="number">3</span>, <span class="number">3</span>))</span><br><span class="line">        kaiming_uniform_(self.hidden2.weight, nonlinearity=<span class="string">&#x27;relu&#x27;</span>)</span><br><span class="line">        self.act2 = ReLU()</span><br><span class="line">        <span class="comment"># 池化层 2 </span></span><br><span class="line">        self.pool2 = MaxPool2d((<span class="number">2</span>,<span class="number">2</span>), stride(<span class="number">2</span>,<span class="number">2</span>))</span><br><span class="line">        <span class="comment"># 全连接层 1</span></span><br><span class="line">        self.hidden3 = Linear(<span class="number">5</span>*<span class="number">5</span>*<span class="number">32</span>, <span class="number">100</span>)</span><br><span class="line">        kaiming_uniform_(self.hidden3.weight, nonlinearity=<span class="string">&#x27;relu&#x27;</span>)</span><br><span class="line">        self.act3 = RELU()</span><br><span class="line">        <span class="comment"># 全连接层 2</span></span><br><span class="line">        self.hidden4 = Linear(<span class="number">100</span>, <span class="number">10</span>)</span><br><span class="line">        xavier_uniform_(self.hidden4.weight)</span><br><span class="line">        self.act4 = Softmax(dim=<span class="number">1</span>)</span><br><span class="line">        </span><br></pre></td></tr></table></figure>
+<h2 id="前向传播">前向传播</h2>
+<h3 id="定义">定义</h3>
+<ol>
+<li>指数据在神经网络中的流动方向</li>
+<li>输入层 -&gt; 隐藏层 -&gt; 输出层</li>
+<li>在卷积神经网络中起到关键作用</li>
+</ol>
+<h3 id="目的">目的</h3>
+<ul>
+<li><strong>计算输出</strong>: 根据输入数据和网络结构计算神经网络的输出</li>
+<li><strong>损失函数评估</strong>: 使用输出数据与真实标签计算损失函数，以评估模型的性能</li>
+<li><strong>反向传播准备</strong>: 为反向传播阶段提供必要的中间信息，如每层的输入、权重和激活函数的导数等</li>
+</ul>
+<h3 id="反向传播">反向传播</h3>
+<p><img src="https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//202411021233919.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//202411021233919.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
+<p>目的是计算损失函数关于网络参数的梯度，以便通过梯度下降等优化算法更新网络的权重，从而改进模型的性能</p>
+<p><strong>前向传播是路径上执行具体的数据处理，执行层与层之间的<mark>数据传递和参数计算</mark></strong></p>
+<p><strong>而模型架构则是定义了前向传播的<mark>路径和操作顺序</mark></strong></p>
+<ul>
+<li>将数据进行输入进入第一层卷积层进行处理，然后通过激活函数后再进行进一步的池化操作</li>
+<li>数据经过进一步的提取特征，减少体积操作。例如特征图体积从(32,15,15)变为(32,7,7)</li>
+<li><strong>数据扁平化(Flattening)</strong>: 将多维的数据结构转化为一维向量形式，使其能够被神经网络处理</li>
+</ul>
+<p><img src="https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//202411021304278.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//202411021304278.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
+<ul>
+<li>全连接层 <code>self.hidden3(X)</code> 将扁平化后的数据传入后，将输入向量与权重矩阵相乘，加上偏置，然后输出结果。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 前向传播</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, X</span>):</span><br><span class="line">    <span class="comment"># 输入到隐层 1</span></span><br><span class="line">    X = self.hidden1(X)</span><br><span class="line">    X = self.act1(X)</span><br><span class="line">    X = self.pool1(X)</span><br><span class="line">    <span class="comment"># 隐层 2</span></span><br><span class="line">    X = self.hidden2(X)</span><br><span class="line">    X = self.act2(X)</span><br><span class="line">    X = self.pool2(X)</span><br><span class="line">    <span class="comment"># 扁平化</span></span><br><span class="line">    X = X.view(-<span class="number">1</span>, <span class="number">5</span>*<span class="number">5</span>*<span class="number">32</span>)</span><br><span class="line">    <span class="comment"># 隐层 3 </span></span><br><span class="line">    X = self.hidden3(X)</span><br><span class="line">    X = self.act3(X)</span><br><span class="line">    <span class="comment"># 输出层 </span></span><br><span class="line">    X = self.hidden4(X)</span><br><span class="line">    X = self.act4(X)</span><br><span class="line">    <span class="keyword">return</span> X</span><br></pre></td></tr></table></figure>
+<h2 id="损失函数">损失函数</h2>
+<p>提供了一个预测结果和真实结果差距有多大的测量标准</p>
+<h2 id="优化器">优化器</h2>
+<ul>
+<li>根据损失函数提供的反馈来调整模型参数</li>
+<li>决定了如何以最有效的方式更新参数以最小化损失函数</li>
+</ul>
+<h3 id="最小梯度下降">最小梯度下降</h3>
+<ul>
+<li>最基本</li>
+<li>在处理复杂损失面的情况下可能陷入收敛慢或局部最优</li>
+</ul>
+<h3 id="adam优化器">Adam优化器</h3>
+<ul>
+<li>通过自适应<strong>学习</strong>率标准，常能更快地收敛到全局最优或者较优的解</li>
+</ul>
+<p>下面使用交叉熵损失函数和随机梯度下降作为优化器</p>
+<h3 id="交叉熵损失函数">交叉熵损失函数</h3>
+<ul>
+<li>分类问题中常用的损失函数</li>
+<li>衡量了预测概率分布和实际标签分布之间的差异</li>
+<li>可以有效处理概率输出，并且在数学上可以解释为最大似然估计</li>
+</ul>
+<h3 id="随机梯度下降优化器">随机梯度下降优化器</h3>
+<ul>
+<li>model.parameters() 表示优化器将更新所有模型的运行参数</li>
+<li>学习率(learning rate)决定了每次参数更新的步长大小</li>
+<li>动量(momentum)通过在更新方向上加速，帮助优化器在鞍点附近更快收敛，并减小震荡</li>
+</ul>
+<h3 id="训练周期-epoch">训练周期 epoch</h3>
+<ul>
+<li>一个epoch指模型训练时一次完整的前向传播和反向传播的过程</li>
+<li>多次遍历可以使模型更好地学习数据的特征</li>
+</ul>
+<h3 id="训练损失-train-loss">训练损失 Train Loss</h3>
+<ul>
+<li>模型在训练数据集上的平均损失值</li>
+<li>训练损失越低，表示模型对训练数据的拟合度越好</li>
+</ul>
+<h3 id="训练准确率-train-acc">训练准确率 Train Acc</h3>
+<ul>
+<li>衡量模型在训练数据集上预测正确的比例</li>
+</ul>
+<h3 id="测试准确率-test-acc">测试准确率 Test Acc</h3>
+<ul>
+<li>衡量模型在测试数据集上预测正确的比例</li>
+<li>可以很真实地反应模型对未知数据的泛化能力</li>
+</ul>
+<h3 id="minibatch">minibatch</h3>
+<ul>
+<li>有利于模型的稳定训练，提高计算效率</li>
+<li>每个minibatch包含输入数据(inputs)和对应的标签(targets)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">train_model</span>(<span class="params">train_dl, model</span>):</span><br><span class="line">    <span class="comment"># 定义优化器</span></span><br><span class="line">    criterion = CrossEntropyLoss()</span><br><span class="line">    optimizer = SGD(model.parameters(),lr=<span class="number">0.01</span>,momentum=<span class="number">0.9</span>)</span><br><span class="line">    <span class="comment"># 枚举 epochs</span></span><br><span class="line">    <span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">    <span class="comment"># 枚举 mini batches</span></span><br><span class="line">    <span class="keyword">for</span> i, (inputs, targets) <span class="keyword">in</span> <span class="built_in">enumerate</span>(train_dl):</span><br><span class="line">        <span class="comment"># 梯度清除</span></span><br><span class="line">        optimizer.zero_grad()</span><br><span class="line">        <span class="comment"># 计算模型输出</span></span><br><span class="line">        yhat = model(inputs)</span><br><span class="line">        <span class="comment"># 计算损失</span></span><br><span class="line">        loss = criterion(yhat,targets)</span><br><span class="line">        <span class="comment"># 贡献度分配</span></span><br><span class="line">        loss.backward()</span><br><span class="line">        <span class="comment"># 升级模型权重</span></span><br><span class="line">        optimizer.step()</span><br></pre></td></tr></table></figure>
+<h2 id="评估模型">评估模型</h2>
+<h3 id="评估误差">评估误差:</h3>
+<ul>
+<li>
+<p>均方误差 (MSE, Mean Squared Error)</p>
+<p>预测值与实际值之间的平均均方误差</p>
+</li>
+</ul>
+<p><img src="https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//202411031314624.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//202411031314624.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
+<ul>
+<li>均方根误差 (RMSE,Root Mean Squared Error)</li>
+</ul>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mi>M</mi><mi>S</mi><mi>E</mi><mo>=</mo><msqrt><mrow><mi>M</mi><mi>S</mi><mi>E</mi></mrow></msqrt></mrow><annotation encoding="application/x-tex">RMSE = \sqrt{MSE}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.06445999999999996em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9755400000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span></span></span><span style="top:-2.93554em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.06445999999999996em;"><span></span></span></span></span></span></span></span></span></span></p>
+<ul>
+<li>平均绝对误差 (MAE, Mean Absolute Error)</li>
+</ul>
+<p><img src="https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//202411031325254.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//202411031325254.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
+<ul>
+<li>
+<p>拟合优度</p>
+<p>值越接近1，模型的解释能力越强<br>
+<img src="https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//202411031326567.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//202411031326567.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
+</li>
+</ul>
+<h3 id="评估指标">评估指标</h3>
+<p>对于分类模型而言，评估指标只要衡量模型的分类效果</p>
+<ul>
+<li>
+<p>混淆矩阵G (Confusion Matrix)</p>
+<p>包括TP、TN、FP、FN</p>
+<ol>
+<li>TP (True Positive):被判定为正样本，实际上是正样本 -&gt; 真阳性</li>
+<li>FN (False Negative):被判定为负样本，实际上是正样本 -&gt; 假阴性</li>
+<li>FP (False Positive):被判定为正样本，实际上是负样本 -&gt; 假阳性</li>
+<li>TN (True Negative):被判定为负样本，实际上是负样本 -&gt; 真阴性</li>
+</ol>
+</li>
+<li>
+<p>ROC曲线 (Receiver Operating Characteristic Curve)</p>
+<p>横轴表示的是 FPR ,即错误地预测为正例的概率</p>
+<p>纵轴表示的是 TPR ,即正确地预测为正例的概率</p>
+</li>
+</ul>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mi>P</mi><mi>R</mi><mo>=</mo><mfrac><mrow><mi>F</mi><mi>P</mi></mrow><mrow><mi>F</mi><mi>P</mi><mo>+</mo><mi>T</mi><mi>N</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">FPR = \frac {FP} {FP+TN} 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.1296600000000003em;vertical-align:-0.7693300000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693300000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mi>P</mi><mi>R</mi><mo>=</mo><mfrac><mrow><mi>T</mi><mi>P</mi></mrow><mrow><mi>T</mi><mi>P</mi><mo>+</mo><mi>F</mi><mi>N</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">TPR = \frac {TP} {TP+FN}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.1296600000000003em;vertical-align:-0.7693300000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693300000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<ul>
+<li>
+<p>AOC (Area Under the Curve)</p>
+<ul>
+<li>衡量的是ROC曲线下的面积</li>
+<li>AOC越大，表示当前的分类算法，就越有可能将正样本排在负样本前面，模型的分类性能越好</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//202411031355667.png" class="lazyload" data-srcset="https://gcore.jsdelivr.net/gh/tugumineko/picture2@latest//202411031355667.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""></p>
+<ul>
+<li>准确率 (Accuracy)</li>
+</ul>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>c</mi><mi>c</mi><mi>u</mi><mi>r</mi><mi>a</mi><mi>c</mi><mi>y</mi><mo>=</mo><mfrac><mrow><mi>T</mi><mi>P</mi><mo>+</mo><mi>T</mi><mi>N</mi></mrow><mrow><mi>T</mi><mi>P</mi><mo>+</mo><mi>T</mi><mi>N</mi><mo>+</mo><mi>F</mi><mi>P</mi><mo>+</mo><mi>F</mi><mi>N</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">Accuracy = \frac {TP+TN}{TP+TN+FP+FN}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault">c</span><span class="mord mathdefault">c</span><span class="mord mathdefault">u</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">a</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.1296600000000003em;vertical-align:-0.7693300000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693300000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<ul>
+<li>
+<p>精确率 (Precision)</p>
+<p>衡量模型预测为正类的样本中，实际为正类的比率</p>
+<p>适用于假阳性比例较高的情况</p>
+</li>
+</ul>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>r</mi><mi>e</mi><mi>c</mi><mi>i</mi><mi>s</mi><mi>i</mi><mi>o</mi><mi>n</mi><mo>=</mo><mfrac><mrow><mi>T</mi><mi>P</mi></mrow><mrow><mi>T</mi><mi>P</mi><mo>+</mo><mi>F</mi><mi>P</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">Precision = \frac {TP}{TP + FP}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">c</span><span class="mord mathdefault">i</span><span class="mord mathdefault">s</span><span class="mord mathdefault">i</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.1296600000000003em;vertical-align:-0.7693300000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693300000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<ul>
+<li>
+<p>召回率 (Recall)</p>
+<p>衡量模型预测为负类的样本中，实际为负类的比率</p>
+<p>适用于假阴性比例较高的情况</p>
+</li>
+</ul>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mi>e</mi><mi>c</mi><mi>a</mi><mi>l</mi><mi>l</mi><mo>=</mo><mfrac><mrow><mi>T</mi><mi>P</mi></mrow><mrow><mi>T</mi><mi>P</mi><mo>+</mo><mi>F</mi><mi>N</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">Recall = \frac {TP}{TP+FN}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault">e</span><span class="mord mathdefault">c</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.1296600000000003em;vertical-align:-0.7693300000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693300000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<ul>
+<li>
+<p>F1分数</p>
+<p>一般公认的结合精确率和召回率的指标</p>
+</li>
+</ul>
 
   </div>
   
@@ -3207,10 +3387,10 @@ stride(2,2)是池化操作的步长</p>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-05-22T21:32:52+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-11-03T17:41:52+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2024年5月22日</p>
+    <p>更新于：2024年11月3日</p>
   </a>
 </div>
 
@@ -3374,7 +3554,7 @@ Heading l...</p>
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-number">1.</span> <span class="toc-text">神经网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9Ccnn-convolution-neural-networks"><span class="toc-number">2.</span> <span class="toc-text">卷积神经网络CNN(Convolution Neural Networks)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%EF%BC%9Alenet-5"><span class="toc-number">3.</span> <span class="toc-text">例：LeNet-5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pytorch%E5%AE%9E%E6%93%8D"><span class="toc-number">4.</span> <span class="toc-text">PyTorch实操</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E6%95%B0%E6%8D%AE"><span class="toc-number">4.1.</span> <span class="toc-text">准备数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B"><span class="toc-number">4.2.</span> <span class="toc-text">定义模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96"><span class="toc-number">4.2.1.</span> <span class="toc-text">特征提取</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-number">1.</span> <span class="toc-text">神经网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9Ccnn-convolution-neural-networks"><span class="toc-number">2.</span> <span class="toc-text">卷积神经网络CNN(Convolution Neural Networks)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%EF%BC%9Alenet-5"><span class="toc-number">3.</span> <span class="toc-text">例：LeNet-5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pytorch%E5%AE%9E%E6%93%8D"><span class="toc-number">4.</span> <span class="toc-text">PyTorch实操</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E6%95%B0%E6%8D%AE"><span class="toc-number">4.1.</span> <span class="toc-text">准备数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B"><span class="toc-number">4.2.</span> <span class="toc-text">定义模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96"><span class="toc-number">4.2.1.</span> <span class="toc-text">特征提取</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E5%90%91%E4%BC%A0%E6%92%AD"><span class="toc-number">5.</span> <span class="toc-text">前向传播</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">5.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E7%9A%84"><span class="toc-number">5.2.</span> <span class="toc-text">目的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD"><span class="toc-number">5.3.</span> <span class="toc-text">反向传播</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">6.</span> <span class="toc-text">损失函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E5%99%A8"><span class="toc-number">7.</span> <span class="toc-text">优化器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D"><span class="toc-number">7.1.</span> <span class="toc-text">最小梯度下降</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#adam%E4%BC%98%E5%8C%96%E5%99%A8"><span class="toc-number">7.2.</span> <span class="toc-text">Adam优化器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E7%86%B5%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">7.3.</span> <span class="toc-text">交叉熵损失函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E4%BC%98%E5%8C%96%E5%99%A8"><span class="toc-number">7.4.</span> <span class="toc-text">随机梯度下降优化器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%AD%E7%BB%83%E5%91%A8%E6%9C%9F-epoch"><span class="toc-number">7.5.</span> <span class="toc-text">训练周期 epoch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%AD%E7%BB%83%E6%8D%9F%E5%A4%B1-train-loss"><span class="toc-number">7.6.</span> <span class="toc-text">训练损失 Train Loss</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%AD%E7%BB%83%E5%87%86%E7%A1%AE%E7%8E%87-train-acc"><span class="toc-number">7.7.</span> <span class="toc-text">训练准确率 Train Acc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E5%87%86%E7%A1%AE%E7%8E%87-test-acc"><span class="toc-number">7.8.</span> <span class="toc-text">测试准确率 Test Acc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#minibatch"><span class="toc-number">7.9.</span> <span class="toc-text">minibatch</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E6%A8%A1%E5%9E%8B"><span class="toc-number">8.</span> <span class="toc-text">评估模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E8%AF%AF%E5%B7%AE"><span class="toc-number">8.1.</span> <span class="toc-text">评估误差:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E6%8C%87%E6%A0%87"><span class="toc-number">8.2.</span> <span class="toc-text">评估指标</span></a></li></ol></li></ol>
   </div>
 </section>
 
@@ -4263,7 +4443,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   <script>
-  let imgs = ["https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//3.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//16.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//24.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//1.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//9.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//11 .jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//20.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//10.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//22.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//14.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//13.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//25.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//8.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//5.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//18.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//21.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//7.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//19.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//6.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//15.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//4.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//23.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//12.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//17.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//2.jpg"];
+  let imgs = ["https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//9.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//12.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//7.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//14.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//16.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//21.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//4.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//23.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//15.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//24.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//13.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//18.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//25.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//19.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//17.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//10.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//8.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//22.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//2.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//3.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//11 .jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//1.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//5.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//6.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//20.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4496,7 +4676,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"鶫ねこ"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"tugumineko"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/python/","name":"python"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/05/05/PyTorch深度学习/","name":"PyTorch深度学习"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"tugumineko","url":"http://example.com/","keywords":null,"description":"鶫ねこ","author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"鶫ねこ"},"publisher":{"@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"PyTorch深度学习","description":"鶫ねこ","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/05/05/PyTorch%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"},"author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"tugumineko","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/05/05/PyTorch%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/","wordCount":0,"datePublished":"2024-05-04T16:38:25.000Z","dateModified":"2024-05-22T13:32:52.860Z","articleSection":"python","keywords":"深度学习","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"鶫ねこ"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"tugumineko"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/python/","name":"python"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/05/05/PyTorch深度学习/","name":"PyTorch深度学习"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"tugumineko","url":"http://example.com/","keywords":null,"description":"鶫ねこ","author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"鶫ねこ"},"publisher":{"@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"PyTorch深度学习","description":"鶫ねこ","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/05/05/PyTorch%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"},"author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"tugumineko","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/05/05/PyTorch%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/","wordCount":0,"datePublished":"2024-05-04T16:38:25.000Z","dateModified":"2024-11-03T09:41:52.871Z","articleSection":"python","keywords":"深度学习","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
