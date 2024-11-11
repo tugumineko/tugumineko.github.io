@@ -2501,7 +2501,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1730635589558),
+    lastupdate: new Date(1731339311856),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2894,6 +2894,209 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <section class="post-list">
     
     
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/05/28/user-malloc/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="tugumineko">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="tugumineko">
+    <meta itemprop="description" content="鶫ねこ">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2024/05/28/user-malloc/"  itemprop="url">
+        用户态内存分配器
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        内存的分配和释放在堆(Heap)上完成
+
+void * ptr = malloc (size)
+free(ptr)
+
+Stack分配是连续的，因为不需要管理。
+Heap是按照size大小分配的，不是连续的。
+1234567int* a1 = malloc (1000 *sizeof(int));int* a2 = malloc (100 *sizeof(int));int b[1000];i...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2024-05-28T20:36:26+08:00">2024-05-28</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/C/">C</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/C/" itemprop="url"><span itemprop="name">C</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2024/05/28/user-malloc/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/05/26/diffusion-model/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="tugumineko">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="tugumineko">
+    <meta itemprop="description" content="鶫ねこ">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2024/05/26/diffusion-model/"  itemprop="url">
+        扩散模型 - Diffusion Model
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        引入
+Diffusion Model是如何运作的
+
+就像把石头雕刻成雕塑，DiffusionModel是将一张充满噪声（noise）的图片不断Denoise最后生成图片的过程
+
+
+
+Denoise模组内部实际做的事情
+
+在遇到一个图片的Denoise过程的时候，先计算出噪声的严重程度，然后推断出需要消去的噪声（这个在训练模型的时候的step）,最后一步步生成图片
+
+
+类似于一种自我监督的训练...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2024-05-26T14:10:13+08:00">2024-05-26</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2024/05/26/diffusion-model/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/05/25/正则表达式/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="tugumineko">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="tugumineko">
+    <meta itemprop="description" content="鶫ねこ">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2024/05/25/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"  itemprop="url">
+        正则表达式
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        定位
+^ :匹配行首或正则表达式搜索的字符串的开头
+$ :匹配行尾或正则表达式搜索的字符串的末尾
+元字符
+. :匹配除新行以外的任意单个字符
+| :表示备选项，即“或”
+\ :表示下一个是文字字符，而非特殊字符
+字符类
+[…] :匹配某一字符集中的任意字符。在字符集中可使用短划线分隔第一个字符和最后一个字符
+[^…] :匹配某一字符集以外的任意字符
+内容合规性政策中的正则表达式区分大小写
+[...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2024-05-25T15:25:49+08:00">2024-05-25</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2024/05/25/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
       
         
           <div class='post-wrapper'>
@@ -3537,9 +3740,24 @@ Heading level 2
             ><div class='name'>CG</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/cg/" href="/categories/cg/"
+            active-action="action-categoriescg"
+            ><div class='name'>cg</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/cpp/" href="/categories/cpp/"
             active-action="action-categoriescpp"
             ><div class='name'>cpp</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/cuda/" href="/categories/cuda/"
+            active-action="action-categoriescuda"
+            ><div class='name'>cuda</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/cv/" href="/categories/cv/"
+            active-action="action-categoriescv"
+            ><div class='name'>cv</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/java/" href="/categories/java/"
@@ -3559,7 +3777,7 @@ Heading level 2
           <li><a class="flat-box"
             title="/categories/python/" href="/categories/python/"
             active-action="action-categoriespython"
-            ><div class='name'>python</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>python</div><div class='badge'>(3)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/vim/" href="/categories/vim/"
@@ -3589,7 +3807,7 @@ Heading level 2
 
 
     <div class='content'>
-      <a href="/tags/Android/" style="font-size: 14px; color: #999">Android</a> <a href="/tags/Arduino/" style="font-size: 14px; color: #999">Arduino</a> <a href="/tags/OS/" style="font-size: 14px; color: #999">OS</a> <a href="/tags/%E5%88%B7%E9%A2%98/" style="font-size: 14px; color: #999">刷题</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" style="font-size: 14px; color: #999">多线程</a> <a href="/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" style="font-size: 17.33px; color: #828282">数字图像处理</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 17.33px; color: #828282">数学</a> <a href="/tags/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 14px; color: #999">文本编辑器</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 17.33px; color: #828282">深度学习</a> <a href="/tags/%E6%B8%B2%E6%9F%93/" style="font-size: 14px; color: #999">渲染</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 14px; color: #999">游戏</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 20.67px; color: #6c6c6c">算法</a> <a href="/tags/%E8%AF%AD%E6%B3%95/" style="font-size: 24px; color: #555">语法</a> <a href="/tags/%E9%BB%84%E6%B2%B9/" style="font-size: 14px; color: #999">黄油</a>
+      <a href="/tags/3dgs/" style="font-size: 17.33px; color: #828282">3dgs</a> <a href="/tags/Android/" style="font-size: 14px; color: #999">Android</a> <a href="/tags/Arduino/" style="font-size: 14px; color: #999">Arduino</a> <a href="/tags/OS/" style="font-size: 14px; color: #999">OS</a> <a href="/tags/%E5%88%B7%E9%A2%98/" style="font-size: 14px; color: #999">刷题</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" style="font-size: 14px; color: #999">多线程</a> <a href="/tags/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/" style="font-size: 17.33px; color: #828282">数字图像处理</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 17.33px; color: #828282">数学</a> <a href="/tags/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/" style="font-size: 14px; color: #999">文本编辑器</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 20.67px; color: #6c6c6c">深度学习</a> <a href="/tags/%E6%B8%B2%E6%9F%93/" style="font-size: 17.33px; color: #828282">渲染</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 14px; color: #999">游戏</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 20.67px; color: #6c6c6c">算法</a> <a href="/tags/%E8%AF%AD%E6%B3%95/" style="font-size: 24px; color: #555">语法</a> <a href="/tags/%E9%BB%84%E6%B2%B9/" style="font-size: 14px; color: #999">黄油</a>
     </div>
   </section>
 
@@ -4484,7 +4702,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   <script>
-  let imgs = ["https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//25.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//4.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//10.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//9.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//14.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//23.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//15.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//24.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//20.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//11 .jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//7.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//21.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//17.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//12.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//1.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//8.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//2.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//19.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//3.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//6.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//22.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//18.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//16.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//5.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//13.jpg"];
+  let imgs = ["https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//14.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//19.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//18.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//12.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//17.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//9.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//1.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//10.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//23.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//16.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//13.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//15.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//8.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//5.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//21.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//4.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//24.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//6.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//11 .jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//3.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//7.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//2.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//25.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//20.jpg","https://gcore.jsdelivr.net/gh/tugumineko/picture@latest//22.jpg"];
   let index = 0;
   let IntervalParallax = null;
 
