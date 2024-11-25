@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/about/"/>
+  <link rel="canonical" href="http://example.com/2024/11/25/3dgs-sketch/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -197,20 +197,21 @@ volantis.dark.push(switchNightMode);
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>关于 - tugumineko</title>
-  <meta name="keywords" content="null">
+  <title>3DGS实时渲染简述 - tugumineko</title>
+  <meta name="keywords" content="3dgs,null">
   <meta desc name="description" content="鶫ねこ - tugumineko - tugumineko">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="tugumineko">
-<meta property="og:url" content="http://example.com/about/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3DGS实时渲染简述">
+<meta property="og:url" content="http://example.com/2024/11/25/3dgs-sketch/index.html">
 <meta property="og:site_name" content="tugumineko">
-<meta property="og:description" content="做题家 互联网魔怔人">
+<meta property="og:description" content="前置知识：高斯分布，协方差矩阵，线性变换，四元数，机器学习，计算机图形学&#x2F;计算机视觉，高性能计算 定义： 3DGS实时渲染，即3D Gaussian Splatting in Real-time Rendering，使用了3D gaussian作为基底，对输入的SfM点云的位置(x,y,z)和颜色(r,g,b)进行gaussian model初始化，通过GPU并行计算，运用计算机图形学的传统光栅化">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2024-05-05T05:04:05.176Z">
-<meta property="article:modified_time" content="2024-05-05T05:04:05.176Z">
+<meta property="article:published_time" content="2024-11-25T02:38:22.000Z">
+<meta property="article:modified_time" content="2024-11-25T13:49:42.359Z">
 <meta property="article:author" content="tugumineko">
+<meta property="article:tag" content="3dgs">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2495,7 +2496,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2569,6 +2570,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <p class="title"></p>
       <ul class='switcher nav-list-h m-phone'>
         <li><a id="s-comment" class="fa-solid fa-comments fa-fw" target="_self" title="comment"></a></li>
+        
+          <li><a id="s-toc" class="s-toc fa-solid fa-list fa-fw" target="_self" title="toc"></a></li>
         
       </ul>
     </div>
@@ -2820,7 +2823,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="l_cover">
   
     
-      <div class="cover-wrapper docs dock" id='half'>
+      <div class="cover-wrapper post dock" id='half'>
         
   <div id="parallax-window"></div>
 
@@ -2888,9 +2891,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-<div id="l_main" class=' no_sidebar'>
-  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-docs" id="docs" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/about/index.html">
+<div id="l_main" class=''>
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/25/3dgs-sketch/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="tugumineko">
   </span>
@@ -2910,17 +2913,195 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
     
-      <span hidden itemprop="name headline">
+      <h1 class="title" itemprop="name headline">
+        3DGS实时渲染简述
+      </h1>
+      <div class='new-meta-box'>
         
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' target="_blank" href="https://github.com/tugumineko" rel="nofollow noopener">
+    <img itemprop="image" src="https://s2.loli.net/2024/05/05/fWJ73mnG5eSVpPj.jpg" class="lazyload" data-srcset="https://s2.loli.net/2024/05/05/fWJ73mnG5eSVpPj.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">鶫ねこ</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1.7k 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：6 分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+  
+  
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/3DV/">3DV</a><span class="sep"></span><a class="category-link" href="/categories/CG/">CG</a><span class="sep"></span><a class="category-link" href="/categories/CV/">CV</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/CV/" itemprop="url"><span itemprop="name">CV</span></a>
       </span>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/CG/" itemprop="url"><span itemprop="name">CG</span></a>
+      </span>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/3DV/" itemprop="url"><span itemprop="name">3DV</span></a>
+      </span>
+    
+  </div>
+  
+
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-11-25T10:38:22+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2024年11月25日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="busuanzi_value_page_pv">
+        <i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i>
+      </span>
+        
+      <span>次浏览</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
     
   </div>
 
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>做题家<br>
-互联网魔怔人</p>
+    <p>前置知识：高斯分布，协方差矩阵，线性变换，四元数，机器学习，计算机图形学/计算机视觉，高性能计算</p>
+<h2 id="定义：">定义：</h2>
+<p>3DGS实时渲染，即3D Gaussian Splatting in Real-time Rendering，使用了3D gaussian作为基底，对输入的SfM点云的位置(x,y,z)和颜色(r,g,b)进行gaussian model初始化，通过GPU并行计算，运用计算机图形学的传统光栅化方法将高斯渲染到屏幕上面，通过渲染结果做偏微分做loss反向传播并更新高斯参数，利用随机梯度下降进行学习，并且交错迭代优化。</p>
+<h2 id="具体细节：">具体细节：</h2>
+<h3 id="为什么选用高斯？">为什么选用高斯？</h3>
+<ol>
+<li>
+<p>高斯可以近似为椭球，渲染到2D屏幕上近似为圆，不仅可以实现以圆为基底的光栅化渲染，而且具有可微的性质，所以可学习。</p>
+<ul>
+<li>2阶协方差矩阵转换为二次曲线得到椭圆表达式</li>
+<li>偏微分得到位置mean和协方差矩阵(用scale和quternion表示)，颜色(r,g,b)，opacity <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span></span></span></span>，反深度，椭球曲线conic等信息，与L1和SSIM Loss做反向传播进行优化更新</li>
+</ul>
+</li>
+<li>
+<p>高斯有很多优秀的性质，加快计算以达到实时渲染</p>
+<ul>
+<li>协方差矩阵表示3D高斯在各个坐标轴的缩放及旋转，相应地可以通过旋转矩阵和缩放矩阵表示协方差矩阵</li>
+<li>3D高斯通过矩阵变换后得到的还是一个3D高斯，我们光栅化时转换坐标系时需要用到</li>
+<li>两个高斯做卷积还是一个高斯，并且得到的高斯的协方差矩阵是两个高斯的协方差矩阵之和，后面做EWA反走样时会用到</li>
+<li>3D高斯沿着某个轴做积分可以得到2D高斯，而且这个2D高斯的协方差矩阵就是3D高斯的协方差矩阵的左上角2x2部分</li>
+</ul>
+</li>
+</ol>
+<h3 id="如何进行光栅化？">如何进行光栅化？</h3>
+<ol>
+<li>
+<p>3D -&gt; 2D</p>
+<ul>
+<li>转换坐标系，从3D高斯投影为2D高斯，注意这里的3D椭球从不同视角看投影出来的2D椭圆是不同的。我们使用了协方差矩阵为核心，从世界空间到相机空间是一个仿射变换。而从相机空间齐次空间是一个非线性变换，不满足上述性质，论文中提出了一种近似的放射投影变换(local affine approximation),是二阶泰勒展开得到的Jacobian Matrix,然后做积分得到2D高斯，而且根本不用做积分运算，因为2D高斯协方差矩阵已经得到了。</li>
+<li>为了减少阴影和混叠，我们需要反走样Antialiasing，我们对信号增加一个低通滤波器以避免混叠现象。经过证明，对整个信号的卷积等价于对足迹函数的卷积，即2D协方差矩阵对角线的两个数加上定值0.3，让所有高斯&quot;胖&quot;一些，让更多高斯贡献到某一像素上。</li>
+<li>用协方差矩阵得到相应的椭球形状，然后近似成圆，得到半径和圆心(2Dmean)，找到这个圆对应了几个Tile，用球谐函数拟合这个圆的颜色，按位深度排序得到 [Tile | Sphere] 键值对，以Tile为Block，Pixel为Thread进行GPU并行计算，加快渲染速度。</li>
+</ul>
+</li>
+<li>
+<p>渲染方程</p>
+</li>
+</ol>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mi>k</mi><mrow></mrow></munderover><msub><mi>c</mi><mrow><mi>λ</mi><mi>k</mi></mrow></msub><msub><mi>o</mi><mi>k</mi></msub><msub><mi>g</mi><mi>k</mi></msub><mo stretchy="false">(</mo><msub><mi>q</mi><mi>k</mi></msub><mo>⊗</mo><mi>h</mi><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sum_{k}^{} c_{\lambda k}o_{k}g_{k}(q_{k}\otimes h)(\hat{x}) 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.652118em;vertical-align:-1.302113em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3500050000000001em;"><span style="top:-1.8478869999999998em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span style="top:-3.0500049999999996em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.300005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.302113em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">λ</span><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">o</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">h</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">x</span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></p>
+<p>对应到3DGS算法上面，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>λ</mi><mi>k</mi></mrow></msub></mrow><annotation encoding="application/x-tex">c_{\lambda k}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">λ</span><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>表示某个高斯的颜色(feature)，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>o</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">o_{k}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">o</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>是累计的透明度，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">g_{k}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>是这次的透明度，卷积经过预计算的协方差矩阵可以得出。</p>
+<p>其中：</p>
+<ul>
+<li>颜色是输入的颜色，但是为了让不同视角看起来的颜色不同(高光和漫反射)，我们使用球谐函数拟合出不同视角的颜色。</li>
+<li>透明度乘以足迹函数就是高斯分布，即概率</li>
+</ul>
+<p>这样，我们不断进行累加，运用GPU并行计算，就可以得到一个2D视图场景。</p>
+<h3 id="怎样做反向传播？">怎样做反向传播？</h3>
+<p>对于一个可学习模型的反向传播，我们要先知道输入项和输出项。<br>
+在这里，我们可以认为输入项是逐像素的颜色张量 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mrow><mi>r</mi><mi>g</mi><mi>b</mi></mrow></msub><mo stretchy="false">(</mo><mi>p</mi><mo separator="true">,</mo><mn>3</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P_{rgb}(p,3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">g</span><span class="mord mathdefault mtight">b</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">p</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span><span class="mclose">)</span></span></span></span>。<br>
+输出项是高斯的相关参数，包括：逐高斯的颜色张量<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mrow><mi>r</mi><mi>g</mi><mi>b</mi></mrow></msub><mo stretchy="false">(</mo><mi>g</mi><mo separator="true">,</mo><mn>3</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">G_{rgb}(g,3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">g</span><span class="mord mathdefault mtight">b</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span><span class="mclose">)</span></span></span></span>、逐高斯的不透明度<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mrow><mi>o</mi><mi>p</mi><mi>a</mi><mi>c</mi><mi>i</mi><mi>t</mi><mi>y</mi></mrow></msub><mo stretchy="false">(</mo><mi>g</mi><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">G_{opacity}(g,1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight">p</span><span class="mord mathdefault mtight">a</span><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">t</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span>、椭球中心的位置<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mrow><mi>p</mi><mi>o</mi><mi>i</mi><mi>n</mi><mi>t</mi><mn>3</mn><mi>D</mi></mrow></msub><mo stretchy="false">(</mo><mi>g</mi><mo separator="true">,</mo><mn>3</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">G_{point3D}(g,3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.328331em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">p</span><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">n</span><span class="mord mathdefault mtight">t</span><span class="mord mtight">3</span><span class="mord mathdefault mtight" style="margin-right:0.02778em;">D</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span><span class="mclose">)</span></span></span></span>、椭球的旋转角度<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mrow><mi>r</mi><mi>o</mi><mi>t</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi></mrow></msub><mo stretchy="false">(</mo><mi>g</mi><mo separator="true">,</mo><mn>4</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">G_{rotation}(g,4)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight">t</span><span class="mord mathdefault mtight">a</span><span class="mord mathdefault mtight">t</span><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">4</span><span class="mclose">)</span></span></span></span>、椭球的轴长<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mrow><mi>s</mi><mi>c</mi><mi>a</mi><mi>l</mi><mi>e</mi></mrow></msub><mo stretchy="false">(</mo><mi>g</mi><mo separator="true">,</mo><mn>3</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">G_{scale}(g,3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">s</span><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight">a</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mord mathdefault mtight">e</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span><span class="mclose">)</span></span></span></span>。</p>
+<p>由于是梯度下降法，然后就是计算梯度，利用Loss函数偏微分计算出即可。</p>
+<p>具体就是Pytorch和Loss比较，在前向传播后会返回一个Loss对输出值的偏微分，即<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>d</mi><mi>L</mi></mrow><mrow><mi>d</mi><msub><mi>P</mi><mrow><mi>r</mi><mi>g</mi><mi>b</mi></mrow></msub><mo stretchy="false">(</mo><mi>p</mi><mo separator="true">,</mo><mn>3</mn><mo stretchy="false">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac {dL}{dP_{rgb}(p,3)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.4281879999999998em;vertical-align:-0.5480799999999999em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8801079999999999em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">d</span><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3487714285714287em;margin-left:-0.13889em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">g</span><span class="mord mathdefault mtight">b</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29011428571428566em;"><span></span></span></span></span></span></span><span class="mopen mtight">(</span><span class="mord mathdefault mtight">p</span><span class="mpunct mtight">,</span><span class="mord mtight">3</span><span class="mclose mtight">)</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">d</span><span class="mord mathdefault mtight">L</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.5480799999999999em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>,然后我们可以通过换元一步步计算出对应的偏微分，即得到梯度。</p>
+<p>在这里，Loss为L1和D-SSIM的组合损失函数，其中D-SSIM权重为0.2</p>
+<h3 id="训练时如何优化？">训练时如何优化？</h3>
+<ol>
+<li>
+<p>增加高斯的数量。<br>
+论文中使用了一种基于gradient的densification方法对高斯密度进行调节。<br>
+论文将需要调节的高斯分为两类:</p>
+<ul>
+<li>under-reconstruction:高斯并不能填满需要表达的几何</li>
+<li>over-reconstrucition:高斯过大导致完全覆盖了一片区域<br>
+这些需要调节的高斯的位置梯度往往很大，因为优化器更倾向于把这些错误纠正。<br>
+论文中直接算历史平均位置梯度，如果在某次调节中发现这个高斯的平均梯度大于某个预定值，就认为这个高斯需要调节。</li>
+</ul>
+</li>
+<li>
+<p>对高斯进行剪枝。</p>
+<ul>
+<li>当透明度小于0.005时，就认为这个高斯不存在（大片空白场景），将其剪枝</li>
+<li>当高斯scale过大时或者投影到屏幕上过大时，将其剪枝</li>
+<li>每过3000次迭代将所有高斯的透明度设置为0.01，这样优化器就会忽略增加那些错误的高斯的透明度从而做到剪枝掉空中的’floater’的作用。</li>
+</ul>
+</li>
+<li>
+<p>增加球谐函数的维度。<br>
+每过1000次迭代增加一个球谐函数的维度，最高为3</p>
+</li>
+<li>
+<p>通过学习率变化策略。</p>
+<ul>
+<li>先warm-up再下降</li>
+<li>不同的参数交错训练，且使用不同的优化器和初始学习率</li>
+</ul>
+</li>
+</ol>
 
   </div>
   
@@ -2944,6 +3125,80 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='article-meta' id="bottom">
     <div class='new-meta-box'>
       
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-11-25T21:49:42+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2024年11月25日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/3dgs/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>3dgs</p></a></div>
+  <span hidden itemprop="keywords">3dgs</span>
+  
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2024/11/25/3dgs-sketch/&title=3DGS实时渲染简述 - tugumineko&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2024/11/25/3dgs-sketch/&title=3DGS实时渲染简述 - tugumineko&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2024/11/25/3dgs-sketch/&title=3DGS实时渲染简述 - tugumineko&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
     </div>
     <!-- Custom Files bottomMeta begin -->
     
@@ -2954,6 +3209,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
 
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2024/11/11/softras-environment/'>
+          <p class='title'>2024/11/11环境配置踩坑<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>今天在跑Soft Rasterizer (SoftRas)这一篇论文代码时出现了很多的问题，由于是一篇2019年的论文，有很多版本兼容的问题，于是记录下来。
+前言
+有一些由于版本兼容出现的警告版...</p>
+        </a>
+      
+    </div>
   
   <!-- 文章推荐 -->
   
@@ -2969,7 +3236,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/about/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2024/11/25/3dgs-sketch/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2987,8 +3254,35 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
 
+  
+    
+    
+      
+    
+  
+
 
 <div class="widget-sticky">
+
+  
+  
+
+
+<section class="widget toc-wrapper desktop mobile" id="toc-div" >
+  
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">定义：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E7%BB%86%E8%8A%82%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">具体细节：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E7%94%A8%E9%AB%98%E6%96%AF%EF%BC%9F"><span class="toc-number">2.1.</span> <span class="toc-text">为什么选用高斯？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E5%85%89%E6%A0%85%E5%8C%96%EF%BC%9F"><span class="toc-number">2.2.</span> <span class="toc-text">如何进行光栅化？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%8E%E6%A0%B7%E5%81%9A%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%EF%BC%9F"><span class="toc-number">2.3.</span> <span class="toc-text">怎样做反向传播？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%AD%E7%BB%83%E6%97%B6%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96%EF%BC%9F"><span class="toc-number">2.4.</span> <span class="toc-text">训练时如何优化？</span></a></li></ol></li></ol>
+  </div>
+</section>
+
+  
 
 </div>
 
@@ -4106,7 +4400,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"鶫ねこ"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"tugumineko"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"tugumineko","url":"http://example.com/","keywords":null,"description":"鶫ねこ","author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"鶫ねこ"},"publisher":{"@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"关于","description":"鶫ねこ","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/about/index.html"},"author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"tugumineko","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/about/index.html","wordCount":0,"datePublished":"2024-05-05T05:04:05.176Z","dateModified":"2024-05-05T05:04:05.176Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"鶫ねこ"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"tugumineko"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/CV/","name":"CV"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/CG/","name":"CG"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/3DV/","name":"3DV"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/11/25/3dgs-sketch/","name":"3DGS实时渲染简述"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"tugumineko","url":"http://example.com/","keywords":null,"description":"鶫ねこ","author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"鶫ねこ"},"publisher":{"@type":"Organization","name":"tugumineko","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"3DGS实时渲染简述","description":"鶫ねこ","inLanguage":["zh-CN","en","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/11/25/3dgs-sketch/"},"author":{"@type":"Person","name":"tugumineko","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"tugumineko","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/11/25/3dgs-sketch/","wordCount":0,"datePublished":"2024-11-25T02:38:22.000Z","dateModified":"2024-11-25T13:49:42.359Z","articleSection":"CV","keywords":"3dgs","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
